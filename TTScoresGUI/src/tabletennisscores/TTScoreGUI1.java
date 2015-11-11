@@ -6,6 +6,7 @@ package tabletennisscores;
 
 import data_classes.DoubleGame;
 import data_classes.Game;
+import data_classes.Match;
 import data_classes.Set;
 import data_classes.SingleGame;
 import data_classes.Team;
@@ -1422,6 +1423,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_calScoreButtonActionPerformed
 
     ArrayList<Set> sets;
+    Match match;
  
     private void getScoresFromTextFields() {
         
@@ -1431,6 +1433,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         Set set4;
         Set set5;
         sets = new ArrayList<>();
+        match = new Match();
        
         set1 = new Set();
         set1.addGame(new SingleGame(Integer.parseInt(set11ahpts.getText()), Integer.parseInt(set11aapts.getText())));
@@ -1462,6 +1465,10 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         sets.add(set3);
         sets.add(set4);
         sets.add(set5);
+        
+        match.setSets(sets);
+        match.setHomeTeam(manager.getTeamWithName(homeTeamName));
+        match.setAwayTeam(manager.getTeamWithName(awayTeamName));
     }
     
     private boolean calculateScores(ArrayList<Set> sets) {
@@ -1503,10 +1510,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_dchActionPerformed
 
     private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
-
+        submitScores();
         // TODO add your handling code here:
     }//GEN-LAST:event_submitScoreButtonActionPerformed
 
+    private void submitScores() {
+        manager.matches.add(match);
+    }
+    
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
 
     }//GEN-LAST:event_viewMatchButtonActionPerformed

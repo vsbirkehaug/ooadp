@@ -45,4 +45,8 @@ public class Match {
         }      
         return points;
     }
+
+    public void setSets(ArrayList<Set> sets) {
+        this.sets = sets;
+    }
 }

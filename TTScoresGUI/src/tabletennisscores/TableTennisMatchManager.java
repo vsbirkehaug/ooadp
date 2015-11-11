@@ -129,6 +129,15 @@ public class TableTennisMatchManager {
         return false;
       }
     }
+    
+    public Team getTeamWithName(String teamName) {
+        for(Team t : teams) {
+            if(t.getName().equalsIgnoreCase(teamName.trim())){
+                return t;
+            }              
+        }
+        return null;
+    }
 
     public int getPointsWonByTeam(Team team) {
         int points = 0;
