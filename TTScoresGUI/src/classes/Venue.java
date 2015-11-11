@@ -19,4 +19,8 @@ public class Venue {
    public String getName() {
      return this.name;
    }
+   
+    public Venue(String name) {
+        setName(name);
+    }
 }

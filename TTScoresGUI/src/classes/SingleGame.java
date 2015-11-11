@@ -13,6 +13,10 @@ public class SingleGame extends Game {
     private Player homePlayer;
     private Player awayPlayer;
 
+    public SingleGame(int homeScore, int awayScore) {
+        super(homeScore, awayScore);
+    }
+
     public void setHomePlayer(Player player) {
        this.homePlayer = player;
     }

@@ -25,4 +25,19 @@ public class Game {
     public int getAwayScore() {
       return this.awayScore;
     }
+    
+    public Game(int homeScore, int awayScore) {
+        setHomeScore(homeScore);
+        setAwayScore(awayScore);
+    }
+    
+    public String gameWinner() {
+        if(homeScore > awayScore) {
+            return "h";
+        } else if (awayScore > homeScore) {
+            return "a";
+        } else {
+            return "u";
+        }
+    }
 }

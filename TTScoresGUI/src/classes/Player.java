@@ -12,6 +12,10 @@ package classes;
 public class Player {
     String name;
 
+    public Player(String name) {
+        setName(name);
+    }
+    
     public String getName() {
         return name;
     }

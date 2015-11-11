@@ -187,7 +187,7 @@
                                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                           <Component id="checkPlayerNamesButton" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="calScorebutton" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calScoreButton" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="submitScoreButton" min="-2" pref="146" max="-2" attributes="0"/>
                                       </Group>
@@ -268,7 +268,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="submitScoreButton" alignment="0" max="32767" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="calScorebutton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="calScoreButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="checkPlayerNamesButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1351,12 +1351,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hPlayer2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="calScorebutton">
+        <Component class="javax.swing.JButton" name="calScoreButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Calculate scores"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calScorebuttonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calScoreButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="hdblplayer1">
@@ -1467,6 +1468,7 @@
         <Component class="javax.swing.JButton" name="submitScoreButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Submit scores"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitScoreButtonActionPerformed"/>

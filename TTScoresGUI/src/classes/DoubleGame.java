@@ -15,6 +15,10 @@ public class DoubleGame extends Game {
     private Player[] homePlayers;
     private Player[] awayPlayers;
 
+    public DoubleGame(int homeScore, int awayScore) {
+        super(homeScore, awayScore);
+    }
+
     public void addHomePlayer(Player player) {
       if(homePlayers == null) {
         homePlayers = new Player[2];

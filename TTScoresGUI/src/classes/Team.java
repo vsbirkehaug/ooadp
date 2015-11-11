@@ -13,9 +13,14 @@ import java.util.ArrayList;
  */
 public class Team {
    public static final int MAX_TEAM_SIZE = 2;
+   private String name;
    Venue venue;
    ArrayList<Player> players;
 
+   public Team(String name) {
+       setName(name);
+   }
+   
    public void setVenue(Venue venue) {
      this.venue = venue;
    }
@@ -49,6 +54,14 @@ public class Team {
                 return true;
         }
         return false;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return this.name;
     }
 
 }
