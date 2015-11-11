@@ -10,8 +10,10 @@ import classes.Set;
 import classes.SingleGame;
 import classes.Team;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -30,105 +32,71 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void setChangeListeners() {
-        hPlayer1.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
+        
+        ArrayList<JTextField> nameTextFields = new ArrayList<>();
+        nameTextFields.addAll(Arrays.asList(
+                        hPlayer1, hPlayer2, hTeamField, 
+                        aPlayer1, aPlayer2, aTeamField,
+                        hdblplayer1, hdblplayer2, 
+                        adblplayer1, adblplayer2));
+        
+        for(JTextField tf : nameTextFields) {
+            tf.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+              textChanged();
+            }
+            public void removeUpdate(DocumentEvent e) {
+              textChanged();
+            }
+            public void insertUpdate(DocumentEvent e) {
+              textChanged();
+            }
 
-        public void textChanged() {
-           doTextChanged();
+            public void textChanged() {
+               doNameTextChanged();
+            }
+            });
         }
-        });
+        
+        ArrayList<JTextField> scoreTextFields = new ArrayList<>();
+        scoreTextFields.addAll(Arrays.asList(
+                    set11ahpts, set11bhpts, set11chpts,
+                    set11aapts, set11bapts, set11capts,
+                    set12ahpts, set12bhpts, set12chpts,
+                    set12aapts, set12bapts, set12capts,
+                    set21ahpts, set21bhpts ,set21chpts,
+                    set21aapts, set21bapts ,set21capts,
+                    set22ahpts, set22bhpts, set22chpts,
+                    set22aapts, set22bapts, set22capts,
+                    dah, dbh, dch, daa, dba, dca
+                    ));
+        
+        for(JTextField tf : scoreTextFields) {
+            tf.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+              textChanged();
+            }
+            public void removeUpdate(DocumentEvent e) {
+              textChanged();
+            }
+            public void insertUpdate(DocumentEvent e) {
+              textChanged();
+            }
 
-        hPlayer2.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
+            public void textChanged() {
+               doScoreTextChanged();
+            }
+            });
         }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
-
-        public void textChanged() {
-           doTextChanged();
-        }
-        });
-
-        hTeamField.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
-
-        public void textChanged() {
-           doTextChanged();
-        }
-        });
-
-        aPlayer1.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
-
-        public void textChanged() {
-           doTextChanged();
-        }
-        });
-
-        aPlayer2.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
-
-        public void textChanged() {
-           doTextChanged();
-        }
-        });
-
-        aTeamField.getDocument().addDocumentListener(new DocumentListener() {
-        public void changedUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void removeUpdate(DocumentEvent e) {
-          textChanged();
-        }
-        public void insertUpdate(DocumentEvent e) {
-          textChanged();
-        }
-
-        public void textChanged() {
-           doTextChanged();
-        }
-        });
+        
     }
 
-    private void doTextChanged() {
+    private void doNameTextChanged() {
         setCalculateScoresButtonEnabled(false);
+        setSubmitScoresButtonEnabled(false);
+    }
+    
+    private void doScoreTextChanged() {
         setSubmitScoresButtonEnabled(false);
     }
 
@@ -1464,29 +1432,29 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         sets = new ArrayList<>();
        
         set1 = new Set();
-        set1.addGame(new SingleGame(Integer.parseInt(set11ahpts.getText()), Integer.parseInt(set11aapts.getText().toString())));
-        set1.addGame(new SingleGame(Integer.parseInt(set11bhpts.getText().toString()), Integer.parseInt(set11bapts.getText().toString())));
-        set1.addGame(new SingleGame(Integer.parseInt(set11chpts.getText().toString()), Integer.parseInt(set11capts.getText().toString())));
+        set1.addGame(new SingleGame(Integer.parseInt(set11ahpts.getText()), Integer.parseInt(set11aapts.getText())));
+        set1.addGame(new SingleGame(Integer.parseInt(set11bhpts.getText()), Integer.parseInt(set11bapts.getText())));
+        set1.addGame(new SingleGame(Integer.parseInt(set11chpts.getText()), Integer.parseInt(set11capts.getText())));
         
         set2 = new Set();
-        set2.addGame(new SingleGame(Integer.parseInt(set12ahpts.getText().toString()),Integer.parseInt(set12aapts.getText().toString())));
-        set2.addGame(new SingleGame(Integer.parseInt(set12bhpts.getText().toString()),Integer.parseInt(set12bapts.getText().toString())));
-        set2.addGame(new SingleGame(Integer.parseInt(set12chpts.getText().toString()),Integer.parseInt(set12capts.getText().toString())));
+        set2.addGame(new SingleGame(Integer.parseInt(set12ahpts.getText()),Integer.parseInt(set12aapts.getText())));
+        set2.addGame(new SingleGame(Integer.parseInt(set12bhpts.getText()),Integer.parseInt(set12bapts.getText())));
+        set2.addGame(new SingleGame(Integer.parseInt(set12chpts.getText()),Integer.parseInt(set12capts.getText())));
 
         set3 = new Set();
-        set3.addGame(new SingleGame(Integer.parseInt(set21ahpts.getText().toString()), Integer.parseInt(set21aapts.getText().toString())));
-        set3.addGame(new SingleGame(Integer.parseInt(set21bhpts.getText().toString()), Integer.parseInt(set21bapts.getText().toString())));
-        set3.addGame(new SingleGame(Integer.parseInt(set21chpts.getText().toString()), Integer.parseInt(set21capts.getText().toString())));
+        set3.addGame(new SingleGame(Integer.parseInt(set21ahpts.getText()), Integer.parseInt(set21aapts.getText())));
+        set3.addGame(new SingleGame(Integer.parseInt(set21bhpts.getText()), Integer.parseInt(set21bapts.getText())));
+        set3.addGame(new SingleGame(Integer.parseInt(set21chpts.getText()), Integer.parseInt(set21capts.getText())));
 
         set4 = new Set();
-        set4.addGame(new SingleGame(Integer.parseInt(set22ahpts.getText().toString()), Integer.parseInt(set22aapts.getText().toString())));      
-        set4.addGame(new SingleGame(Integer.parseInt(set22bhpts.getText().toString()), Integer.parseInt(set22bapts.getText().toString())));      
-        set4.addGame(new SingleGame(Integer.parseInt(set22chpts.getText().toString()), Integer.parseInt(set22capts.getText().toString())));      
+        set4.addGame(new SingleGame(Integer.parseInt(set22ahpts.getText()), Integer.parseInt(set22aapts.getText())));      
+        set4.addGame(new SingleGame(Integer.parseInt(set22bhpts.getText()), Integer.parseInt(set22bapts.getText())));      
+        set4.addGame(new SingleGame(Integer.parseInt(set22chpts.getText()), Integer.parseInt(set22capts.getText())));      
 
         set5 = new Set();
-        set5.addGame(new DoubleGame(Integer.parseInt(dah.getText().toString()), Integer.parseInt(daa.getText().toString())));
-        set5.addGame(new DoubleGame(Integer.parseInt(dbh.getText().toString()), Integer.parseInt(dba.getText().toString())));
-        set5.addGame(new DoubleGame(Integer.parseInt(dch.getText().toString()), Integer.parseInt(dca.getText().toString())));
+        set5.addGame(new DoubleGame(Integer.parseInt(dah.getText()), Integer.parseInt(daa.getText())));
+        set5.addGame(new DoubleGame(Integer.parseInt(dbh.getText()), Integer.parseInt(dba.getText())));
+        set5.addGame(new DoubleGame(Integer.parseInt(dch.getText()), Integer.parseInt(dca.getText())));
 
         sets.add(set1);
         sets.add(set2);
@@ -1521,6 +1489,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         
         hWinTotal.setText(String.valueOf(homeWin1 + homeWin2 + homeWin3));
         aWinTotal.setText(String.valueOf(awayWin1 + awayWin2 + awayWin3));
+        
         return true;
     }
     
@@ -1553,7 +1522,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
         getNamesFromTextFields();
-        Boolean isVerified = manager.verifyNames(homeTeamName, homeTeamMembersNames, awayTeamName, awayTeamMembersNames);
+        Boolean isVerified = manager.verifyNames(homeTeamName, hPlayersNamesSingles, hPlayersNamesDoubles, awayTeamName, aPlayersNamesSingles, aPlayersNamesDoubles);
         if(isVerified) {
             setCalculateScoresButtonEnabled(true);
         } else {
@@ -1562,20 +1531,29 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
 
     String homeTeamName;
-    String[] homeTeamMembersNames;
+    String[] hPlayersNamesSingles;
+    String[] hPlayersNamesDoubles;
     String awayTeamName;
-    String[] awayTeamMembersNames;
+    String[] aPlayersNamesSingles;
+    String[] aPlayersNamesDoubles;
 
     private void getNamesFromTextFields() {
        homeTeamName = hTeamField.getText().toString();
-       homeTeamMembersNames = new String[2];
-       homeTeamMembersNames[0] = hPlayer1.getText().toString();
-       homeTeamMembersNames[1] = hPlayer2.getText().toString();
+       hPlayersNamesSingles = new String[2];
+       hPlayersNamesDoubles = new String[2];
+       hPlayersNamesSingles[0] = hPlayer1.getText().toString();
+       hPlayersNamesSingles[1] = hPlayer2.getText().toString();
+       hPlayersNamesDoubles[0] = hdblplayer1.getText().toString();
+       hPlayersNamesDoubles[1] = hdblplayer2.getText().toString();
 
        awayTeamName = aTeamField.getText().toString();
-       awayTeamMembersNames = new String[2];
-       awayTeamMembersNames[0] = aPlayer1.getText().toString();
-       awayTeamMembersNames[1] = aPlayer2.getText().toString();
+       aPlayersNamesSingles = new String[2];
+       aPlayersNamesDoubles = new String[2];
+       aPlayersNamesSingles[0] = aPlayer1.getText().toString();
+       aPlayersNamesSingles[1] = aPlayer2.getText().toString();
+       aPlayersNamesDoubles[0] = adblplayer1.getText().toString();
+       aPlayersNamesDoubles[1] = adblplayer2.getText().toString();
+
     }
     
     private void setCalculateScoresButtonEnabled(Boolean state) {

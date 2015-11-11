@@ -10,6 +10,7 @@ import classes.Player;
 import classes.Team;
 import classes.Venue;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  *
@@ -44,9 +45,12 @@ public class TableTennisMatchManager {
     }
    
     boolean verifyPlayerNames(String teamName, String[] players) {
-        if(stringIsEmpty(teamName) || stringIsEmpty(players[0]) || stringIsEmpty(players[1])) {
+        if(stringIsEmpty(teamName) || 
+            anyPlayerNamesAreEmpty(players) || 
+            anyPlayerNamesAreIdentical(players)) {
+            
             return false;
-        }
+        } 
         
         //to keep track of the verified players
         int unverifiedPlayers = players.length;
@@ -66,6 +70,29 @@ public class TableTennisMatchManager {
             return false;
         }
     }
+    
+    private boolean anyPlayerNamesAreEmpty(String[] players) {
+        for(String s : players) {
+            if(stringIsEmpty(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean anyPlayerNamesAreIdentical(String[] players) {
+        
+        HashSet tempHashSet = new HashSet();
+        
+        for(String s : players) {
+            if(!tempHashSet.add(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
         
     boolean stringIsEmpty(String str) {
         if(str != null && str.length() > 0) {
@@ -82,10 +109,16 @@ public class TableTennisMatchManager {
      
      
      
-    Boolean verifyNames(String homeTeamName, String[] homeTeamMembersNames, String awayTeamName, String[] awayTeamMembersNames) {
-        if(verifyPlayerNames(homeTeamName, homeTeamMembersNames) && verifyPlayerNames(awayTeamName, awayTeamMembersNames)) {
-          System.out.println("" +verifyPlayerNames(homeTeamName, homeTeamMembersNames) );
-          System.out.println("" +verifyPlayerNames(awayTeamName, awayTeamMembersNames) );
+    Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers, 
+                        String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
+        
+        if(verifyPlayerNames(hTeamName, hSinglesPlayers) 
+        && verifyPlayerNames(hTeamName, hDoublesPlayers)
+        && verifyPlayerNames(aTeamName, aSinglesPlayers)
+        && verifyPlayerNames(aTeamName, aDoublesPlayers)
+        ) {
+          System.out.println("" +verifyPlayerNames(hTeamName, hSinglesPlayers) );
+          System.out.println("" +verifyPlayerNames(aTeamName, aSinglesPlayers) );
           
         return true;
       } else {
