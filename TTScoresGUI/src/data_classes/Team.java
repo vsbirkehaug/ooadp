@@ -69,4 +69,12 @@ public class Team {
     public String toString() {
         return ("Name: " + name + ", venue: " + venue.getName());
     }
+
+    public boolean hasRoomForMorePlayers() {
+        if(players == null || players.size() < MAX_TEAM_SIZE) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -39,6 +39,7 @@ public class AddTeam extends javax.swing.JFrame {
         cancelFrameButton = new javax.swing.JButton();
         addTeamErrorLabel = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add team");
 
         jLabel1.setText("Team name");

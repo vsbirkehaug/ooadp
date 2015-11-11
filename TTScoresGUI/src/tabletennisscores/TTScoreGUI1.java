@@ -1572,7 +1572,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
     
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
-
+        JFrame registerPlayer = new RegisterPlayer();
+        registerPlayer.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_regPlayerButtonActionPerformed
 

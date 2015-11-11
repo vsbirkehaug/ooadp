@@ -100,6 +100,18 @@ public class TableTennisMatchManager {
         }
     }
     
+    public ArrayList<Team> getTeamsWithOpenPlayerSlots() {
+        ArrayList<Team> availableTeams = new ArrayList<>();
+        
+        for(Team t : teams) {
+            if(t.hasRoomForMorePlayers()) {
+                availableTeams.add(t);
+            }
+        }
+        
+        return availableTeams;
+    }
+    
     
     
     
