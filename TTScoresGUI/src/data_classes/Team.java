@@ -6,6 +6,7 @@
 package data_classes;
 
 import java.util.ArrayList;
+import tabletennisscores.TTScoreGUI1;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Team {
    private String name;
    Venue venue;
    ArrayList<Player> players;
+   int points;
 
     public Team(String teamName, String venueName) {
         setName(teamName);
@@ -76,5 +78,10 @@ public class Team {
         } else {
             return false;
         }
+    }
+    
+    public int getPoints() {
+        points = TTScoreGUI1.manager.getPointsWonByTeam(this);
+        return points;
     }
 }

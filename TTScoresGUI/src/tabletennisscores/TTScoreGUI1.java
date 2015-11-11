@@ -1523,13 +1523,16 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_viewMatchButtonActionPerformed
 
     private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
-
-        // TODO add your handling code here:
+        listTeamRankings();
     }//GEN-LAST:event_teamTankingButtonActionPerformed
 
+    private void listTeamRankings() {
+        ListTeamRanking listTeamRanking = new ListTeamRanking();
+        listTeamRanking.setVisible(true);
+    }
+    
     private void allTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allTeamButtonActionPerformed
         listAllTeams();
-// TODO add your handling code here:
     }//GEN-LAST:event_allTeamButtonActionPerformed
 
     private void listAllTeams() {
