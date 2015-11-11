@@ -4,14 +4,15 @@
  */
 package tabletennisscores;
 
-import classes.DoubleGame;
-import classes.Game;
-import classes.Set;
-import classes.SingleGame;
-import classes.Team;
+import data_classes.DoubleGame;
+import data_classes.Game;
+import data_classes.Set;
+import data_classes.SingleGame;
+import data_classes.Team;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -1561,10 +1562,15 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
-
+        openAddTeamFrame();
         // TODO add your handling code here:
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
+    private void openAddTeamFrame() {
+        JFrame addTeam = new AddTeam();
+        addTeam.setVisible(true);
+    }
+    
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
 
         // TODO add your handling code here:
@@ -1661,7 +1667,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
     // Variables:
 
-    TableTennisMatchManager manager = new TableTennisMatchManager();
+    public static TableTennisMatchManager manager = new TableTennisMatchManager();
     public Scanner sc = new Scanner(TTScoreGUI1.class.getResourceAsStream("/testscores.txt"));
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

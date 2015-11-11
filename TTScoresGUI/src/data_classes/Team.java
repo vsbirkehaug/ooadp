@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package classes;
+package data_classes;
 
 import java.util.ArrayList;
 
@@ -17,9 +17,10 @@ public class Team {
    Venue venue;
    ArrayList<Player> players;
 
-   public Team(String name) {
-       setName(name);
-   }
+    public Team(String teamName, String venueName) {
+        setName(teamName);
+        setVenue(new Venue(venueName));
+    }
    
    public void setVenue(Venue venue) {
      this.venue = venue;
@@ -64,4 +65,8 @@ public class Team {
         return this.name;
     }
 
+    @Override
+    public String toString() {
+        return ("Name: " + name + ", venue: " + venue.getName());
+    }
 }

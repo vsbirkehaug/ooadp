@@ -5,10 +5,10 @@
  */
 package tabletennisscores;
 
-import classes.Match;
-import classes.Player;
-import classes.Team;
-import classes.Venue;
+import data_classes.Match;
+import data_classes.Player;
+import data_classes.Team;
+import data_classes.Venue;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -32,13 +32,11 @@ public class TableTennisMatchManager {
     }  
     
     private void setupTestData() {
-        Team filtonTeam = new Team("filton");
-        filtonTeam.setVenue(new Venue("Gloucester road"));
+        Team filtonTeam = new Team("filton", "Gloucester road");
         filtonTeam.addPlayer(new Player("alex"));
         filtonTeam.addPlayer(new Player("brian"));
         teams.add(filtonTeam);
-        Team uweTeam = new Team("uwe");
-        uweTeam.setVenue(new Venue("Frenchay campus"));
+        Team uweTeam = new Team("uwe", "Frenchay campus");
         uweTeam.addPlayer(new Player("jin"));
         uweTeam.addPlayer(new Player("julia"));
         teams.add(uweTeam);
