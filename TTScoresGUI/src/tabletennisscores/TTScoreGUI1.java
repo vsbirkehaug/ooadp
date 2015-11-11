@@ -1555,21 +1555,21 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     String[] aPlayersNamesDoubles;
 
     private void getNamesFromTextFields() {
-       homeTeamName = hTeamField.getText().toString();
+       homeTeamName = hTeamField.getText().toString().trim();
        hPlayersNamesSingles = new String[2];
        hPlayersNamesDoubles = new String[2];
-       hPlayersNamesSingles[0] = hPlayer1.getText().toString();
-       hPlayersNamesSingles[1] = hPlayer2.getText().toString();
-       hPlayersNamesDoubles[0] = hdblplayer1.getText().toString();
-       hPlayersNamesDoubles[1] = hdblplayer2.getText().toString();
+       hPlayersNamesSingles[0] = hPlayer1.getText().toString().trim();
+       hPlayersNamesSingles[1] = hPlayer2.getText().toString().trim();
+       hPlayersNamesDoubles[0] = hdblplayer1.getText().toString().trim();
+       hPlayersNamesDoubles[1] = hdblplayer2.getText().toString().trim();
 
-       awayTeamName = aTeamField.getText().toString();
+       awayTeamName = aTeamField.getText().toString().trim();
        aPlayersNamesSingles = new String[2];
        aPlayersNamesDoubles = new String[2];
-       aPlayersNamesSingles[0] = aPlayer1.getText().toString();
-       aPlayersNamesSingles[1] = aPlayer2.getText().toString();
-       aPlayersNamesDoubles[0] = adblplayer1.getText().toString();
-       aPlayersNamesDoubles[1] = adblplayer2.getText().toString();
+       aPlayersNamesSingles[0] = aPlayer1.getText().toString().trim();
+       aPlayersNamesSingles[1] = aPlayer2.getText().toString().trim();
+       aPlayersNamesDoubles[0] = adblplayer1.getText().toString().trim();
+       aPlayersNamesDoubles[1] = adblplayer2.getText().toString().trim();
 
     }
     
