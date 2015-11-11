@@ -29,4 +29,20 @@ public class Match {
     public Team getAwayTeam() {
       return this.awayTeam;
     }
+    
+    public int getPointsForTeam(Team t) {
+        int points = -1;
+        if(homeTeam.equals(t)) {
+            points = 0;
+            for(Set s : sets) {
+                points += s.getHomePoint();
+            }
+        } else if (awayTeam.equals(t)) {
+            points = 0;
+            for(Set s : sets) {
+                points += s.getAwayPoint();
+            }
+        }      
+        return points;
+    }
 }

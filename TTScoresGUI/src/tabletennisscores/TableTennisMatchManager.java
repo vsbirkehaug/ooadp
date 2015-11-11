@@ -112,12 +112,6 @@ public class TableTennisMatchManager {
         return availableTeams;
     }
     
-    
-    
-    
-
-     
-     
      
     Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers, 
                         String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
@@ -136,8 +130,14 @@ public class TableTennisMatchManager {
       }
     }
 
-    void calculateScores(ArrayList<int[][]> scores) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getPointsWonByTeam(Team team) {
+        int points = 0;
+        for(Match m : matches) {
+            if(m.getPointsForTeam(team) >= 0) {
+                points = points + m.getPointsForTeam(team);
+            }
+        }
+        return points;
     }
         
 }

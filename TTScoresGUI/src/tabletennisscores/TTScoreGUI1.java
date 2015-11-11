@@ -1517,10 +1517,15 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_teamTankingButtonActionPerformed
 
     private void allTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allTeamButtonActionPerformed
-
+        listAllTeams();
 // TODO add your handling code here:
     }//GEN-LAST:event_allTeamButtonActionPerformed
 
+    private void listAllTeams() {
+        ListAllTeams listAllTeams = new ListAllTeams();
+        listAllTeams.setVisible(true);
+    }
+    
     private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
         getNamesFromTextFields();
         Boolean isVerified = manager.verifyNames(homeTeamName, hPlayersNamesSingles, hPlayersNamesDoubles, awayTeamName, aPlayersNamesSingles, aPlayersNamesDoubles);

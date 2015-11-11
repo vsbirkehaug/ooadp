@@ -60,9 +60,7 @@ public class RegisterPlayer extends javax.swing.JFrame {
         playerNameTextField.setEnabled(false);  
         //playerNameTextField.setVisible(false);
         addPlayerButton.setEnabled(false);
-        //addPlayerButton.setVisible(false);
-        
-        
+        //addPlayerButton.setVisible(false);               
         
     }
 
