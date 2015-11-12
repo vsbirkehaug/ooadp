@@ -7,6 +7,7 @@ package tabletennisscores;
 
 import data_classes.Match;
 import data_classes.Player;
+import data_classes.Set;
 import data_classes.Team;
 import data_classes.Venue;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class TableTennisMatchManager {
     
     public ArrayList<Team> teams;
     public ArrayList<Match> matches;
+    public ArrayList<Player> players;
 
     public TableTennisMatchManager() {
         intializeLists();
@@ -28,7 +30,8 @@ public class TableTennisMatchManager {
 
     private void intializeLists() {
         teams = new ArrayList<>();
-        matches = new ArrayList<>();   
+        matches = new ArrayList<>();  
+        players = new ArrayList<>();
     }  
     
     private void setupTestData() {
@@ -40,6 +43,26 @@ public class TableTennisMatchManager {
         uweTeam.addPlayer(new Player("jin"));
         uweTeam.addPlayer(new Player("julia"));
         teams.add(uweTeam);
+        
+        for(Team t : teams) {
+            addPlayersToList(t.getPlayers());
+            System.out.println("Players: " + players.size());
+        }
+    }
+    
+    public Player getPlayerWithName(String name) {
+        for(Player p : players) {
+            if(p.getName().equals(name.trim())) {
+                return p;
+            }
+        }
+        return null;
+    }
+    
+    private void addPlayersToList(ArrayList<Player> ps) {
+        for(Player p : ps) {
+            players.add(p);
+        }
     }
    
     boolean verifyPlayerNames(String teamName, String[] players) {
@@ -148,5 +171,7 @@ public class TableTennisMatchManager {
         }
         return points;
     }
+    
+   
         
 }

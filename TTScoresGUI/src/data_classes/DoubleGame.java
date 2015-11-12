@@ -14,9 +14,27 @@ import java.util.ArrayList;
 public class DoubleGame extends Game {
     private Player[] homePlayers;
     private Player[] awayPlayers;
+    
+    public Player[] getHomePlayer() {
+        return homePlayers;
+    }
 
-    public DoubleGame(int homeScore, int awayScore) {
+    public void setHomePlayer(Player[] homePlayers) {
+        this.homePlayers = homePlayers;
+    }
+
+    public Player[] getAwayPlayer() {
+        return awayPlayers;
+    }
+
+    public void setAwayPlayer(Player[] awayPlayers) {
+        this.awayPlayers = awayPlayers;
+    }
+
+    public DoubleGame(Player[] homePlayers, int homeScore, Player[] awayPlayers, int awayScore) {
         super(homeScore, awayScore);
+        setHomePlayer(homePlayers);
+        setAwayPlayer(awayPlayers);
     }
 
     public void addHomePlayer(Player player) {

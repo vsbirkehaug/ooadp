@@ -12,6 +12,24 @@ package data_classes;
 public class Game {
     protected int homeScore;
     protected int awayScore;
+    protected Player[] homePlayer;
+    protected Player[] awayPlayer;
+
+    public Player[] getHomePlayer() {
+        return homePlayer;
+    }
+
+    public void setHomePlayer(Player[] homePlayer) {
+        this.homePlayer = homePlayer;
+    }
+
+    public Player[] getAwayPlayer() {
+        return awayPlayer;
+    }
+
+    public void setAwayPlayer(Player[] awayPlayer) {
+        this.awayPlayer = awayPlayer;
+    }
 
     public void setHomeScore(int score) {
       this.homeScore = score;
@@ -40,4 +58,5 @@ public class Game {
             return "u";
         }
     }
+
 }

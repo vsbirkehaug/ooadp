@@ -84,4 +84,13 @@ public class Team {
         points = TTScoreGUI1.manager.getPointsWonByTeam(this);
         return points;
     }
+    
+    public boolean hasPlayer(Player player) {
+        for(Player p : players) {
+            if(p.equals(player)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

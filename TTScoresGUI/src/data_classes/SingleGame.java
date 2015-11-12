@@ -10,24 +10,28 @@ package data_classes;
  * @author VSB
  */
 public class SingleGame extends Game {
-    private Player homePlayer;
-    private Player awayPlayer;
+    private Player[] homePlayer = new Player[1];
+    private Player[] awayPlayer = new Player[1];
 
-    public SingleGame(int homeScore, int awayScore) {
+    public SingleGame(Player homePlayer, int homeScore, Player awayPlayer, int awayScore) {
         super(homeScore, awayScore);
+        setHomePlayer(homePlayer);
+        setAwayPlayer(awayPlayer);
     }
 
     public void setHomePlayer(Player player) {
-       this.homePlayer = player;
+       this.homePlayer[0] = player;
     }
-    public Player getHomePlayer() {
+    public Player[] getHomePlayer() {
        return this.homePlayer;
     }
     public void setAwayPlayer(Player player) {
-       this.awayPlayer = player;
+       this.awayPlayer[0] = player; 
     }
-    public Player getAwayPlayer() {
+    public Player[] getAwayPlayer() {
        return this.awayPlayer;
     }
+    
+    
 
 }

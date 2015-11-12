@@ -6,6 +6,7 @@
 package data_classes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -14,6 +15,10 @@ import java.util.ArrayList;
 public class Set {
     private int maxNumberOfGames = 3;
     private ArrayList<Game> games;
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
     private String winner;
     private int homeWins;
     private int awayWins;
@@ -69,13 +74,29 @@ public class Set {
         }
     }
     
-    //public String getWinner() {
-    //    if(getHomeWins() > getAwayWins()) {
-    //        return "h";
-    //    } else if (getAwayWins() > getHomeWins()) {
-    //        return "a";
-    //    }
-    //    return null;
-    //}
+    public Player[] getAllPlayers() {
+        //will have to be changed if there are different players for the various set games
+        
+        ArrayList<Player> playersList = new ArrayList<>();
+        for(Player p : games.get(0).getHomePlayer()) {
+            playersList.add(p);
+        }
+        for(Player p : games.get(0).getAwayPlayer()) {
+            playersList.add(p);
+        }
+        
+        Player[] players = (Player[])playersList.toArray();
+        return players;
+    }
     
+    public Player[] getHomePlayers() {
+         //will have to be changed if there are different players for the various set games
+         System.out.println("home players: " + (games.get(0).getHomePlayer()).length);
+         System.out.println("home players: " + (games.get(0).getHomePlayer())[0].getName());
+        return games.get(0).getHomePlayer();
+    }
+    
+    public Player[] getAwayPlayers() {
+        return games.get(0).getAwayPlayer();
+    }
 }

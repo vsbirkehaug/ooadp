@@ -15,6 +15,7 @@ public class Match {
     private ArrayList<Set> sets;
     private Team homeTeam;
     private Team awayTeam;
+    public final static int MAX_NUMBER_OF_SETS = 5;
 
     public void setHomeTeam(Team team) {
       this.homeTeam = team;
@@ -49,4 +50,9 @@ public class Match {
     public void setSets(ArrayList<Set> sets) {
         this.sets = sets;
     }
+
+    public ArrayList<Set> getSets() {
+        return sets;
+    }
+
 }
