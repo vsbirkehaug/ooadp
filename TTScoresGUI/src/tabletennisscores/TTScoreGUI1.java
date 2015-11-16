@@ -1460,27 +1460,27 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         sets = new ArrayList<>();
         match = new Match();
        
-        set1 = new Set();
+        set1 = new Set(set11.getText());
         set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11ahpts.getText()), getAwayPlayer1(), Integer.parseInt(set11aapts.getText())));
         set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11bhpts.getText()), getAwayPlayer1(), Integer.parseInt(set11bapts.getText())));
         set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11chpts.getText()), getAwayPlayer1(), Integer.parseInt(set11capts.getText())));
         
-        set2 = new Set();
+        set2 = new Set(set12.getText());
         set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12ahpts.getText()), getAwayPlayer2(), Integer.parseInt(set12aapts.getText())));
         set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12bhpts.getText()), getAwayPlayer2(), Integer.parseInt(set12bapts.getText())));
         set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12chpts.getText()), getAwayPlayer2(), Integer.parseInt(set12capts.getText())));
 
-        set3 = new Set();
+        set3 = new Set(set21.getText());
         set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21ahpts.getText()), getAwayPlayer1(), Integer.parseInt(set21aapts.getText())));
         set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21bhpts.getText()), getAwayPlayer1(), Integer.parseInt(set21bapts.getText())));
         set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21chpts.getText()), getAwayPlayer1(), Integer.parseInt(set21capts.getText())));
 
-        set4 = new Set();
+        set4 = new Set(set22.getText());
         set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22ahpts.getText()), getAwayPlayer2(), Integer.parseInt(set22aapts.getText())));      
         set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22bhpts.getText()), getAwayPlayer2(), Integer.parseInt(set22bapts.getText())));      
         set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22chpts.getText()), getAwayPlayer2(), Integer.parseInt(set22capts.getText())));      
 
-        set5 = new Set();
+        set5 = new Set(setDbl.getText());
         set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dah.getText()), getAwayPlayers(), Integer.parseInt(daa.getText())));
         set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dbh.getText()), getAwayPlayers(), Integer.parseInt(dba.getText())));
         set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dch.getText()), getAwayPlayers(), Integer.parseInt(dca.getText())));
@@ -1494,7 +1494,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         match.setSets(sets);
         match.setHomeTeam(manager.getTeamWithName(homeTeamName));
         match.setAwayTeam(manager.getTeamWithName(awayTeamName));
-    }
+    }   
     
     private boolean calculateScores(ArrayList<Set> sets) {
         int homeWin1 = 0;
@@ -1544,7 +1544,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
     
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
-
+        ViewMatchScore viewMatchScore = new ViewMatchScore();
+        viewMatchScore.setVisible(true);
     }//GEN-LAST:event_viewMatchButtonActionPerformed
 
     private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed

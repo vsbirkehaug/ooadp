@@ -13,21 +13,36 @@ import java.util.Arrays;
  * @author VSB
  */
 public class Set {
-    private int maxNumberOfGames = 3;
+    private final int MAX_NUMBER_OF_GAMES = 3;
     private ArrayList<Game> games;
+    private String setIdentifier;
+    private String winner;
+    private int homeWins;
+    private int awayWins;
+    
+    
+    public Set(String id) {
+        setSetIdentifier(id.trim());
+    }
+    
+    public String getSetIdentifier() {
+        return setIdentifier;
+    }
+
+    private void setSetIdentifier(String setIdentifier) {
+        this.setIdentifier = setIdentifier;
+    }
 
     public ArrayList<Game> getGames() {
         return games;
     }
-    private String winner;
-    private int homeWins;
-    private int awayWins;
+
 
     public void addGame(Game game) {
       if(this.games == null) {
         this.games = new ArrayList<>();
       }
-      if(this.games.size() < maxNumberOfGames) {
+      if(this.games.size() < MAX_NUMBER_OF_GAMES) {
         this.games.add(game);
       } else {
         //TODO some error that says you cannot add more games to this set
@@ -36,7 +51,7 @@ public class Set {
     
     private int getHomeWins() {
         homeWins = 0;
-        if(games.size() == maxNumberOfGames) {
+        if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
                 if(g.gameWinner().equalsIgnoreCase("h")) {
                     homeWins = homeWins+1;
@@ -48,7 +63,7 @@ public class Set {
     
     private int getAwayWins() {
         awayWins = 0;
-        if(games.size() == maxNumberOfGames) {
+        if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
                 if(g.gameWinner().equalsIgnoreCase("a")) {
                     awayWins = awayWins+1;
@@ -99,4 +114,10 @@ public class Set {
     public Player[] getAwayPlayers() {
         return games.get(0).getAwayPlayer();
     }
+    
+    @Override
+    public String toString() {
+        return getSetIdentifier();
+    }
+
 }

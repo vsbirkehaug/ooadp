@@ -69,7 +69,8 @@ public class Team {
 
     @Override
     public String toString() {
-        return ("Name: " + name + ", venue: " + venue.getName());
+        //return ("Name: " + name + ", venue: " + venue.getName());
+        return getName();
     }
 
     public boolean hasRoomForMorePlayers() {

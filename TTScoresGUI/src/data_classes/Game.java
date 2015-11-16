@@ -18,6 +18,22 @@ public class Game {
     public Player[] getHomePlayer() {
         return homePlayer;
     }
+    
+    public String getHomePlayerString() {
+        String str = "";
+        for(Player p : homePlayer) {
+            str += p.getName() + ",";
+        }
+        return str.substring(0, str.length()-2);
+    }
+    
+     public String getAwayPlayerString() {
+        String str = "";
+        for(Player p : awayPlayer) {
+            str += p.getName() + ",";
+        }
+        return str.substring(0, str.length()-2);
+    }
 
     public void setHomePlayer(Player[] homePlayer) {
         this.homePlayer = homePlayer;
@@ -44,8 +60,10 @@ public class Game {
       return this.awayScore;
     }
     
-    public Game(int homeScore, int awayScore) {
+    public Game(Player[] homePlayer, int homeScore, Player[] awayPlayer, int awayScore) {
+        setHomePlayer(homePlayer);
         setHomeScore(homeScore);
+        setAwayPlayer(awayPlayer);
         setAwayScore(awayScore);
     }
     
