@@ -1315,9 +1315,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     
     private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
         submitScores();
-        // TODO add your handling code here:
+        setSubmitScoresButtonEnabled(false);
+     
     }//GEN-LAST:event_submitScoreButtonActionPerformed
 
+    private void setSubmitScoresButtonEnabled(boolean state) {
+       submitScoreButton.setEnabled(state);
+    }
+    
     private void submitScores() {
         manager.getMatches().add(match);
     }
@@ -1386,7 +1391,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
         openAddTeamFrame();
-        // TODO add your handling code here:
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void openAddTeamFrame() {
@@ -1397,7 +1401,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
         JFrame registerPlayer = new RegisterPlayer();
         registerPlayer.setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_regPlayerButtonActionPerformed
 
     private void allPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allPlayerButtonActionPerformed
@@ -1411,6 +1414,10 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     
 
     private void testScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testScoreButtonActionPerformed
+        getTestScores();
+    }//GEN-LAST:event_testScoreButtonActionPerformed
+
+    private void getTestScores() {
         if (!sc.hasNext())
             return;
         else {
@@ -1450,8 +1457,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             dca.setText(sc.nextInt() + "");
             sc.nextLine();
         }
-    }//GEN-LAST:event_testScoreButtonActionPerformed
-    
+    }
 
 
     /**
@@ -1607,9 +1613,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private javax.swing.JButton viewMatchButton;
     // End of variables declaration//GEN-END:variables
 
-    private void setSubmitScoresButtonEnabled(boolean state) {
-       submitScoreButton.setEnabled(state);
-    }
+
 
 
 }
