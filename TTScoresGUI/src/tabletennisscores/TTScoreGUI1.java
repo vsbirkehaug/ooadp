@@ -1378,7 +1378,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
        aPlayersNamesSingles[1] = aPlayer2.getText().trim();
        aPlayersNamesDoubles[0] = adblplayer1.getText().trim();
        aPlayersNamesDoubles[1] = adblplayer2.getText().trim();
-
     }
     
     private void setCalculateScoresButtonEnabled(Boolean state) {
@@ -1450,9 +1449,9 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             dch.setText(sc.nextInt() + "");
             dca.setText(sc.nextInt() + "");
             sc.nextLine();
-// TODO add your handling code here:
+        }
     }//GEN-LAST:event_testScoreButtonActionPerformed
-    }
+    
 
 
     /**
