@@ -25,7 +25,7 @@ public class ListAllPlayers extends javax.swing.JFrame {
     private void fillPlayerList() {
         Vector players = new Vector();
         for(Player p : TTScoreGUI1.manager.getPlayers()) {
-            String str = (p.getName() + ", Played: " + p.getSetsPlayed() + ", wins: " + p.getSetsWon());
+            String str = (p.getName() + ", Played: " + p.getPlayerSetsPlayed() + ", wins: " + p.getPlayerSetsWon());
             players.add(str);
         }
         playerList.setListData(players);

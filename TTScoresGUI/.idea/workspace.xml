@@ -22,11 +22,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TTScoreGUI1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TTScoreGUI1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tabletennisscores/TTScoreGUI1.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72638434">
+              <caret line="1331" column="48" selection-start-line="1331" selection-start-column="48" selection-end-line="1331" selection-end-column="48" />
+              <folding>
+                <element signature="e#92882#92883#0" expanded="true" />
+                <element signature="e#92933#92934#0" expanded="true" />
+                <element signature="e#92968#92969#0" expanded="true" />
+                <element signature="e#93015#93016#0" expanded="true" />
+                <element signature="e#95668#95669#0" expanded="true" />
+                <element signature="e#95716#95717#0" expanded="true" />
+                <element signature="e#100166#100167#0" expanded="true" />
+                <element signature="e#100232#100233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data_classes/Match.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListAllPlayers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="41" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -36,95 +65,37 @@
         <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <caret line="197" column="46" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data_classes/SingleSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-              <folding />
-            </state>
+      <file leaf-file-name="AddTeam.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/AddTeam.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoubleSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data_classes/DoubleSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding>
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="ListAllTeams.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllTeams.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Set.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data_classes/Set.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3333335">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="34" />
-              <folding>
-                <element signature="e#3430#3431#0" expanded="true" />
-                <element signature="e#3471#3472#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="ListAllPlayers.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListAllPlayers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListAllTeams.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllTeams.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListTeamRanking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListTeamRanking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data_classes/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/data_classes/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6221498">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
-            </state>
+      <file leaf-file-name="ViewMatchScore.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -150,14 +121,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/data_classes/Game.java" />
-        <option value="$PROJECT_DIR$/src/tabletennisscores/TTScoreGUI1.java" />
         <option value="$PROJECT_DIR$/src/data_classes/SingleGame.java" />
         <option value="$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.java" />
         <option value="$PROJECT_DIR$/src/data_classes/SingleSet.java" />
         <option value="$PROJECT_DIR$/src/data_classes/DoubleSet.java" />
-        <option value="$PROJECT_DIR$/src/data_classes/Set.java" />
         <option value="$PROJECT_DIR$/src/data_classes/Player.java" />
+        <option value="$PROJECT_DIR$/src/data_classes/Game.java" />
+        <option value="$PROJECT_DIR$/src/data_classes/Set.java" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/ErrorDialog.form" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/ErrorPanel.java" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/ErrorForm.form" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/ErrorForm.java" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/ErrorDialog.java" />
+        <option value="$PROJECT_DIR$/src/tabletennisscores/TTScoreGUI1.java" />
       </list>
     </option>
   </component>
@@ -561,7 +537,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="-9" width="1860" height="1098" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -573,7 +549,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18729642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18729642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -612,15 +588,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#92882#92883#0" expanded="true" />
+            <element signature="e#92933#92934#0" expanded="true" />
+            <element signature="e#92968#92969#0" expanded="true" />
+            <element signature="e#93015#93016#0" expanded="true" />
+            <element signature="e#95668#95669#0" expanded="true" />
+            <element signature="e#95716#95717#0" expanded="true" />
+            <element signature="e#100166#100167#0" expanded="true" />
+            <element signature="e#100232#100233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,33 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/TTScoreGUI1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_classes/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="34" />
-          <folding>
-            <element signature="e#3430#3431#0" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllTeams.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5">
@@ -686,19 +636,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_classes/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/data_classes/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_classes/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/data_classes/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6221498">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_classes/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="59" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
+          <folding>
+            <element signature="e#3222#3223#0" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/RegisterPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="41" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllPlayers.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ListAllTeams.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/AddTeam.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/ViewMatchScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="197" column="46" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data_classes/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabletennisscores/TTScoreGUI1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72638434">
+          <caret line="1331" column="48" selection-start-line="1331" selection-start-column="48" selection-end-line="1331" selection-end-column="48" />
+          <folding>
+            <element signature="e#92882#92883#0" expanded="true" />
+            <element signature="e#92933#92934#0" expanded="true" />
+            <element signature="e#92968#92969#0" expanded="true" />
+            <element signature="e#93015#93016#0" expanded="true" />
+            <element signature="e#95668#95669#0" expanded="true" />
+            <element signature="e#95716#95717#0" expanded="true" />
+            <element signature="e#100166#100167#0" expanded="true" />
+            <element signature="e#100232#100233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

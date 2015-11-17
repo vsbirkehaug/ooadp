@@ -13,13 +13,10 @@ import tabletennisscores.TTScoreGUI1;
  * @author VSB
  */
 public class Player {
-    String name;
-    int setsPlayed;
-    int setsWon;
-    int setsLost;
+    private String name;
 
-    public int getSetsPlayed() {
-        setsPlayed = 0;
+    public int getPlayerSetsPlayed() {
+        int setsPlayed = 0;
         for(Match m : TTScoreGUI1.manager.getMatches()) {
             for(Set s : m.getSets()) {
                 if(Arrays.asList(s.getHomePlayers()).contains(this) || Arrays.asList(s.getAwayPlayers()).contains(this)) {
@@ -30,8 +27,8 @@ public class Player {
         return setsPlayed;
     }
 
-    public int getSetsWon() {
-        setsWon = 0;
+    public int getPlayerSetsWon() {
+        int setsWon = 0;
         for(Match m : TTScoreGUI1.manager.getMatches()) {
             if(m.getHomeTeam().getPlayers().contains(this)) {
                 for(Set s : m.getSets()) {
@@ -50,15 +47,17 @@ public class Player {
         return setsWon;
     }
 
-    public int getSetsLost() {
+    public int getPlayerSetsLost() {
 //        for(Match m : TTScoreGUI1.manager.matches) {
 //            if(m.getHomeTeam().getPlayers().contains(this)) {
 //                setsLost = setsLost + (m.MAX_NUMBER_OF_SETS - m.getPointsForTeam(m.getHomeTeam()));
 //            } else if (m.getAwayTeam().getPlayers().contains(this)) {
 //                setsLost = setsLost + (m.MAX_NUMBER_OF_SETS - m.getPointsForTeam(m.getAwayTeam()));
 //            }          
-//        } 
-        setsLost = setsPlayed - setsWon;
+//        }
+
+        //assuming a set is either won or lost
+        int setsLost = getPlayerSetsPlayed() - getPlayerSetsWon();
         return setsLost;
     }
 

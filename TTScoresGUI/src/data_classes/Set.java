@@ -46,18 +46,10 @@ public abstract class Set {
         return str.substring(0, str.length()-1);
     }
 
-    public void setHomePlayers(Player[] homePlayers) {
-        this.homePlayers = homePlayers;
-    }
-
     public Player[] getAwayPlayers() {
         return awayPlayers;
     }
 
-    public void setAwayPlayers(Player[] awayPlayers) {
-        this.awayPlayers = awayPlayers;
-    }
-    
     public Set(String id) {
         setSetIdentifier(id.trim());
     }

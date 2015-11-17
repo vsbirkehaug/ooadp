@@ -13,7 +13,6 @@ public class Game {
     protected int homeScore;
     protected int awayScore;
 
-
     public void setHomeScore(int score) {
       this.homeScore = score;
     }
