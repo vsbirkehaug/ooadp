@@ -6,7 +6,6 @@
 package tabletennisscores;
 
 import data_classes.Player;
-import data_classes.Team;
 import java.util.Vector;
 
 /**
@@ -25,7 +24,7 @@ public class ListAllPlayers extends javax.swing.JFrame {
     
     private void fillPlayerList() {
         Vector players = new Vector();
-        for(Player p : TTScoreGUI1.manager.players) {
+        for(Player p : TTScoreGUI1.manager.getPlayers()) {
             String str = (p.getName() + ", Played: " + p.getSetsPlayed() + ", wins: " + p.getSetsWon());
             players.add(str);
         }

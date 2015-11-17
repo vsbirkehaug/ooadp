@@ -32,7 +32,18 @@ public class TableTennisMatchManager {
         teams = new ArrayList<>();
         matches = new ArrayList<>();  
         players = new ArrayList<>();
-    }  
+    } 
+    
+    public ArrayList<Player> getPlayers() {
+        players.clear();
+        
+        for(Team t : teams) {
+            for(Player p : t.getPlayers()) {
+                players.add(p);
+            }
+        }
+        return players;
+    }
     
     private void setupTestData() {
         Team filtonTeam = new Team("filton", "Gloucester road");
