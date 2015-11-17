@@ -227,29 +227,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         setPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         set11.setText("set number");
-        set11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set11ActionPerformed(evt);
-            }
-        });
 
         set11ahpts.setColumns(5);
         set11ahpts.setText("0");
-        set11ahpts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set11ahptsActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText(":");
 
         set11aapts.setColumns(5);
         set11aapts.setText("0");
-        set11aapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set11aaptsActionPerformed(evt);
-            }
-        });
 
         set11bhpts.setColumns(5);
         set11bhpts.setText("0");
@@ -258,11 +243,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set11bapts.setColumns(5);
         set11bapts.setText("0");
-        set11bapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set11baptsActionPerformed(evt);
-            }
-        });
 
         set11chpts.setColumns(5);
         set11chpts.setText("0");
@@ -271,11 +251,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set11capts.setColumns(5);
         set11capts.setText("0");
-        set11capts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set11captsActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
         gamePanel.setLayout(gamePanelLayout);
@@ -381,11 +356,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         daa.setColumns(5);
         daa.setText("0");
-        daa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                daaActionPerformed(evt);
-            }
-        });
 
         dbh.setColumns(5);
         dbh.setText("0");
@@ -394,29 +364,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         dba.setColumns(5);
         dba.setText("0");
-        dba.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dbaActionPerformed(evt);
-            }
-        });
 
         dch.setColumns(5);
         dch.setText("0");
-        dch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dchActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText(":");
 
         dca.setColumns(5);
         dca.setText("0");
-        dca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dcaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout gamePanel5Layout = new javax.swing.GroupLayout(gamePanel5);
         gamePanel5.setLayout(gamePanel5Layout);
@@ -527,11 +482,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set12aapts.setColumns(5);
         set12aapts.setText("0");
-        set12aapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set12aaptsActionPerformed(evt);
-            }
-        });
 
         set12bhpts.setColumns(5);
         set12bhpts.setText("0");
@@ -540,11 +490,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set12bapts.setColumns(5);
         set12bapts.setText("0");
-        set12bapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set12baptsActionPerformed(evt);
-            }
-        });
 
         set12chpts.setColumns(5);
         set12chpts.setText("0");
@@ -553,11 +498,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set12capts.setColumns(5);
         set12capts.setText("0");
-        set12capts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set12captsActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout gamePanel8Layout = new javax.swing.GroupLayout(gamePanel8);
         gamePanel8.setLayout(gamePanel8Layout);
@@ -663,11 +603,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set22aapts.setColumns(5);
         set22aapts.setText("0");
-        set22aapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set22aaptsActionPerformed(evt);
-            }
-        });
 
         set22bhpts.setColumns(5);
         set22bhpts.setText("0");
@@ -676,29 +611,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set22bapts.setColumns(5);
         set22bapts.setText("0");
-        set22bapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set22baptsActionPerformed(evt);
-            }
-        });
 
         set22chpts.setColumns(5);
         set22chpts.setText("0");
-        set22chpts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set22chptsActionPerformed(evt);
-            }
-        });
 
         jLabel12.setText(":");
 
         set22capts.setColumns(5);
         set22capts.setText("0");
-        set22capts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set22captsActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout gamePanel11Layout = new javax.swing.GroupLayout(gamePanel11);
         gamePanel11.setLayout(gamePanel11Layout);
@@ -808,11 +728,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set21aapts.setColumns(5);
         set21aapts.setText("0");
-        set21aapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set21aaptsActionPerformed(evt);
-            }
-        });
 
         set21bhpts.setColumns(5);
         set21bhpts.setText("0");
@@ -821,11 +736,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set21bapts.setColumns(5);
         set21bapts.setText("0");
-        set21bapts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set21baptsActionPerformed(evt);
-            }
-        });
 
         set21chpts.setColumns(5);
         set21chpts.setText("0");
@@ -834,11 +744,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         set21capts.setColumns(5);
         set21capts.setText("0");
-        set21capts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                set21captsActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout gamePanel14Layout = new javax.swing.GroupLayout(gamePanel14);
         gamePanel14.setLayout(gamePanel14Layout);
@@ -936,32 +841,12 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         jLabel28.setText("Final score:");
 
         aPlayer1.setText("jin");
-        aPlayer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aPlayer1ActionPerformed(evt);
-            }
-        });
 
         aPlayer2.setText("julia");
-        aPlayer2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aPlayer2ActionPerformed(evt);
-            }
-        });
 
         hPlayer1.setText("alex");
-        hPlayer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hPlayer1ActionPerformed(evt);
-            }
-        });
 
         hPlayer2.setText("brian");
-        hPlayer2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hPlayer2ActionPerformed(evt);
-            }
-        });
 
         calScoreButton.setText("Calculate scores");
         calScoreButton.setEnabled(false);
@@ -1172,18 +1057,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         jLabel22.setText("vs");
 
         hTeamField.setText("filton");
-        hTeamField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hTeamFieldActionPerformed(evt);
-            }
-        });
 
         aTeamField.setText("uwe");
-        aTeamField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aTeamFieldActionPerformed(evt);
-            }
-        });
 
         jLabel16.setText("away players");
 
@@ -1326,94 +1201,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void set11captsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set11captsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set11captsActionPerformed
-
-    private void set11aaptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set11aaptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set11aaptsActionPerformed
-
-    private void set11baptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set11baptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set11baptsActionPerformed
-
-    private void daaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_daaActionPerformed
-
-    private void dbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dbaActionPerformed
-
-    private void dcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dcaActionPerformed
-
-    private void set12aaptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set12aaptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set12aaptsActionPerformed
-
-    private void set12baptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set12baptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set12baptsActionPerformed
-
-    private void set12captsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set12captsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set12captsActionPerformed
-
-    private void set22aaptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set22aaptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set22aaptsActionPerformed
-
-    private void set22baptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set22baptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set22baptsActionPerformed
-
-    private void set22captsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set22captsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set22captsActionPerformed
-
-    private void set21aaptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set21aaptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set21aaptsActionPerformed
-
-    private void set21baptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set21baptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set21baptsActionPerformed
-
-    private void set21captsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set21captsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set21captsActionPerformed
-
-    private void set11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set11ActionPerformed
-
-    private void hPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hPlayer1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hPlayer1ActionPerformed
-
-    private void hTeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hTeamFieldActionPerformed
-// TODO add your handling code here:
-    }//GEN-LAST:event_hTeamFieldActionPerformed
-
-    private void aTeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aTeamFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aTeamFieldActionPerformed
-
-    private void aPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aPlayer2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aPlayer2ActionPerformed
-
-    private void hPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hPlayer2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hPlayer2ActionPerformed
-
-    private void aPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aPlayer1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aPlayer1ActionPerformed
-
     private void calScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calScoreButtonActionPerformed
         getScoresFromTextFields();
         if(calculateScores(sets)) {
@@ -1427,27 +1214,27 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     Match match;
  
     private Player getHomePlayer1() {
-        return manager.getPlayerWithName(hPlayer1.getText().toString());
-    }
+        return manager.getPlayerWithName(hPlayer1.getText());
+    }    
     
     private Player getHomePlayer2() {
-        return manager.getPlayerWithName(hPlayer2.getText().toString());
+        return manager.getPlayerWithName(hPlayer2.getText());
     }
-    
+   
     private Player getAwayPlayer1() {
-        return manager.getPlayerWithName(aPlayer1.getText().toString());
+        return manager.getPlayerWithName(aPlayer1.getText());
     }
     
     private Player getAwayPlayer2() {
-        return manager.getPlayerWithName(aPlayer2.getText().toString());
+        return manager.getPlayerWithName(aPlayer2.getText());
     }
     
     private Player[] getHomePlayers() {
-        return new Player[]{manager.getPlayerWithName(hdblplayer1.getText().toString()), manager.getPlayerWithName(hdblplayer2.getText().toString())};
+        return new Player[]{manager.getPlayerWithName(hdblplayer1.getText()), manager.getPlayerWithName(hdblplayer2.getText())};
     }
     
     private Player[] getAwayPlayers() {
-        return new Player[]{manager.getPlayerWithName(adblplayer1.getText().toString()), manager.getPlayerWithName(adblplayer2.getText().toString())};
+        return new Player[]{manager.getPlayerWithName(adblplayer1.getText()), manager.getPlayerWithName(adblplayer2.getText())};
     }
     
     private void getScoresFromTextFields() {
@@ -1526,21 +1313,13 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         return true;
     }
     
-    private void set22chptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set22chptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set22chptsActionPerformed
-
-    private void dchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dchActionPerformed
-
     private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
         submitScores();
         // TODO add your handling code here:
     }//GEN-LAST:event_submitScoreButtonActionPerformed
 
     private void submitScores() {
-        manager.matches.add(match);
+        manager.getMatches().add(match);
     }
     
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
@@ -1584,21 +1363,21 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     String[] aPlayersNamesDoubles;
 
     private void getNamesFromTextFields() {
-       homeTeamName = hTeamField.getText().toString().trim();
+       homeTeamName = hTeamField.getText().trim();
        hPlayersNamesSingles = new String[2];
        hPlayersNamesDoubles = new String[2];
-       hPlayersNamesSingles[0] = hPlayer1.getText().toString().trim();
-       hPlayersNamesSingles[1] = hPlayer2.getText().toString().trim();
-       hPlayersNamesDoubles[0] = hdblplayer1.getText().toString().trim();
-       hPlayersNamesDoubles[1] = hdblplayer2.getText().toString().trim();
+       hPlayersNamesSingles[0] = hPlayer1.getText().trim();
+       hPlayersNamesSingles[1] = hPlayer2.getText().trim();
+       hPlayersNamesDoubles[0] = hdblplayer1.getText().trim();
+       hPlayersNamesDoubles[1] = hdblplayer2.getText().trim();
 
-       awayTeamName = aTeamField.getText().toString().trim();
+       awayTeamName = aTeamField.getText().trim();
        aPlayersNamesSingles = new String[2];
        aPlayersNamesDoubles = new String[2];
-       aPlayersNamesSingles[0] = aPlayer1.getText().toString().trim();
-       aPlayersNamesSingles[1] = aPlayer2.getText().toString().trim();
-       aPlayersNamesDoubles[0] = adblplayer1.getText().toString().trim();
-       aPlayersNamesDoubles[1] = adblplayer2.getText().toString().trim();
+       aPlayersNamesSingles[0] = aPlayer1.getText().trim();
+       aPlayersNamesSingles[1] = aPlayer2.getText().trim();
+       aPlayersNamesDoubles[0] = adblplayer1.getText().trim();
+       aPlayersNamesDoubles[1] = adblplayer2.getText().trim();
 
     }
     
@@ -1631,10 +1410,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         listAllPlayers.setVisible(true);
     }
     
-    private void set11ahptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set11ahptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_set11ahptsActionPerformed
-
 
     private void testScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testScoreButtonActionPerformed
         if (!sc.hasNext())

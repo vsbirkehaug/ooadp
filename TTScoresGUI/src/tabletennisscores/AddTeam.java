@@ -126,12 +126,12 @@ public class AddTeam extends javax.swing.JFrame {
         
             Team newTeam = new Team(teamName, venueName);
             if(newTeam != null) {
-                TTScoreGUI1.manager.teams.add(newTeam);
+                TTScoreGUI1.manager.getTeams().add(newTeam);
             }            
             closeWindow();
         }
         
-        for(Team t :  TTScoreGUI1.manager.teams) {
+        for(Team t :  TTScoreGUI1.manager.getTeams()) {
             System.out.println(t.toString());
         }
     }

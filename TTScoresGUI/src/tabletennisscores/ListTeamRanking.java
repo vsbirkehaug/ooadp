@@ -31,8 +31,8 @@ public class ListTeamRanking extends javax.swing.JFrame {
     
 
     private void fillListWithSortedTeams() { 
-        if(TTScoreGUI1.manager.teams != null && !TTScoreGUI1.manager.teams.isEmpty()) {
-            ArrayList<Team> teams = TTScoreGUI1.manager.teams;
+        if(TTScoreGUI1.manager.getTeams() != null && !TTScoreGUI1.manager.getTeams().isEmpty()) {
+            ArrayList<Team> teams = TTScoreGUI1.manager.getTeams();
             Collections.sort(teams, new CustomComparator());
             String[] listData = new String[teams.size()];
             for(int i = 0; i < listData.length; i++) {

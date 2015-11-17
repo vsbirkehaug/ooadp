@@ -24,7 +24,7 @@ public class ListAllTeams extends javax.swing.JFrame {
 
     private void fillListWithTeams() {
         Vector teamList = new Vector();
-        for(Team t : TTScoreGUI1.manager.teams) {
+        for(Team t : TTScoreGUI1.manager.getTeams()) {
             String str = (t.getName() + ": " + TTScoreGUI1.manager.getPointsWonByTeam(t) + " points");
             teamList.add(str);
         }

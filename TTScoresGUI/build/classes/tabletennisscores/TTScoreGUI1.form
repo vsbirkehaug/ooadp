@@ -317,9 +317,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="set number"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set11ActionPerformed"/>
-              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="gamePanel1">
 
@@ -358,9 +355,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set11ahptsActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -372,9 +366,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set11aaptsActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="gamePanel2">
 
@@ -424,9 +415,6 @@
                         <Property name="columns" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set11baptsActionPerformed"/>
-                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="gamePanel">
 
@@ -473,9 +461,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set11captsActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -578,9 +563,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="daaActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="gamePanel4">
 
@@ -629,9 +611,6 @@
                         <Property name="columns" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dbaActionPerformed"/>
-                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="gamePanel5">
 
@@ -667,9 +646,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dchActionPerformed"/>
-                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel6">
                           <Properties>
@@ -681,9 +657,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dcaActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -786,9 +759,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set12aaptsActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="gamePanel7">
 
@@ -838,9 +808,6 @@
                         <Property name="columns" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set12baptsActionPerformed"/>
-                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="gamePanel8">
 
@@ -887,9 +854,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set12captsActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -987,9 +951,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set22aaptsActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="gamePanel10">
 
@@ -1039,9 +1000,6 @@
                         <Property name="columns" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set22baptsActionPerformed"/>
-                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="gamePanel11">
 
@@ -1077,9 +1035,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set22chptsActionPerformed"/>
-                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel12">
                           <Properties>
@@ -1091,9 +1046,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set22captsActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1201,9 +1153,6 @@
                     <Property name="columns" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set21aaptsActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="gamePanel13">
 
@@ -1253,9 +1202,6 @@
                         <Property name="columns" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set21baptsActionPerformed"/>
-                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="gamePanel14">
 
@@ -1302,9 +1248,6 @@
                             <Property name="columns" type="int" value="5"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="set21captsActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1323,33 +1266,21 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jin"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aPlayer1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="aPlayer2">
           <Properties>
             <Property name="text" type="java.lang.String" value="julia"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aPlayer2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="hPlayer1">
           <Properties>
             <Property name="text" type="java.lang.String" value="alex"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hPlayer1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="hPlayer2">
           <Properties>
             <Property name="text" type="java.lang.String" value="brian"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hPlayer2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="calScoreButton">
           <Properties>
@@ -1503,17 +1434,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="filton"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hTeamFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="aTeamField">
       <Properties>
         <Property name="text" type="java.lang.String" value="uwe"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aTeamFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>

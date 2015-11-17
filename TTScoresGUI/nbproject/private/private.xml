@@ -3,21 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/AddTeam.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/TTScoreGUI1.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Game.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Set.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/ListAllTeams.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/RegisterPlayer.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/SingleGame.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/ListTeamRanking.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/TableTennisMatchManager.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/ListAllPlayers.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Team.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Match.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/DoubleGame.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Player.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/ViewMatchScore.java</file>
+            <file>file:/C:/Users/VSB/Desktop/TTScoresGUI/ooadp/TTScoresGUI/src/tabletennisscores/ListAllPlayers.java</file>
+            <file>file:/C:/Users/VSB/Desktop/TTScoresGUI/ooadp/TTScoresGUI/src/tabletennisscores/TableTennisMatchManager.java</file>
+            <file>file:/C:/Users/VSB/Desktop/TTScoresGUI/ooadp/TTScoresGUI/src/tabletennisscores/TTScoreGUI1.java</file>
         </group>
     </open-files>
 </project-private>

@@ -19,9 +19,9 @@ import java.util.HashSet;
  */
 public class TableTennisMatchManager {
     
-    public ArrayList<Team> teams;
-    public ArrayList<Match> matches;
-    public ArrayList<Player> players;
+    private ArrayList<Team> teams;
+    private ArrayList<Match> matches;
+    private ArrayList<Player> players;
 
     public TableTennisMatchManager() {
         intializeLists();
@@ -31,18 +31,26 @@ public class TableTennisMatchManager {
     private void intializeLists() {
         teams = new ArrayList<>();
         matches = new ArrayList<>();  
-        players = new ArrayList<>();
+        this.players = new ArrayList<>();
     } 
     
     public ArrayList<Player> getPlayers() {
-        players.clear();
+        this.players.clear();
         
         for(Team t : teams) {
             for(Player p : t.getPlayers()) {
-                players.add(p);
+                this.players.add(p);
             }
         }
-        return players;
+        return this.players;
+    }
+    
+    public ArrayList<Match> getMatches() {
+        return this.matches;
+    }
+    
+    public ArrayList<Team> getTeams() {
+        return this.teams;
     }
     
     private void setupTestData() {

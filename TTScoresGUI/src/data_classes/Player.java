@@ -20,7 +20,7 @@ public class Player {
 
     public int getSetsPlayed() {
         setsPlayed = 0;
-        for(Match m : TTScoreGUI1.manager.matches) {
+        for(Match m : TTScoreGUI1.manager.getMatches()) {
             for(Set s : m.getSets()) {
                 if(Arrays.asList(s.getHomePlayers()).contains(this) || Arrays.asList(s.getAwayPlayers()).contains(this)) {
                    ++setsPlayed;
@@ -33,7 +33,7 @@ public class Player {
     public int getSetsWon() {
         setsWon = 0;
         System.out.println("get set wins for player: " + this.getName());
-        for(Match m : TTScoreGUI1.manager.matches) {
+        for(Match m : TTScoreGUI1.manager.getMatches()) {
             if(m.getHomeTeam().getPlayers().contains(this)) {  
                 int setnumber = 1;
                 for(Set s : m.getSets()) {
