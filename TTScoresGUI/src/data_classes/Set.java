@@ -12,14 +12,51 @@ import java.util.Arrays;
  *
  * @author VSB
  */
-public class Set {
-    private final int MAX_NUMBER_OF_GAMES = 3;
-    private ArrayList<Game> games;
-    private String setIdentifier;
+public abstract class Set {
+    protected final int MAX_NUMBER_OF_GAMES = 3;
+    protected ArrayList<Game> games;
+    protected String setIdentifier;
     private String winner;
-    private int homeWins;
-    private int awayWins;
-    
+    protected Player[] homePlayers;
+    protected Player[] awayPlayers;
+
+    protected Set(String id, Player[] homePlayers, Player[] awayPlayers) {
+        this.setIdentifier = id;
+        this.homePlayers = homePlayers;
+        this.awayPlayers = awayPlayers;
+    }
+
+    public Player[] getHomePlayers() {
+        return homePlayers;
+    }
+
+    public String getHomePlayerString() {
+        String str = "";
+        for(Player p : homePlayers) {
+            str += p.getName() + ",";
+        }
+        return str.substring(0, str.length()-1);
+    }
+
+    public String getAwayPlayerString() {
+        String str = "";
+        for(Player p : awayPlayers) {
+            str += p.getName() + ",";
+        }
+        return str.substring(0, str.length()-1);
+    }
+
+    public void setHomePlayers(Player[] homePlayers) {
+        this.homePlayers = homePlayers;
+    }
+
+    public Player[] getAwayPlayers() {
+        return awayPlayers;
+    }
+
+    public void setAwayPlayers(Player[] awayPlayers) {
+        this.awayPlayers = awayPlayers;
+    }
     
     public Set(String id) {
         setSetIdentifier(id.trim());
@@ -29,7 +66,7 @@ public class Set {
         return setIdentifier;
     }
 
-    private void setSetIdentifier(String setIdentifier) {
+    protected void setSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
     }
 
@@ -50,11 +87,11 @@ public class Set {
     }
     
     private int getHomeWins() {
-        homeWins = 0;
+        int homeWins = 0;
         if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
                 if(g.gameWinner().equalsIgnoreCase("h")) {
-                    homeWins = homeWins+1;
+                    homeWins = homeWins +1;
                 }
             }
         }
@@ -62,11 +99,11 @@ public class Set {
     }
     
     private int getAwayWins() {
-        awayWins = 0;
+        int awayWins = 0;
         if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
                 if(g.gameWinner().equalsIgnoreCase("a")) {
-                    awayWins = awayWins+1;
+                    awayWins = awayWins +1;
                 }
             }
         }
@@ -89,30 +126,12 @@ public class Set {
         }
     }
     
-    public Player[] getAllPlayers() {
-        //will have to be changed if there are different players for the various set games
-        
-        ArrayList<Player> playersList = new ArrayList<>();
-        for(Player p : games.get(0).getHomePlayer()) {
-            playersList.add(p);
-        }
-        for(Player p : games.get(0).getAwayPlayer()) {
-            playersList.add(p);
-        }
-        
-        Player[] players = (Player[])playersList.toArray();
-        return players;
-    }
-    
-    public Player[] getHomePlayers() {
-         //will have to be changed if there are different players for the various set games
-         System.out.println("home players: " + (games.get(0).getHomePlayer()).length);
-         System.out.println("home players: " + (games.get(0).getHomePlayer())[0].getName());
-        return games.get(0).getHomePlayer();
-    }
-    
-    public Player[] getAwayPlayers() {
-        return games.get(0).getAwayPlayer();
+    public Player[] getAllSetPlayers() {
+        ArrayList<Player> allPlayers = new ArrayList<>();
+        allPlayers.addAll(Arrays.asList(getHomePlayers()));
+        allPlayers.addAll(Arrays.asList(getAwayPlayers()));
+
+        return (Player[]) allPlayers.toArray();
     }
     
     @Override

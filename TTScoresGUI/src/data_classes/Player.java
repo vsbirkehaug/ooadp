@@ -32,25 +32,18 @@ public class Player {
 
     public int getSetsWon() {
         setsWon = 0;
-        System.out.println("get set wins for player: " + this.getName());
         for(Match m : TTScoreGUI1.manager.getMatches()) {
-            if(m.getHomeTeam().getPlayers().contains(this)) {  
-                int setnumber = 1;
+            if(m.getHomeTeam().getPlayers().contains(this)) {
                 for(Set s : m.getSets()) {
-                    System.out.println("setnumber: " + setnumber);
                     if(Arrays.asList(s.getHomePlayers()).contains(this) && (s.getAwayPoint() < s.getHomePoint())) {
                        setsWon++; 
                     }
-                    setnumber++;
                 }               
             } else if (m.getAwayTeam().getPlayers().contains(this)) {
-                int setnumber = 1;
                 for(Set s : m.getSets()) {
-                    System.out.println("setnumber: " + setnumber);
                     if(Arrays.asList(s.getAwayPlayers()).contains(this) && (s.getAwayPoint() > s.getHomePoint())) {
                        setsWon++; 
                     }
-                    setnumber++;
                 }  
             }          
         } 

@@ -4,13 +4,8 @@
  */
 package tabletennisscores;
 
-import data_classes.DoubleGame;
-import data_classes.Game;
-import data_classes.Match;
-import data_classes.Player;
-import data_classes.Set;
-import data_classes.SingleGame;
-import data_classes.Team;
+import data_classes.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -1238,39 +1233,39 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
     
     private void getScoresFromTextFields() {
-        
-        Set set1;
-        Set set2;
-        Set set3;
-        Set set4;
-        Set set5;
+
+        SingleSet set1;
+        SingleSet set2;
+        SingleSet set3;
+        SingleSet set4;
+        DoubleSet set5;
         sets = new ArrayList<>();
         match = new Match();
        
-        set1 = new Set(set11.getText());
-        set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11ahpts.getText()), getAwayPlayer1(), Integer.parseInt(set11aapts.getText())));
-        set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11bhpts.getText()), getAwayPlayer1(), Integer.parseInt(set11bapts.getText())));
-        set1.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set11chpts.getText()), getAwayPlayer1(), Integer.parseInt(set11capts.getText())));
+        set1 = new SingleSet(set11.getText(), getHomePlayer1(), getAwayPlayer1());
+        set1.addGame(new Game(Integer.parseInt(set11ahpts.getText()), Integer.parseInt(set11aapts.getText())));
+        set1.addGame(new Game(Integer.parseInt(set11bhpts.getText()), Integer.parseInt(set11bapts.getText())));
+        set1.addGame(new Game(Integer.parseInt(set11chpts.getText()), Integer.parseInt(set11capts.getText())));
         
-        set2 = new Set(set12.getText());
-        set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12ahpts.getText()), getAwayPlayer2(), Integer.parseInt(set12aapts.getText())));
-        set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12bhpts.getText()), getAwayPlayer2(), Integer.parseInt(set12bapts.getText())));
-        set2.addGame(new SingleGame(getHomePlayer1(), Integer.parseInt(set12chpts.getText()), getAwayPlayer2(), Integer.parseInt(set12capts.getText())));
+        set2 = new SingleSet(set12.getText(), getHomePlayer1(), getAwayPlayer2());
+        set2.addGame(new Game(Integer.parseInt(set12ahpts.getText()), Integer.parseInt(set12aapts.getText())));
+        set2.addGame(new Game(Integer.parseInt(set12bhpts.getText()), Integer.parseInt(set12bapts.getText())));
+        set2.addGame(new Game(Integer.parseInt(set12chpts.getText()), Integer.parseInt(set12capts.getText())));
 
-        set3 = new Set(set21.getText());
-        set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21ahpts.getText()), getAwayPlayer1(), Integer.parseInt(set21aapts.getText())));
-        set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21bhpts.getText()), getAwayPlayer1(), Integer.parseInt(set21bapts.getText())));
-        set3.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set21chpts.getText()), getAwayPlayer1(), Integer.parseInt(set21capts.getText())));
+        set3 = new SingleSet(set21.getText() , getHomePlayer2(), getAwayPlayer1());
+        set3.addGame(new Game(Integer.parseInt(set21ahpts.getText()), Integer.parseInt(set21aapts.getText())));
+        set3.addGame(new Game(Integer.parseInt(set21bhpts.getText()), Integer.parseInt(set21bapts.getText())));
+        set3.addGame(new Game(Integer.parseInt(set21chpts.getText()), Integer.parseInt(set21capts.getText())));
 
-        set4 = new Set(set22.getText());
-        set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22ahpts.getText()), getAwayPlayer2(), Integer.parseInt(set22aapts.getText())));      
-        set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22bhpts.getText()), getAwayPlayer2(), Integer.parseInt(set22bapts.getText())));      
-        set4.addGame(new SingleGame(getHomePlayer2(), Integer.parseInt(set22chpts.getText()), getAwayPlayer2(), Integer.parseInt(set22capts.getText())));      
+        set4 = new SingleSet(set22.getText(), getHomePlayer2(), getAwayPlayer2());
+        set4.addGame(new Game(Integer.parseInt(set22ahpts.getText()), Integer.parseInt(set22aapts.getText())));
+        set4.addGame(new Game(Integer.parseInt(set22bhpts.getText()), Integer.parseInt(set22bapts.getText())));
+        set4.addGame(new Game(Integer.parseInt(set22chpts.getText()), Integer.parseInt(set22capts.getText())));
 
-        set5 = new Set(setDbl.getText());
-        set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dah.getText()), getAwayPlayers(), Integer.parseInt(daa.getText())));
-        set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dbh.getText()), getAwayPlayers(), Integer.parseInt(dba.getText())));
-        set5.addGame(new DoubleGame(getHomePlayers(), Integer.parseInt(dch.getText()), getAwayPlayers(), Integer.parseInt(dca.getText())));
+        set5 = new DoubleSet(setDbl.getText(), getHomePlayers(), getAwayPlayers());
+        set5.addGame(new Game(Integer.parseInt(dah.getText()), Integer.parseInt(daa.getText())));
+        set5.addGame(new Game(Integer.parseInt(dbh.getText()), Integer.parseInt(dba.getText())));
+        set5.addGame(new Game(Integer.parseInt(dch.getText()), Integer.parseInt(dca.getText())));
 
         sets.add(set1);
         sets.add(set2);

@@ -64,7 +64,7 @@ public class ViewMatchScore extends javax.swing.JFrame {
             System.out.println("Set : " + s.getSetIdentifier());
             int i = 1;
             for(Game g : s.getGames()) {
-                System.out.println("Game " + i + ": " + g.getHomePlayerString() + " " + g.getHomeScore() + ", " + g.getAwayPlayerString() + " " + g.getAwayScore());
+                System.out.println("Game " + i + ": " + s.getHomePlayerString() + " " + g.getHomeScore() + ", " + s.getAwayPlayerString() + " " + g.getAwayScore());
                 i++;
             }       
         }
