@@ -52,9 +52,11 @@ public class Team {
    }
 
     public boolean hasPlayerWithThisName(String playerName) {
-        for(Player p : players) {
-            if(p.getName().toLowerCase().equals(playerName.toLowerCase()))
-                return true;
+        if(players != null && players.size() > 0 && playerName != null) {
+            for(Player p : players) {
+                if(p.getName().toLowerCase().equals(playerName.toLowerCase()))
+                    return true;
+            }
         }
         return false;
     }
@@ -87,9 +89,11 @@ public class Team {
     }
     
     public boolean hasPlayer(Player player) {
-        for(Player p : players) {
-            if(p.equals(player)) {
-                return true;
+        if(players != null && players.size() > 0) {
+            for(Player p : players) {
+                if(p.equals(player)) {
+                    return true;
+                }
             }
         }
         return false;

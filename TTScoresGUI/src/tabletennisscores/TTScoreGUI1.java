@@ -1351,7 +1351,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
-        ViewMatchScore viewMatchScore = new ViewMatchScore();
+        ViewMatchScoreJFrame viewMatchScore = new ViewMatchScoreJFrame();
         viewMatchScore.setVisible(true);
     }//GEN-LAST:event_viewMatchButtonActionPerformed
 
@@ -1360,7 +1360,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_teamTankingButtonActionPerformed
 
     private void listTeamRankings() {
-        ListTeamRanking listTeamRanking = new ListTeamRanking();
+        ListTeamRankingJFrame listTeamRanking = new ListTeamRankingJFrame();
         listTeamRanking.setVisible(true);
     }
 
@@ -1369,7 +1369,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_allTeamButtonActionPerformed
 
     private void listAllTeams() {
-        ListAllTeams listAllTeams = new ListAllTeams();
+        ListAllTeamsJFrame listAllTeams = new ListAllTeamsJFrame();
         listAllTeams.setVisible(true);
     }
 
@@ -1380,9 +1380,18 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             setCalculateScoresButtonEnabled(true);
         } else {
             setCalculateScoresButtonEnabled(false);
+            showErrorNamesNotVerified();
         }
     }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
 
+    private void showErrorNamesNotVerified() {
+        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
+        //wrapped in HTML to allow for multiline error label.
+        errorMessage.setMessage("<html>Error, player names could not be verified. Please check your entries and try again.</html>");
+        errorMessage.setVisible(true);
+    }
+
+    
     String homeTeamName;
     String[] hPlayersNamesSingles;
     String[] hPlayersNamesDoubles;
@@ -1417,12 +1426,12 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void openAddTeamFrame() {
-        JFrame addTeam = new AddTeam();
+        JFrame addTeam = new AddTeamJFrame();
         addTeam.setVisible(true);
     }
 
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
-        JFrame registerPlayer = new RegisterPlayer();
+        JFrame registerPlayer = new RegisterPlayerJFrame();
         registerPlayer.setVisible(true);
     }//GEN-LAST:event_regPlayerButtonActionPerformed
 
@@ -1431,7 +1440,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_allPlayerButtonActionPerformed
 
     private void listAllPlayers() {
-        ListAllPlayers listAllPlayers = new ListAllPlayers();
+        ListAllPlayersJFrame listAllPlayers = new ListAllPlayersJFrame();
         listAllPlayers.setVisible(true);
     }
 

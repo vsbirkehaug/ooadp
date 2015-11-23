@@ -6,30 +6,50 @@
 package tabletennisscores;
 
 import data_classes.Team;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Vector;
 
 /**
  *
  * @author Vilde
  */
-public class ListAllTeams extends javax.swing.JFrame {
+public class ListTeamRankingJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form ListAllTeams
      */
-    public ListAllTeams() {
+    public ListTeamRankingJFrame() {
         initComponents();
-        fillListWithTeams();
+        fillListWithSortedTeams();
     }
+    
 
-    private void fillListWithTeams() {
-        Vector teamList = new Vector();
-        for(Team t : TTScoreGUI1.manager.getTeams()) {
-            String str = (t.getName() + ": " + TTScoreGUI1.manager.getPointsWonByTeam(t) + " points");
-            teamList.add(str);
+    private void fillListWithSortedTeams() { 
+        if(TTScoreGUI1.manager.getTeams() != null && !TTScoreGUI1.manager.getTeams().isEmpty()) {
+            ArrayList<Team> teams = TTScoreGUI1.manager.getTeams();
+            Collections.sort(teams, new CustomComparator());
+            String[] listData = new String[teams.size()];
+            for(int i = 0; i < listData.length; i++) {
+                listData[i] = (teams.get(i).getName() + ": " + teams.get(i).getPoints());
+            }
+
+            teamsList.setListData(listData);
         }
-        teamsList.setListData(teamList);
     }
+    
+    public class CustomComparator implements Comparator<Team> {
+    @Override
+    public int compare(Team o1, Team o2) {
+        //o2 before o1 to get it in descending order
+        return Integer.valueOf(o2.getPoints()).compareTo(Integer.valueOf(o1.getPoints()));
+    }
+}
     
     
     /**
@@ -90,20 +110,20 @@ public class ListAllTeams extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListAllTeams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListAllTeams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListAllTeams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListAllTeams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListAllTeams().setVisible(true);
+                new ListAllTeamsJFrame().setVisible(true);
             }
         });
     }
