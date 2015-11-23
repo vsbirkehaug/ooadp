@@ -36,12 +36,12 @@ public class Match {
         if(homeTeam.equals(t)) {
             points = 0;
             for(Set s : sets) {
-                points += s.getHomePoint();
+                points += s.getHomePoints();
             }
         } else if (awayTeam.equals(t)) {
             points = 0;
             for(Set s : sets) {
-                points += s.getAwayPoint();
+                points += s.getAwayPoints();
             }
         }      
         return points;
@@ -54,5 +54,6 @@ public class Match {
     public ArrayList<Set> getSets() {
         return sets;
     }
+    
 
 }

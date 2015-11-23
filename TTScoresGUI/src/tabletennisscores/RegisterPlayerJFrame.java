@@ -35,7 +35,7 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
     
     private boolean addTeamsToComboBox() {
         Boolean teamsAdded = false;
-        ArrayList<Team> teams = TTScoreGUI1.manager.getTeamsWithOpenPlayerSlots();
+        ArrayList<Team> teams = TableTennisMatchManager.INSTANCE.getTeamsWithOpenPlayerSlots();
         
         if(teams != null && teams.size() > 0) {
             teamsAdded = true;
@@ -109,16 +109,18 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(cancelFrameButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                            .addComponent(addPlayerButton))
-                        .addComponent(playerNameLabel)
-                        .addComponent(playerNameTextField)
-                        .addComponent(teamNameComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cancelFrameButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(addPlayerButton))
+                    .addComponent(playerNameLabel)
+                    .addComponent(playerNameTextField)
+                    .addComponent(teamNameComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,9 +131,9 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
                 .addComponent(playerNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(teamNameComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelFrameButton)
                     .addComponent(addPlayerButton))
@@ -157,18 +159,19 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
     private void addPlayer() {
         String playerName = playerNameTextField.getText().toString();
         if(playerName.isEmpty()) {
-            //tell user to enter a name
+            errorLabel.setText("Please enter a name.");
         } else {
-            
             Player player = new Player(playerName);
-            Team team = (Team)teamNameComboBox.getSelectedItem();
+            Team team = (Team)teamNameComboBox.getSelectedItem();   
+            if(team.addPlayer(player)) {
+                closeWindow();
+            } else {
+                errorLabel.setText("<html>A player with this name is already registered for this team.</html>");
+            }
             
-            team.addPlayer(player);
             
-            closeWindow();
-        }
-        
-        
+            
+        }    
     }
     
     /**

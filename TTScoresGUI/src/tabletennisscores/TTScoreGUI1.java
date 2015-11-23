@@ -24,6 +24,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
      */
     public TTScoreGUI1() {
         initComponents();
+        new TableTennisMatchManager();
         setChangeListeners();
     }
 
@@ -1208,27 +1209,27 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     Match match;
 
     private Player getHomePlayer1() {
-        return manager.getPlayerWithName(hPlayer1.getText());
+        return TableTennisMatchManager.INSTANCE.getPlayerWithName(hPlayer1.getText());
     }
 
     private Player getHomePlayer2() {
-        return manager.getPlayerWithName(hPlayer2.getText());
+        return TableTennisMatchManager.INSTANCE.getPlayerWithName(hPlayer2.getText());
     }
 
     private Player getAwayPlayer1() {
-        return manager.getPlayerWithName(aPlayer1.getText());
+        return TableTennisMatchManager.INSTANCE.getPlayerWithName(aPlayer1.getText());
     }
 
     private Player getAwayPlayer2() {
-        return manager.getPlayerWithName(aPlayer2.getText());
+        return TableTennisMatchManager.INSTANCE.getPlayerWithName(aPlayer2.getText());
     }
 
     private Player[] getHomePlayers() {
-        return new Player[]{manager.getPlayerWithName(hdblplayer1.getText()), manager.getPlayerWithName(hdblplayer2.getText())};
+        return new Player[]{TableTennisMatchManager.INSTANCE.getPlayerWithName(hdblplayer1.getText()), TableTennisMatchManager.INSTANCE.getPlayerWithName(hdblplayer2.getText())};
     }
 
     private Player[] getAwayPlayers() {
-        return new Player[]{manager.getPlayerWithName(adblplayer1.getText()), manager.getPlayerWithName(adblplayer2.getText())};
+        return new Player[]{TableTennisMatchManager.INSTANCE.getPlayerWithName(adblplayer1.getText()), TableTennisMatchManager.INSTANCE.getPlayerWithName(adblplayer2.getText())};
     }
 
     private boolean getScoresFromTextFields() {
@@ -1274,8 +1275,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             sets.add(set5);
 
             match.setSets(sets);
-            match.setHomeTeam(manager.getTeamWithName(homeTeamName));
-            match.setAwayTeam(manager.getTeamWithName(awayTeamName));
+            match.setHomeTeam(TableTennisMatchManager.INSTANCE.getTeamWithName(homeTeamName));
+            match.setAwayTeam(TableTennisMatchManager.INSTANCE.getTeamWithName(awayTeamName));
 
         } catch (NumberFormatException nfex) {
             String errorMessage = "Error reading scores. Please check that only numbers are entered.";
@@ -1301,14 +1302,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             int homeWin3 = 0;
             int awayWin3 = 0;
 
-            homeWin1 = sets.get(0).getHomePoint() + sets.get(1).getHomePoint();
-            awayWin1 = sets.get(0).getAwayPoint() + sets.get(1).getAwayPoint();
+            homeWin1 = sets.get(0).getHomePoints() + sets.get(1).getHomePoints();
+            awayWin1 = sets.get(0).getAwayPoints() + sets.get(1).getAwayPoints();
 
-            homeWin2 = sets.get(2).getHomePoint() + sets.get(3).getHomePoint();
-            awayWin2 = sets.get(2).getAwayPoint() + sets.get(3).getAwayPoint();
+            homeWin2 = sets.get(2).getHomePoints() + sets.get(3).getHomePoints();
+            awayWin2 = sets.get(2).getAwayPoints() + sets.get(3).getAwayPoints();
 
-            homeWin3 = sets.get(4).getHomePoint();
-            awayWin3 = sets.get(4).getAwayPoint();
+            homeWin3 = sets.get(4).getHomePoints();
+            awayWin3 = sets.get(4).getAwayPoints();
 
             hWinRow1.setText(String.valueOf(homeWin1));
             aWinRow1.setText(String.valueOf(awayWin1));
@@ -1347,7 +1348,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void submitScores() {
-        manager.getMatches().add(match);
+        TableTennisMatchManager.INSTANCE.addMatch(match);
     }
 
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
@@ -1375,7 +1376,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
         getNamesFromTextFields();
-        Boolean isVerified = manager.verifyNames(homeTeamName, hPlayersNamesSingles, hPlayersNamesDoubles, awayTeamName, aPlayersNamesSingles, aPlayersNamesDoubles);
+        Boolean isVerified = TableTennisMatchManager.INSTANCE.verifyNames(homeTeamName, hPlayersNamesSingles, hPlayersNamesDoubles, awayTeamName, aPlayersNamesSingles, aPlayersNamesDoubles);
         if(isVerified) {
             setCalculateScoresButtonEnabled(true);
         } else {
@@ -1530,7 +1531,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
     // Variables:
 
-    public static TableTennisMatchManager manager = new TableTennisMatchManager();
+
     public Scanner sc = new Scanner(TTScoreGUI1.class.getResourceAsStream("/testscores.txt"));
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -26,19 +26,21 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="errorLabel" pref="180" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="cancelFrameButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="30" max="32767" attributes="0"/>
-                          <Component id="addPlayerButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="playerNameLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="playerNameTextField" alignment="0" max="32767" attributes="0"/>
-                      <Component id="teamNameComboBox" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="cancelFrameButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <Component id="addPlayerButton" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="playerNameLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="playerNameTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="teamNameComboBox" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="38" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="errorLabel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,9 +53,9 @@
               <Component id="playerNameTextField" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="teamNameComboBox" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="errorLabel" pref="19" max="32767" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="errorLabel" min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cancelFrameButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addPlayerButton" alignment="3" min="-2" max="-2" attributes="0"/>

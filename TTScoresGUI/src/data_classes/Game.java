@@ -14,13 +14,21 @@ public class Game {
     protected int awayScore;
 
     public void setHomeScore(int score) {
-      this.homeScore = score;
+        if(score >= 0) {
+            this.homeScore = score;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
     public int getHomeScore() {
       return this.homeScore;
     }
     public void setAwayScore(int score) {
-      this.awayScore = score;
+        if(score >= 0) {
+            this.awayScore = score;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
     public int getAwayScore() {
       return this.awayScore;

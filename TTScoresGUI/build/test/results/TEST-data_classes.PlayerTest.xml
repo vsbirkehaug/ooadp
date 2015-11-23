@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.PlayerTest" skipped="0" tests="5" time="0.13" timestamp="2015-11-23T15:57:53">
+<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.PlayerTest" skipped="0" tests="10" time="0.19" timestamp="2015-11-23T22:15:01">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="VSB" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.PlayerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.PlayerTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher2099635058311131314.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit2689570017059085118.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.PlayerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.PlayerTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher2840844852051655944.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit6117656436863093442.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -301,13 +301,16 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="data_classes.PlayerTest" name="testGetPlayerSetsWon" time="0.037" />
-  <testcase classname="data_classes.PlayerTest" name="testGetPlayerSetsPlayed" time="0.0" />
-  <testcase classname="data_classes.PlayerTest" name="testGetPlayerSetsLost" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="testGetName" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="testSetName" time="0.0" />
-  <system-out><![CDATA[Players: 2
-Players: 4
-]]></system-out>
+  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsPlayed_zero_shouldSucceed" time="0.003" />
+  <testcase classname="data_classes.PlayerTest" name="test_SetName_shouldSucceed" time="0.001" />
+  <testcase classname="data_classes.PlayerTest" name="test_SetName_empty_shouldFail" time="0.0" />
+  <testcase classname="data_classes.PlayerTest" name="test_GetName_shouldSucceed" time="0.001" />
+  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsWon_someNumber_shouldSucceed" time="0.001" />
+  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedNegativeOne_shouldFail" time="0.0" />
+  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedZero_shouldFail" time="0.0" />
+  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedTwo_shouldSucceed" time="0.0" />
+  <testcase classname="data_classes.PlayerTest" name="test_SetName_null_shouldFail" time="0.001" />
+  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsWon_zero_shouldSucceed" time="0.0" />
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

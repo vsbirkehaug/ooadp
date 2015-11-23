@@ -126,12 +126,12 @@ public class AddTeamJFrame extends javax.swing.JFrame {
         
             Team newTeam = new Team(teamName, venueName);
             if(newTeam != null) {
-                TTScoreGUI1.manager.getTeams().add(newTeam);
+                TableTennisMatchManager.INSTANCE.getTeams().add(newTeam);
             }            
             closeWindow();
         }
         
-        for(Team t :  TTScoreGUI1.manager.getTeams()) {
+        for(Team t :  TableTennisMatchManager.INSTANCE.getTeams()) {
             System.out.println(t.toString());
         }
     }

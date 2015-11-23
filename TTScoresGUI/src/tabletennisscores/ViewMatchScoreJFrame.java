@@ -29,7 +29,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     
     private void fillTeamBoxes() {
         Vector teamsVector = new Vector();
-        for(Team t : TTScoreGUI1.manager.getTeams()) {          
+        for(Team t : TableTennisMatchManager.INSTANCE.getTeams()) {          
             teamsVector.add(t);          
         }
         final DefaultComboBoxModel homeModel = new DefaultComboBoxModel(teamsVector);
@@ -43,7 +43,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     }
     
     private void getMatch() {
-        for(Match m : TTScoreGUI1.manager.getMatches()) {
+        for(Match m : TableTennisMatchManager.INSTANCE.getMatches()) {
             if(m.getHomeTeam().equals(homeTeamComboBox.getSelectedItem()) 
                     && m.getAwayTeam().equals(awayTeamComboBox.getSelectedItem())) {
                 //showMatchDetails(m);

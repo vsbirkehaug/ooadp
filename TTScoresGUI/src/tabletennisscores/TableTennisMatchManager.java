@@ -22,10 +22,14 @@ public class TableTennisMatchManager {
     private ArrayList<Team> teams;
     private ArrayList<Match> matches;
     private ArrayList<Player> players;
+    public static TableTennisMatchManager INSTANCE;
 
     public TableTennisMatchManager() {
-        intializeLists();
-        setupTestData();
+        if(INSTANCE == null) {
+            INSTANCE = this;
+            intializeLists();
+            setupTestData();
+        }
     }
 
     private void intializeLists() {
@@ -65,7 +69,6 @@ public class TableTennisMatchManager {
         
         for(Team t : teams) {
             addPlayersToList(t.getPlayers());
-            System.out.println("Players: " + players.size());
         }
     }
     
@@ -84,7 +87,7 @@ public class TableTennisMatchManager {
         }
     }
    
-    boolean verifyPlayerNames(String teamName, String[] players) {
+    private boolean verifyPlayerNames(String teamName, String[] players) {
         if(stringIsEmpty(teamName) || 
             anyPlayerNamesAreEmpty(players) || 
             anyPlayerNamesAreIdentical(players)) {
@@ -158,6 +161,8 @@ public class TableTennisMatchManager {
     Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers, 
                         String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
         
+        
+        
         if(verifyPlayerNames(hTeamName, hSinglesPlayers) 
         && verifyPlayerNames(hTeamName, hDoublesPlayers)
         && verifyPlayerNames(aTeamName, aSinglesPlayers)
@@ -173,19 +178,54 @@ public class TableTennisMatchManager {
     }
     
     public Team getTeamWithName(String teamName) {
-        for(Team t : teams) {
-            if(t.getName().equalsIgnoreCase(teamName.trim())){
-                return t;
-            }              
+        if(teams != null && !teams.isEmpty()) {
+            for(Team t : teams) {
+                if(t.getName().equalsIgnoreCase(teamName.trim())){
+                    return t;
+                }              
+            }
         }
         return null;
+    }
+    
+    public void addMatch(Match m) {
+        if(m != null) {
+            matches.add(m);
+            for(Set s : m.getSets()) {
+                m.getHomeTeam().addSetsWon(s.getHomePoints());
+                m.getAwayTeam().addSetsWon(s.getAwayPoints()); 
+                addSetStatsToPlayers(s);
+            }
+            m.getHomeTeam().addSetsPlayed(m.getSets().size());
+            m.getAwayTeam().addSetsPlayed(m.getSets().size());
+        }
+        
+    }
+    
+    private void addSetStatsToPlayers(Set s) {
+        for(Player p : s.getAllSetPlayers()) {
+            p.addSetsPlayed(1);
+        }
+        
+        if(s.getHomePoints() > s.getAwayPoints()) {
+            for(Player p : s.getHomePlayers()) {
+                p.addOneSetWin();
+            }
+        } else {
+            for(Player p : s.getAwayPlayers()) {
+                p.addOneSetWin();
+            }
+        }
+        
     }
 
     public int getPointsWonByTeam(Team team) {
         int points = 0;
-        for(Match m : matches) {
-            if(m.getPointsForTeam(team) >= 0) {
-                points = points + m.getPointsForTeam(team);
+        if(matches != null && !matches.isEmpty()) {
+            for(Match m : matches) {
+                if(m.getPointsForTeam(team) >= 0) {
+                    points = points + m.getPointsForTeam(team);
+                }
             }
         }
         return points;

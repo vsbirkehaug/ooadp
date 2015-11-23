@@ -31,12 +31,12 @@ public class ListTeamRankingJFrame extends javax.swing.JFrame {
     
 
     private void fillListWithSortedTeams() { 
-        if(TTScoreGUI1.manager.getTeams() != null && !TTScoreGUI1.manager.getTeams().isEmpty()) {
-            ArrayList<Team> teams = TTScoreGUI1.manager.getTeams();
+        if(TableTennisMatchManager.INSTANCE.getTeams() != null && !TableTennisMatchManager.INSTANCE.getTeams().isEmpty()) {
+            ArrayList<Team> teams = TableTennisMatchManager.INSTANCE.getTeams();
             Collections.sort(teams, new CustomComparator());
             String[] listData = new String[teams.size()];
             for(int i = 0; i < listData.length; i++) {
-                listData[i] = (teams.get(i).getName() + ": " + teams.get(i).getPoints());
+                listData[i] = (teams.get(i).getName() + ": " + teams.get(i).getSetsWon());
             }
 
             teamsList.setListData(listData);
@@ -47,7 +47,7 @@ public class ListTeamRankingJFrame extends javax.swing.JFrame {
     @Override
     public int compare(Team o1, Team o2) {
         //o2 before o1 to get it in descending order
-        return Integer.valueOf(o2.getPoints()).compareTo(Integer.valueOf(o1.getPoints()));
+        return Integer.valueOf(o2.getSetsWon()).compareTo(Integer.valueOf(o1.getSetsWon()));
     }
 }
     

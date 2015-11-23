@@ -5,15 +5,13 @@
  */
 package data_classes;
 
-import data_classes.Team;
-import data_classes.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import tabletennisscores.TTScoreGUI1;
+import tabletennisscores.TableTennisMatchManager;
 
 /**
  *
@@ -28,6 +26,7 @@ public class TeamTest {
     String playerOneName = "Vilde";
     String playerTwoName = "Elliot";
     String playerThreeName = "Ryan";
+    
     
     @Rule 
     public ExpectedException thrown = ExpectedException.none();
@@ -105,8 +104,9 @@ public class TeamTest {
 
     @Test
     public void test_getPoints() {
-        int points = TTScoreGUI1.manager.getPointsWonByTeam(team);
-        assertEquals(points, TTScoreGUI1.manager.getPointsWonByTeam(team));
+        new TableTennisMatchManager();
+        int points = TableTennisMatchManager.INSTANCE.getPointsWonByTeam(team);
+        assertEquals(points, TableTennisMatchManager.INSTANCE.getPointsWonByTeam(team));
     }
 
 }

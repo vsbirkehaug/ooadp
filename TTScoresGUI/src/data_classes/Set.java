@@ -102,7 +102,7 @@ public abstract class Set {
         return awayWins;
     }
     
-    public int getHomePoint() {
+    public int getHomePoints() {
         if(getHomeWins() > getAwayWins()) {
             return 1;
         } else {
@@ -110,7 +110,7 @@ public abstract class Set {
         }
     }
     
-    public int getAwayPoint() {
+    public int getAwayPoints() {
         if(getHomeWins() < getAwayWins()) {
             return 1;
         } else {
@@ -123,7 +123,7 @@ public abstract class Set {
         allPlayers.addAll(Arrays.asList(getHomePlayers()));
         allPlayers.addAll(Arrays.asList(getAwayPlayers()));
 
-        return (Player[]) allPlayers.toArray();
+        return allPlayers.toArray(new Player[allPlayers.size()]);
     }
     
     @Override

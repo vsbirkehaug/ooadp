@@ -6,7 +6,6 @@
 package data_classes;
 
 import java.util.ArrayList;
-import tabletennisscores.TTScoreGUI1;
 
 /**
  *
@@ -17,7 +16,8 @@ public class Team {
    private String name;
    Venue venue;
    ArrayList<Player> players;
-   int points;
+   int setsWon = 0;
+   int setsPlayed = 0;
 
     public Team(String teamName, String venueName) {
         setName(teamName);
@@ -36,14 +36,16 @@ public class Team {
      return this.venue.getName();
    }
 
-   public void addPlayer(Player player) {
+   public boolean addPlayer(Player player) {
      if(players == null) {
        players = new ArrayList<>();
      }
-     if(players.size() < MAX_TEAM_SIZE) {
+     //ASSUMPTION : team can only have one player with a specific name
+     if(players.size() < MAX_TEAM_SIZE && !hasPlayerWithThisName(player.getName())) {
        players.add(player);
+       return true;
      } else {
-       //TODO some error that says you cannot add more playes
+       return false;
      }
    }
    
@@ -83,9 +85,8 @@ public class Team {
         }
     }
     
-    public int getPoints() {
-        points = TTScoreGUI1.manager.getPointsWonByTeam(this);
-        return points;
+    public int getSetsWon() {
+        return setsWon;
     }
     
     public boolean hasPlayer(Player player) {
@@ -97,5 +98,13 @@ public class Team {
             }
         }
         return false;
+    }
+
+    public void addSetsWon(int points) {
+        this.setsWon += points;
+    }
+    
+    public void addSetsPlayed(int setsPlayed) {
+        this.setsPlayed = this.setsPlayed + setsPlayed;
     }
 }
