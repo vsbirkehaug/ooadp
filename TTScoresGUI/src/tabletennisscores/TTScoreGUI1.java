@@ -24,9 +24,11 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
      */
     public TTScoreGUI1() {
         initComponents();
-        new TableTennisMatchManager();
+        manager = TableTennisMatchManager.INSTANCE;
         setChangeListeners();
     }
+
+    TableTennisMatchManager manager;
 
     private void setChangeListeners() {
 
@@ -85,7 +87,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
                 }
             });
         }
-
     }
 
     private void doNameTextChanged() {
@@ -1209,27 +1210,27 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     Match match;
 
     private Player getHomePlayer1() {
-        return TableTennisMatchManager.INSTANCE.getPlayerWithName(hPlayer1.getText());
+        return manager.getPlayerWithName(hPlayer1.getText());
     }
 
     private Player getHomePlayer2() {
-        return TableTennisMatchManager.INSTANCE.getPlayerWithName(hPlayer2.getText());
+        return manager.getPlayerWithName(hPlayer2.getText());
     }
 
     private Player getAwayPlayer1() {
-        return TableTennisMatchManager.INSTANCE.getPlayerWithName(aPlayer1.getText());
+        return manager.getPlayerWithName(aPlayer1.getText());
     }
 
     private Player getAwayPlayer2() {
-        return TableTennisMatchManager.INSTANCE.getPlayerWithName(aPlayer2.getText());
+        return manager.getPlayerWithName(aPlayer2.getText());
     }
 
     private Player[] getHomePlayers() {
-        return new Player[]{TableTennisMatchManager.INSTANCE.getPlayerWithName(hdblplayer1.getText()), TableTennisMatchManager.INSTANCE.getPlayerWithName(hdblplayer2.getText())};
+        return new Player[]{manager.getPlayerWithName(hdblplayer1.getText()), manager.getPlayerWithName(hdblplayer2.getText())};
     }
 
     private Player[] getAwayPlayers() {
-        return new Player[]{TableTennisMatchManager.INSTANCE.getPlayerWithName(adblplayer1.getText()), TableTennisMatchManager.INSTANCE.getPlayerWithName(adblplayer2.getText())};
+        return new Player[]{manager.getPlayerWithName(adblplayer1.getText()), manager.getPlayerWithName(adblplayer2.getText())};
     }
 
     private boolean getScoresFromTextFields() {
@@ -1275,18 +1276,21 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             sets.add(set5);
 
             match.setSets(sets);
-            match.setHomeTeam(TableTennisMatchManager.INSTANCE.getTeamWithName(homeTeamName));
-            match.setAwayTeam(TableTennisMatchManager.INSTANCE.getTeamWithName(awayTeamName));
+            match.setHomeTeam(manager.getTeamWithName(hTName));
+            match.setAwayTeam(manager.getTeamWithName(aTName));
 
         } catch (NumberFormatException nfex) {
             String errorMessage = "Error reading scores. Please check that only numbers are entered.";
-            System.out.println(errorMessage);
-            //TODO error dialog
+            doErrorMessage(errorMessage, nfex.getMessage());
+            return false;
+        } catch (IllegalArgumentException iaex) {
+            String errorMessage = "Error verifying scores. Please check that the scores are valid.";
+            doErrorMessage(errorMessage, iaex.getMessage());
             return false;
         } catch (Exception ex) {
             String errorMessage = "Error reading scores. Please check that all values are entered and try again.";
-            System.out.println(errorMessage);
-            //TODO error dialog
+            doErrorMessage(errorMessage, ex.getMessage());
+            ex.printStackTrace();
             return false;
         }
 
@@ -1323,23 +1327,26 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         } catch (IndexOutOfBoundsException ioobex) {
             String errorMessage = "Error calculating scores. Please try again.";
-            System.out.println(errorMessage);
-            System.out.println(ioobex.getMessage());
-            //TODO error dialog
+            doErrorMessage(errorMessage, ioobex.getMessage());
             return false;
         } catch (Exception ex) {
             String errorMessage = "Error calculating scores. Please try again.";
-            System.out.println(errorMessage);
-            System.out.println(ex.getMessage());
-            //TODO error dialog
+            doErrorMessage(errorMessage, ex.getMessage());
             return false;
         }
         return true;
     }
 
+    private void doErrorMessage(String errorMessage, String exceptionMessage) {
+        showErrorMessage(errorMessage);
+        System.out.println(errorMessage);
+        System.out.println(exceptionMessage);
+    }
+
     private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
         submitScores();
         setSubmitScoresButtonEnabled(false);
+        setCalculateScoresButtonEnabled(false);
 
     }//GEN-LAST:event_submitScoreButtonActionPerformed
 
@@ -1348,7 +1355,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void submitScores() {
-        TableTennisMatchManager.INSTANCE.addMatch(match);
+        manager.addMatch(match);
     }
 
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
@@ -1376,14 +1383,31 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
         getNamesFromTextFields();
-        Boolean isVerified = TableTennisMatchManager.INSTANCE.verifyNames(homeTeamName, hPlayersNamesSingles, hPlayersNamesDoubles, awayTeamName, aPlayersNamesSingles, aPlayersNamesDoubles);
-        if(isVerified) {
+        System.out.println(hTName + " " + aTName);
+        Boolean isVerified = manager.verifyNames(hTName, hPNamesSingles, hPNamesDoubles, aTName, aPNamesSingles, aPNamesDoubles);
+        System.out.println(homeAwayCombinationExists(hTName, aTName));
+        if(isVerified && !homeAwayCombinationExists(hTName, aTName)) {
             setCalculateScoresButtonEnabled(true);
+        } else if (isVerified) {
+            showErrorTeamHomeAwayComboAlreadyExists();
         } else {
             setCalculateScoresButtonEnabled(false);
             showErrorNamesNotVerified();
         }
+
     }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
+
+    private void showErrorTeamHomeAwayComboAlreadyExists() {
+        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
+        //wrapped in HTML to allow for multiline error label.
+        errorMessage.setMessage("<html>Error, these teams have already played a match with that home/away team combination.</html>");
+        errorMessage.setVisible(true);
+    }
+
+
+    private boolean homeAwayCombinationExists(String homeTeamName, String awayTeamName) {
+        return manager.matchExistsForThisTeamSetup(homeTeamName, awayTeamName);
+    }
 
     private void showErrorNamesNotVerified() {
         ErrorMessageFrame errorMessage = new ErrorMessageFrame();
@@ -1392,30 +1416,38 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         errorMessage.setVisible(true);
     }
 
-    
-    String homeTeamName;
-    String[] hPlayersNamesSingles;
-    String[] hPlayersNamesDoubles;
-    String awayTeamName;
-    String[] aPlayersNamesSingles;
-    String[] aPlayersNamesDoubles;
+    private void showErrorMessage(String message) {
+        String msg = "<html>" + message + "</html>";
+        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
+        //wrapped in HTML to allow for multiline error label.
+        errorMessage.setMessage(msg);
+        errorMessage.setVisible(true);
+    }
+
+
+    String hTName;
+    String[] hPNamesSingles;
+    String[] hPNamesDoubles;
+    String aTName;
+    String[] aPNamesSingles;
+    String[] aPNamesDoubles;
 
     private void getNamesFromTextFields() {
-        homeTeamName = hTeamField.getText().trim();
-        hPlayersNamesSingles = new String[2];
-        hPlayersNamesDoubles = new String[2];
-        hPlayersNamesSingles[0] = hPlayer1.getText().trim();
-        hPlayersNamesSingles[1] = hPlayer2.getText().trim();
-        hPlayersNamesDoubles[0] = hdblplayer1.getText().trim();
-        hPlayersNamesDoubles[1] = hdblplayer2.getText().trim();
+        hTName = hTeamField.getText().trim();
+        hPNamesSingles = new String[2];
+        hPNamesDoubles = new String[2];
+        hPNamesSingles[0] = hPlayer1.getText().trim();
+        hPNamesSingles[1] = hPlayer2.getText().trim();
+        hPNamesDoubles[0] = hdblplayer1.getText().trim();
+        hPNamesDoubles[1] = hdblplayer2.getText().trim();
 
-        awayTeamName = aTeamField.getText().trim();
-        aPlayersNamesSingles = new String[2];
-        aPlayersNamesDoubles = new String[2];
-        aPlayersNamesSingles[0] = aPlayer1.getText().trim();
-        aPlayersNamesSingles[1] = aPlayer2.getText().trim();
-        aPlayersNamesDoubles[0] = adblplayer1.getText().trim();
-        aPlayersNamesDoubles[1] = adblplayer2.getText().trim();
+        aTName = aTeamField.getText().trim();
+        aPNamesSingles = new String[2];
+        aPNamesDoubles = new String[2];
+        aPNamesSingles[0] = aPlayer1.getText().trim();
+        aPNamesSingles[1] = aPlayer2.getText().trim();
+        aPNamesDoubles[0] = adblplayer1.getText().trim();
+        aPNamesDoubles[1] = adblplayer2.getText().trim();
     }
 
     private void setCalculateScoresButtonEnabled(Boolean state) {

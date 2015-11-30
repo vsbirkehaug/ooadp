@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.GameTest" skipped="0" tests="9" time="0.192" timestamp="2015-11-23T22:14:59">
+<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.GameTest" skipped="0" tests="9" time="0.197" timestamp="2015-11-24T09:32:07">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="VSB" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.GameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.GameTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher254788983420735646.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit6380984483447693609.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.GameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.GameTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher8144540351932005321.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit951285955315251770.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -302,11 +302,11 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
   <testcase classname="data_classes.GameTest" name="test_GameWinner_awayWins" time="0.003" />
-  <testcase classname="data_classes.GameTest" name="testGetHomeScore" time="0.0" />
-  <testcase classname="data_classes.GameTest" name="test_SetHomeScore_zero_shouldSucceed" time="0.0" />
-  <testcase classname="data_classes.GameTest" name="test_GetAwayScore" time="0.0" />
-  <testcase classname="data_classes.GameTest" name="test_SetAwayScore_negativeNumber_shouldFail" time="0.0" />
-  <testcase classname="data_classes.GameTest" name="test_SetAwayScore_zero_shouldSucceed" time="0.0" />
+  <testcase classname="data_classes.GameTest" name="testGetHomeScore" time="0.001" />
+  <testcase classname="data_classes.GameTest" name="test_SetHomeScore_zero_shouldSucceed" time="0.001" />
+  <testcase classname="data_classes.GameTest" name="test_GetAwayScore" time="0.001" />
+  <testcase classname="data_classes.GameTest" name="test_SetAwayScore_negativeNumber_shouldFail" time="0.001" />
+  <testcase classname="data_classes.GameTest" name="test_SetAwayScore_zero_shouldSucceed" time="0.001" />
   <testcase classname="data_classes.GameTest" name="test_SetAwayScore_one_shouldSucceed" time="0.001" />
   <testcase classname="data_classes.GameTest" name="test_SetHomeScore_negativeNumber_shouldFail" time="0.001" />
   <testcase classname="data_classes.GameTest" name="test_SetHomeScore_one_shouldSucceed" time="0.001" />

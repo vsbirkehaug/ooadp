@@ -8,5 +8,6 @@ import java.util.Arrays;
 public class SingleSet extends Set {
     public SingleSet(String id, Player homePlayer1, Player awayPlayer1) {
         super(id, new Player[]{homePlayer1}, new Player[]{awayPlayer1});
+        System.out.println("Added player: " + homePlayer1.getName());
     }
 }

@@ -35,8 +35,12 @@ public class Game {
     }
     
     public Game(int homeScore, int awayScore) {
-        setHomeScore(homeScore);
-        setAwayScore(awayScore);
+        if(verifyScores(homeScore, awayScore)) {
+            setHomeScore(homeScore);
+            setAwayScore(awayScore);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
     
     public String gameWinner() {
@@ -47,6 +51,31 @@ public class Game {
         } else {
             return "u";
         }
+    }
+
+    private boolean verifyScores(int hs, int as) {
+        return (scoresArePositive(hs, as) &&
+                (scoreIs11(hs, as) || scoreHigherThan11(hs, as)));
+    }
+
+    private boolean scoresArePositive(int hs, int as) {
+        return (hs >= 0 && as >= 0);
+    }
+
+    private boolean scoreIs11(int hs, int as) {
+        return (hs == 11 || as == 11) && wonByAtLeastTwoPoints(hs, as);
+    }
+
+    private boolean scoreHigherThan11(int hs, int as) {
+        return ((hs > 11 || as > 11) && wonByExactlyTwoPoints(hs, as));
+    }
+
+    private boolean wonByExactlyTwoPoints(int hs, int as) {
+        return ((hs-as)==2 || (as-hs)==2);
+    }
+
+    private boolean wonByAtLeastTwoPoints(int hs, int as) {
+        return ((hs-as)>=2 || (as-hs)>=2);
     }
 
 }

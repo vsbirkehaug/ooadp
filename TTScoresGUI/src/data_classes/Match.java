@@ -32,27 +32,39 @@ public class Match {
     }
     
     public int getPointsForTeam(Team t) {
-        int points = -1;
-        if(homeTeam.equals(t)) {
-            points = 0;
-            for(Set s : sets) {
-                points += s.getHomePoints();
-            }
-        } else if (awayTeam.equals(t)) {
-            points = 0;
-            for(Set s : sets) {
-                points += s.getAwayPoints();
-            }
-        }      
+        int points = 0;
+        if(homeTeam != null && awayTeam != null) {
+            if(homeTeam.equals(t)) {
+                points = 0;
+                for(Set s : sets) {
+                    points += s.getHomePoints();
+                }
+            } else if (awayTeam.equals(t)) {
+                points = 0;
+                for(Set s : sets) {
+                    points += s.getAwayPoints();
+                }
+            } else {
+                return 0;
+            }   
+        }
         return points;
     }
 
     public void setSets(ArrayList<Set> sets) {
-        this.sets = sets;
+        if(sets.size() == 5) {
+            this.sets = sets;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public ArrayList<Set> getSets() {
-        return sets;
+        if(sets != null) {
+            return sets; 
+        } else {
+            return null;
+        }
     }
     
 

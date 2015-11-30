@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.PlayerTest" skipped="0" tests="10" time="0.196" timestamp="2015-11-24T09:32:12">
+<testsuite errors="2" failures="4" hostname="Vilde" name="data_classes.MatchTest" skipped="0" tests="7" time="0.214" timestamp="2015-11-24T09:32:09">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="VSB" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.PlayerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.PlayerTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher1772252173118187602.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit9153500088030856214.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.MatchTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.MatchTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher2608835770467908180.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit1209188186944500028.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -165,7 +165,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="netbeans.user" value="C:\Users\VSB\AppData\Roaming\NetBeans\8.1" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\VSB\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -297,21 +296,50 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
-    <property name="javadoc.nonavbar" value="false" />
     <property name="jdkBug6558476" value="false" />
+    <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsPlayed_zero_shouldSucceed" time="0.003" />
-  <testcase classname="data_classes.PlayerTest" name="test_SetName_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="test_SetName_empty_shouldFail" time="0.0" />
-  <testcase classname="data_classes.PlayerTest" name="test_GetName_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsWon_someNumber_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedNegativeOne_shouldFail" time="0.0" />
-  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedZero_shouldFail" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="test_addSetsPlayed_addedTwo_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.PlayerTest" name="test_SetName_null_shouldFail" time="0.0" />
-  <testcase classname="data_classes.PlayerTest" name="test_GetPlayerSetsWon_zero_shouldSucceed" time="0.0" />
-  <system-out><![CDATA[]]></system-out>
+  <testcase classname="data_classes.MatchTest" name="testGetSets" time="0.019">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at data_classes.MatchTest.testGetSets(MatchTest.java:112)
+</failure>
+  </testcase>
+  <testcase classname="data_classes.MatchTest" name="testSetAwayTeam" time="0.002">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at data_classes.MatchTest.testSetAwayTeam(MatchTest.java:56)
+</failure>
+  </testcase>
+  <testcase classname="data_classes.MatchTest" name="testGetAwayTeam" time="0.004">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at data_classes.MatchTest.testGetAwayTeam(MatchTest.java:70)
+</failure>
+  </testcase>
+  <testcase classname="data_classes.MatchTest" name="testSetHomeTeam" time="0.001" />
+  <testcase classname="data_classes.MatchTest" name="testGetHomeTeam" time="0.003">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at data_classes.MatchTest.testGetHomeTeam(MatchTest.java:43)
+</failure>
+  </testcase>
+  <testcase classname="data_classes.MatchTest" name="testGetPointsForTeam" time="0.002">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at data_classes.Match.getPointsForTeam(Match.java:36)
+	at data_classes.MatchTest.testGetPointsForTeam(MatchTest.java:82)
+</error>
+  </testcase>
+  <testcase classname="data_classes.MatchTest" name="testSetSets" time="0.003">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at data_classes.Match.setSets(Match.java:51)
+	at data_classes.MatchTest.testSetSets(MatchTest.java:96)
+</error>
+  </testcase>
+  <system-out><![CDATA[getSets
+setAwayTeam
+getAwayTeam
+getHomeTeam
+getPointsForTeam
+setSets
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

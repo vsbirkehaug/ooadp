@@ -20,6 +20,7 @@ public class AddTeamJFrame extends javax.swing.JFrame {
      */
     public AddTeamJFrame() {
         initComponents();
+        this.getRootPane().setDefaultButton(addTeamButton);
     }
 
     /**
@@ -126,7 +127,7 @@ public class AddTeamJFrame extends javax.swing.JFrame {
         
             Team newTeam = new Team(teamName, venueName);
             if(newTeam != null) {
-                TableTennisMatchManager.INSTANCE.getTeams().add(newTeam);
+                TableTennisMatchManager.INSTANCE.addTeam(newTeam);
             }            
             closeWindow();
         }

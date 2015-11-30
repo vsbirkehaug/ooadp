@@ -27,7 +27,8 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
      * Creates new form RegisterPlayer
      */
     public RegisterPlayerJFrame() {
-        initComponents();             
+        initComponents();     
+        this.getRootPane().setDefaultButton(addPlayerButton);        
         if(!addTeamsToComboBox()) {
             showNoTeamsAvailable();
         }       
