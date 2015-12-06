@@ -7,7 +7,6 @@ package tabletennisscores;
 
 import data_classes.Team;
 import java.awt.Color;
-import java.awt.event.WindowEvent;
 
 /**
  *
@@ -127,12 +126,12 @@ public class AddTeamJFrame extends javax.swing.JFrame {
         
             Team newTeam = new Team(teamName, venueName);
             if(newTeam != null) {
-                TableTennisMatchManager.INSTANCE.addTeam(newTeam);
+                TableTennisManager.INSTANCE.addTeam(newTeam);
             }            
             closeWindow();
         }
         
-        for(Team t :  TableTennisMatchManager.INSTANCE.getTeams()) {
+        for(Team t :  TableTennisManager.INSTANCE.getTeams()) {
             System.out.println(t.toString());
         }
     }

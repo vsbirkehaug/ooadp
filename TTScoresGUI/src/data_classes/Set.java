@@ -13,7 +13,7 @@ import java.util.Arrays;
  * @author VSB
  */
 public abstract class Set {
-    protected final int MAX_NUMBER_OF_GAMES = 3;
+    public final int MAX_NUMBER_OF_GAMES = 3;
     protected ArrayList<Game> games;
     protected String setIdentifier;
     private String winner;

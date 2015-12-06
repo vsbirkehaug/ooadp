@@ -24,7 +24,7 @@ public class ListAllPlayersJFrame extends javax.swing.JFrame {
     
     private void fillPlayerList() {
         Vector players = new Vector();
-        for(Player p : TableTennisMatchManager.INSTANCE.getPlayers()) {
+        for(Player p : TableTennisManager.INSTANCE.getPlayers()) {
             String str = (p.getName() + ", Played: " + p.getSetsPlayed()+ ", wins: " + p.getSetsWon());
             players.add(str);
         }

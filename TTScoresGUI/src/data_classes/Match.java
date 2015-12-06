@@ -52,10 +52,12 @@ public class Match {
     }
 
     public void setSets(ArrayList<Set> sets) {
-        if(sets.size() == 5) {
+        if(sets == null) {
+            throw new IllegalArgumentException("Set list was null.");
+        } else if (sets.size() == 5) {
             this.sets = sets;
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Set list was the wrong size. Please add a list of size " + Match.MAX_NUMBER_OF_SETS + ".");
         }
     }
 

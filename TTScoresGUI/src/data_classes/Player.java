@@ -5,10 +5,6 @@
  */
 package data_classes;
 
-import java.util.Arrays;
-import tabletennisscores.TTScoreGUI1;
-import tabletennisscores.TableTennisMatchManager;
-
 /**
  *
  * @author VSB

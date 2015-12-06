@@ -8,6 +8,9 @@ package data_classes;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import data_classes.Match;
+import data_classes.Set;
+import data_classes.Team;
 
 /**
  *
@@ -78,8 +81,8 @@ public class MatchTest {
     /**
      * Test of setSets method, of class Match.
      */
-    @Test
-    public void test_SetSets() {
+    @Test(expected=IllegalArgumentException.class)
+    public void test_SetSets_setnull_shouldFail() {
         System.out.println("setSets");
         ArrayList<Set> sets = null;
         Match instance = new Match();

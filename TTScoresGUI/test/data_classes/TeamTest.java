@@ -11,7 +11,8 @@ import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import tabletennisscores.TableTennisMatchManager;
+import tabletennisscores.TableTennisManager;
+
 
 /**
  *
@@ -104,9 +105,8 @@ public class TeamTest {
 
     @Test
     public void test_getPoints() {
-        new TableTennisMatchManager();
-        int points = TableTennisMatchManager.INSTANCE.getPointsWonByTeam(team);
-        assertEquals(points, TableTennisMatchManager.INSTANCE.getPointsWonByTeam(team));
+        int points = TableTennisManager.INSTANCE.getPointsWonByTeam(team);
+        assertEquals(points, TableTennisManager.INSTANCE.getPointsWonByTeam(team));
     }
 
 }
