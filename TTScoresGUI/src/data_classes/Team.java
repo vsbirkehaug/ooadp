@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class Team {
    public static final int MAX_TEAM_SIZE = 2;
    private String name;
-   Venue venue;
-   ArrayList<Player> players;
-   int setsWon = 0;
-   int setsPlayed = 0;
+   private Venue venue;
+   private ArrayList<Player> players;
+   private int setsWon = 0;
+   private int setsPlayed = 0;
 
     public Team(String teamName, String venueName) {
         setName(teamName);
@@ -30,10 +30,6 @@ public class Team {
 
    public Venue getVenue() {
      return this.venue;
-   }
-
-   public String getVenueName() {
-     return this.venue.getName();
    }
 
    public boolean addPlayer(Player player) {
@@ -78,26 +74,11 @@ public class Team {
     }
 
     public boolean hasRoomForMorePlayers() {
-        if(players == null || players.size() < MAX_TEAM_SIZE) {
-            return true;
-        } else {
-            return false;
-        }
+        return players == null || players.size() < MAX_TEAM_SIZE;
     }
     
     public int getSetsWon() {
         return setsWon;
-    }
-    
-    public boolean hasPlayer(Player player) {
-        if(players != null && players.size() > 0) {
-            for(Player p : players) {
-                if(p.equals(player)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     public void addSetsWon(int points) {

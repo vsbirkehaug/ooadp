@@ -1207,6 +1207,11 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calScoreButtonActionPerformed
+        calculateScoresButton();
+    }//GEN-LAST:event_calScoreButtonActionPerformed
+
+
+    public void calculateScoresButton() {
         if(getScoresFromTextFields()) {
             if (calculateScores(sets)) {
                 setSubmitScoresButtonEnabled(true);
@@ -1214,9 +1219,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
                 setSubmitScoresButtonEnabled(false);
             }
         }
-    }//GEN-LAST:event_calScoreButtonActionPerformed
-
-
+    }
 
     private Player getHomePlayer1() {
         return manager.getPlayerWithName(hPlayer1.getText());
@@ -1240,15 +1243,17 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private boolean getScoresFromTextFields() {
 
         sets = new ArrayList<>();
-        match = new Match();
+
 
         try {
+
+            Team homeTeam = manager.getTeamWithName(hTName);
+            Team awayTeam = manager.getTeamWithName(aTName);
+            match = new Match(homeTeam, awayTeam);
             addSetsToList();
             addGamesToSets();
             
             match.setSets(sets);
-            match.setHomeTeam(manager.getTeamWithName(hTName));
-            match.setAwayTeam(manager.getTeamWithName(aTName));
 
         } catch (NumberFormatException nfex) {
             String errorMessage = "Error reading scores. Please check that only numbers are entered.";
@@ -1295,14 +1300,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             int awayWin1 = 0, awayWin2 = 0, awayWin3 = 0;
             
 
-            homeWin1 = sets.get(0).getHomePoints() + sets.get(1).getHomePoints();
-            awayWin1 = sets.get(0).getAwayPoints() + sets.get(1).getAwayPoints();
+            homeWin1 = sets.get(0).getHomePoint() + sets.get(1).getHomePoint();
+            awayWin1 = sets.get(0).getAwayPoint() + sets.get(1).getAwayPoint();
 
-            homeWin2 = sets.get(2).getHomePoints() + sets.get(3).getHomePoints();
-            awayWin2 = sets.get(2).getAwayPoints() + sets.get(3).getAwayPoints();
+            homeWin2 = sets.get(2).getHomePoint() + sets.get(3).getHomePoint();
+            awayWin2 = sets.get(2).getAwayPoint() + sets.get(3).getAwayPoint();
 
-            homeWin3 = sets.get(4).getHomePoints();
-            awayWin3 = sets.get(4).getAwayPoints();
+            homeWin3 = sets.get(4).getHomePoint();
+            awayWin3 = sets.get(4).getAwayPoint();
 
             hWinRow1.setText(String.valueOf(homeWin1));
             aWinRow1.setText(String.valueOf(awayWin1));

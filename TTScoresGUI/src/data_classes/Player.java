@@ -22,7 +22,7 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         if(name != null && !name.isEmpty()) {
             this.name = name;
         } else {
@@ -72,13 +72,13 @@ public class Player {
 //            for(Match m : TableTennisMatchManager.INSTANCE.getMatches()) {
 //                if(m.getHomeTeam().getPlayers().contains(this)) {
 //                    for(Set s : m.getSets()) {
-//                        if(Arrays.asList(s.getHomePlayers()).contains(this) && (s.getAwayPoints() < s.getHomePoints())) {
+//                        if(Arrays.asList(s.getHomePlayers()).contains(this) && (s.getAwayPoint() < s.getHomePoint())) {
 //                           setsWon++; 
 //                        }
 //                    }               
 //                } else if (m.getAwayTeam().getPlayers().contains(this)) {
 //                    for(Set s : m.getSets()) {
-//                        if(Arrays.asList(s.getAwayPlayers()).contains(this) && (s.getAwayPoints() > s.getHomePoints())) {
+//                        if(Arrays.asList(s.getAwayPlayers()).contains(this) && (s.getAwayPoint() > s.getHomePoint())) {
 //                           setsWon++; 
 //                        }
 //                    }  

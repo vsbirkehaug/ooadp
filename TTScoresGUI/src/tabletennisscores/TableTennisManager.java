@@ -175,8 +175,8 @@ public class TableTennisManager {
         if(m != null) {
             matches.add(m);
             for(Set s : m.getSets()) {
-                m.getHomeTeam().addSetsWon(s.getHomePoints());
-                m.getAwayTeam().addSetsWon(s.getAwayPoints());
+                m.getHomeTeam().addSetsWon(s.getHomePoint());
+                m.getAwayTeam().addSetsWon(s.getAwayPoint());
                 addSetStatsToPlayers(s);
             }
             m.getHomeTeam().addSetsPlayed(m.getSets().size());
@@ -191,7 +191,7 @@ public class TableTennisManager {
             p.addSetsPlayed(1);
         }
 
-        if(s.getHomePoints() > s.getAwayPoints()) {
+        if(s.getHomePoint() > s.getAwayPoint()) {
             for(Player p : s.getHomePlayers()) {
                 p.addOneSetWin();
             }
@@ -234,5 +234,15 @@ public class TableTennisManager {
         if(newTeam != null) {
             teams.add(newTeam);
         }
+    }
+
+    boolean hasTeamWithName(String newName) {
+        for(Team t : getTeams()) {
+            if(t.getName().equalsIgnoreCase(newName)) {
+                return true;
+            } 
+        }
+        
+        return false;
     }
 }
