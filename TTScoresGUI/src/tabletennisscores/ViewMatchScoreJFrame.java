@@ -5,10 +5,7 @@
  */
 package tabletennisscores;
 
-import data_classes.Game;
-import data_classes.Match;
-import data_classes.Set;
-import data_classes.Team;
+import data_classes.*;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
@@ -44,8 +41,8 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     
     private void getMatch() {
         for(Match m : TableTennisManager.INSTANCE.getMatches()) {
-            if(m.getHomeTeam().equals(homeTeamComboBox.getSelectedItem()) 
-                    && m.getAwayTeam().equals(awayTeamComboBox.getSelectedItem())) {
+            if(m.getTeam(TeamType.HOME).equals(homeTeamComboBox.getSelectedItem())
+                    && m.getTeam(TeamType.AWAY).equals(awayTeamComboBox.getSelectedItem())) {
                 //showMatchDetails(m);
                 printMatchDetails(m);
                 errorLabel.setVisible(false);
@@ -64,14 +61,14 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
             System.out.println("Set : " + s.getSetIdentifier());
             int i = 1;
             for(Game g : s.getGames()) {
-                System.out.println("Game " + i + ": " + s.getHomePlayerString() + " " + g.getHomeScore() + ", " + s.getAwayPlayerString() + " " + g.getAwayScore());
+                System.out.println("Game " + i + ": " + s.getHomePlayerString() + " " + g.getScore(TeamType.HOME) + ", " + s.getAwayPlayerString() + " " + g.getScore(TeamType.AWAY));
                 i++;
             }       
         }
         
         System.out.println("");     
-        System.out.println("Total home win: " + m.getPointsForTeam(m.getHomeTeam()));
-        System.out.println("Total away win: " + m.getPointsForTeam(m.getAwayTeam()));
+        System.out.println("Total home win: " + m.getPointsForTeam(m.getTeam(TeamType.HOME)));
+        System.out.println("Total away win: " + m.getPointsForTeam(m.getTeam(TeamType.AWAY)));
         
     }
     
