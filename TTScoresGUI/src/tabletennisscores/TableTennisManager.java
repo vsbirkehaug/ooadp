@@ -5,10 +5,7 @@
  */
 package tabletennisscores;
 
-import data_classes.Match;
-import data_classes.Player;
-import data_classes.Set;
-import data_classes.Team;
+import data_classes.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -160,7 +157,7 @@ public class TableTennisManager {
         }
     }
 
-    public Team getTeamWithName(String teamName) {
+    public Team getTeamByName(String teamName) {
         if(teams != null && !teams.isEmpty()) {
             for(Team t : teams) {
                 if(t.getName().equalsIgnoreCase(teamName.trim())){
@@ -175,12 +172,12 @@ public class TableTennisManager {
         if(m != null) {
             matches.add(m);
             for(Set s : m.getSets()) {
-                m.getHomeTeam().addSetsWon(s.getHomePoint());
-                m.getAwayTeam().addSetsWon(s.getAwayPoint());
+                m.getTeam(TeamType.HOME).addSetsWon(s.getSetPointForTeam(TeamType.HOME));
+                m.getTeam(TeamType.AWAY).addSetsWon(s.getSetPointForTeam(TeamType.AWAY));
                 addSetStatsToPlayers(s);
             }
-            m.getHomeTeam().addSetsPlayed(m.getSets().size());
-            m.getAwayTeam().addSetsPlayed(m.getSets().size());
+            m.getTeam(TeamType.HOME).addSetsPlayed(m.getSets().size());
+            m.getTeam(TeamType.AWAY).addSetsPlayed(m.getSets().size());
         }
 
     }
@@ -191,14 +188,17 @@ public class TableTennisManager {
             p.addSetsPlayed(1);
         }
 
-        if(s.getHomePoint() > s.getAwayPoint()) {
+
+        if(s.getSetPointForTeam(TeamType.HOME) > s.getSetPointForTeam(TeamType.AWAY)) {
             for(Player p : s.getHomePlayers()) {
                 p.addOneSetWin();
             }
-        } else {
+        } else if (s.getSetPointForTeam(TeamType.HOME) < s.getSetPointForTeam(TeamType.AWAY)) {
             for(Player p : s.getAwayPlayers()) {
                 p.addOneSetWin();
             }
+        } else {
+            throw new IllegalStateException("Set draw - should not occur.");
         }
 
     }
@@ -217,13 +217,11 @@ public class TableTennisManager {
 
 
     public boolean matchExistsForThisTeamSetup(String homeTeamName, String awayTeamName) {
-        for(Team t : teams) {
-            System.out.println("Team: " + t.getName());
-        }
-        Team homeTeam = getTeamWithName(homeTeamName);
-        Team awayTeam = getTeamWithName(awayTeamName);
+        Team homeTeam = getTeamByName(homeTeamName);
+        Team awayTeam = getTeamByName(awayTeamName);
+
         for(Match m : getMatches()) {
-            if(m.getHomeTeam().equals(homeTeam) && m.getAwayTeam().equals(awayTeam)) {
+            if(m.getTeam(TeamType.HOME).equals(homeTeam) && m.getTeam(TeamType.AWAY).equals(awayTeam)) {
                 return true;
             }
         }

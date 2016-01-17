@@ -25,6 +25,16 @@ public abstract class Set {
         this.awayPlayers = awayPlayers;
     }
 
+    public Player[] getPlayers(TeamType team) {
+        if(team.equals(TeamType.HOME)) {
+            return homePlayers;
+        } else if (team.equals(TeamType.AWAY)) {
+            return awayPlayers;
+        } else {
+            throw new IllegalArgumentException("Please select a valid team to get players from. (Illegal argument)");
+        }
+    }
+
     public Player[] getHomePlayers() {
         return homePlayers;
     }
@@ -65,62 +75,76 @@ public abstract class Set {
         return games;
     }
 
-
-    public void addGame(Game game) {
+    public void addGameToSet(Game game) {
       if(this.games == null) {
         this.games = new ArrayList<>();
       }
       if(this.games.size() < MAX_NUMBER_OF_GAMES) {
         this.games.add(game);
       } else {
-        //TODO some error that says you cannot add more games to this set
+         throw new IllegalStateException("Cannot add more games to this set.");
       }
     }
-    
-    private int getHomeWins() {
-        int homeWins = 0;
+
+    private int getSetGameWins(TeamType team) {
+        int wins = 0;
         if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
-                if(g.gameWinner().equalsIgnoreCase("h")) {
-                    homeWins = homeWins +1;
+                if(g.gameWinner().equals(team)) {
+                    wins = wins +1;
                 }
             }
         }
-        return homeWins;
+        return wins;
     }
-    
-    private int getAwayWins() {
-        int awayWins = 0;
-        if(games.size() == MAX_NUMBER_OF_GAMES) {
-            for(Game g : games) {
-                if(g.gameWinner().equalsIgnoreCase("a")) {
-                    awayWins = awayWins +1;
-                }
-            }
-        }
-        return awayWins;
-    }
-    
-    public int getHomePoint() {
-        if(getHomeWins() > getAwayWins()) {
+//
+//    private int getHomeWins() {
+//        int homeWins = 0;
+//        if(games.size() == MAX_NUMBER_OF_GAMES) {
+//            for(Game g : games) {
+//                if(g.gameWinner().equals(TeamType.HOME)) {
+//                    homeWins = homeWins +1;
+//                }
+//            }
+//        }
+//        return homeWins;
+//    }
+//
+//    private int getAwayWins() {
+//        int awayWins = 0;
+//        if(games.size() == MAX_NUMBER_OF_GAMES) {
+//            for(Game g : games) {
+//                if(g.gameWinner().equals(TeamType.AWAY)) {
+//                    awayWins = awayWins +1;
+//                }
+//            }
+//        }
+//        return awayWins;
+//    }
+
+    public int getSetPointForTeam(TeamType team) {
+        if(getSetWinner().equals(team)) {
             return 1;
         } else {
             return 0;
         }
     }
-    
-    public int getAwayPoint() {
-        if(getHomeWins() < getAwayWins()) {
-            return 1;
+
+    public TeamType getSetWinner() {
+        if(getSetGameWins(TeamType.HOME) > getSetGameWins(TeamType.AWAY)) {
+            return TeamType.HOME;
+        } else if (getSetGameWins(TeamType.AWAY) > getSetGameWins(TeamType.HOME)) {
+            return TeamType.AWAY;
         } else {
-            return 0;
+            throw new IllegalStateException("No game winner. (Draw is not allowed)");
         }
     }
+
     
     public Player[] getAllSetPlayers() {
         ArrayList<Player> allPlayers = new ArrayList<>();
-        allPlayers.addAll(Arrays.asList(getHomePlayers()));
-        allPlayers.addAll(Arrays.asList(getAwayPlayers()));
+        allPlayers.addAll(Arrays.asList(getPlayers(TeamType.HOME)));
+        allPlayers.addAll(Arrays.asList(getPlayers(TeamType.AWAY)));
 
         return allPlayers.toArray(new Player[allPlayers.size()]);
     }

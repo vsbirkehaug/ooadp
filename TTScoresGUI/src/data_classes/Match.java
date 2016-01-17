@@ -20,24 +20,31 @@ public class Match {
     public Match(Team homeTeam, Team awayTeam) {
         //ASSUMPTION : a team cannot play itself
         if(!homeTeam.equals(awayTeam)) {
-            setHomeTeam(homeTeam);
-            setAwayTeam(awayTeam);
+            setTeam(TeamType.HOME, homeTeam);
+            setTeam(TeamType.AWAY, awayTeam);
         }
     }
 
-    private void setHomeTeam(Team team) {
-      this.homeTeam = team;
-    }
-    public Team getHomeTeam() {
-      return this.homeTeam;
+    private void setTeam(TeamType teamId, Team team) {
+        if(teamId.equals(TeamType.HOME)) {
+            this.homeTeam = team;
+        } else if (teamId.equals(TeamType.AWAY)) {
+            this.awayTeam = team;
+        } else {
+            throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
+        }
     }
 
-    private void setAwayTeam(Team team) {
-      this.awayTeam = team;
+    public Team getTeam(TeamType teamId) {
+        if(teamId.equals(TeamType.HOME)) {
+            return this.homeTeam;
+        } else if (teamId.equals(TeamType.AWAY)) {
+            return this.awayTeam;
+        } else {
+            throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
+        }
     }
-    public Team getAwayTeam() {
-      return this.awayTeam;
-    }
+
     
     public int getPointsForTeam(Team t) {
         int points = 0;
@@ -45,12 +52,12 @@ public class Match {
             if(homeTeam.equals(t)) {
                 points = 0;
                 for(Set s : sets) {
-                    points += s.getHomePoint();
+                    points += s.getSetPointForTeam(TeamType.HOME);
                 }
             } else if (awayTeam.equals(t)) {
                 points = 0;
                 for(Set s : sets) {
-                    points += s.getAwayPoint();
+                    points += s.getSetPointForTeam(TeamType.AWAY);
                 }
             } else {
                 return 0;

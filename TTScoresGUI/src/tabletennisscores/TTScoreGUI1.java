@@ -1247,8 +1247,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         try {
 
-            Team homeTeam = manager.getTeamWithName(hTName);
-            Team awayTeam = manager.getTeamWithName(aTName);
+            Team homeTeam = manager.getTeamByName(hTName);
+            Team awayTeam = manager.getTeamByName(aTName);
             match = new Match(homeTeam, awayTeam);
             addSetsToList();
             addGamesToSets();
@@ -1286,7 +1286,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         int counter = 0;
         for(int i = 0; i < sets.size(); i++) {
             for(int j = 0; j < gamesPerSet; j++) {
-                sets.get(i).addGame(new Game(
+                sets.get(i).addGameToSet(new Game(
                         Integer.parseInt(scoreTextFields.get(counter).getText()),
                         Integer.parseInt(scoreTextFields.get(counter+1).getText())));
                 counter = counter+2;
@@ -1300,14 +1300,14 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
             int awayWin1 = 0, awayWin2 = 0, awayWin3 = 0;
             
 
-            homeWin1 = sets.get(0).getHomePoint() + sets.get(1).getHomePoint();
-            awayWin1 = sets.get(0).getAwayPoint() + sets.get(1).getAwayPoint();
+            homeWin1 = sets.get(0).getSetPointForTeam(TeamType.HOME) + sets.get(1).getSetPointForTeam(TeamType.HOME);
+            awayWin1 = sets.get(0).getSetPointForTeam(TeamType.AWAY) + sets.get(1).getSetPointForTeam(TeamType.AWAY);
 
-            homeWin2 = sets.get(2).getHomePoint() + sets.get(3).getHomePoint();
-            awayWin2 = sets.get(2).getAwayPoint() + sets.get(3).getAwayPoint();
+            homeWin2 = sets.get(2).getSetPointForTeam(TeamType.HOME) + sets.get(3).getSetPointForTeam(TeamType.HOME);
+            awayWin2 = sets.get(2).getSetPointForTeam(TeamType.AWAY) + sets.get(3).getSetPointForTeam(TeamType.AWAY);
 
-            homeWin3 = sets.get(4).getHomePoint();
-            awayWin3 = sets.get(4).getAwayPoint();
+            homeWin3 = sets.get(4).getSetPointForTeam(TeamType.HOME);
+            awayWin3 = sets.get(4).getSetPointForTeam(TeamType.AWAY);
 
             hWinRow1.setText(String.valueOf(homeWin1));
             aWinRow1.setText(String.valueOf(awayWin1));
