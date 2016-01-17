@@ -7,7 +7,6 @@ package tabletennisscores;
 
 import data_classes.Team;
 import java.awt.Color;
-import java.awt.event.WindowEvent;
 
 /**
  *
@@ -122,17 +121,23 @@ public class AddTeamJFrame extends javax.swing.JFrame {
         
         if(teamName.isEmpty() || venueName.isEmpty()) { 
             addTeamErrorLabel.setForeground(Color.RED);
-            addTeamErrorLabel.setText("Please don't leave any fields empty.");
+            addTeamErrorLabel.setText("<html>Please don't leave any fields empty.</html>");
         } else {
         
-            Team newTeam = new Team(teamName, venueName);
-            if(newTeam != null) {
-                TableTennisMatchManager.INSTANCE.addTeam(newTeam);
-            }            
-            closeWindow();
+            if(!TableTennisManager.INSTANCE.hasTeamWithName(teamName)) {
+                Team newTeam = new Team(teamName, venueName);
+                if(newTeam != null ) {
+                    TableTennisManager.INSTANCE.addTeam(newTeam);
+                }      
+                closeWindow();
+            } else {
+                addTeamErrorLabel.setForeground(Color.RED);
+                addTeamErrorLabel.setText("<html>A team with this name already exists!</html>");
+            }
+            
         }
         
-        for(Team t :  TableTennisMatchManager.INSTANCE.getTeams()) {
+        for(Team t :  TableTennisManager.INSTANCE.getTeams()) {
             System.out.println(t.toString());
         }
     }

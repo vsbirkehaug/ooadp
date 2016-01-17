@@ -10,10 +10,10 @@ package data_classes;
  * @author VSB
  */
 public class Game {
-    protected int homeScore;
-    protected int awayScore;
+    private int homeScore;
+    private int awayScore;
 
-    public void setHomeScore(int score) {
+    private void setHomeScore(int score) {
         if(score >= 0) {
             this.homeScore = score;
         } else {
@@ -23,7 +23,7 @@ public class Game {
     public int getHomeScore() {
       return this.homeScore;
     }
-    public void setAwayScore(int score) {
+    private void setAwayScore(int score) {
         if(score >= 0) {
             this.awayScore = score;
         } else {

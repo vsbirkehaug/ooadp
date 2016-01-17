@@ -9,23 +9,21 @@ import data_classes.Match;
 import data_classes.Player;
 import data_classes.Set;
 import data_classes.Team;
-import data_classes.Venue;
+
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.stream.Collectors;
 
 /**
  *
  * @author VSB
  */
-public class TableTennisMatchManager {
+public class TableTennisManager {
 
     private ArrayList<Team> teams;
     private ArrayList<Match> matches;
-    private ArrayList<Player> players;
-    public static TableTennisMatchManager INSTANCE = new TableTennisMatchManager();
+    public static TableTennisManager INSTANCE = new TableTennisManager();
 
-    private TableTennisMatchManager() {
+    private TableTennisManager() {
         intializeLists();
         setupTestData();
     }
@@ -33,16 +31,16 @@ public class TableTennisMatchManager {
     private void intializeLists() {
         teams = new ArrayList<>();
         matches = new ArrayList<>();
-        this.players = new ArrayList<>();
     }
 
     public ArrayList<Player> getPlayers() {
-        this.players.clear();
-
+        ArrayList<Player> players = new ArrayList<>();
         for(Team t : teams) {
-            this.players.addAll(t.getPlayers().stream().collect(Collectors.toList()));
+            for(Player p : t.getPlayers()) {
+                players.add(p);
+            }
         }
-        return this.players;
+        return players;
     }
 
     public ArrayList<Match> getMatches() {
@@ -54,23 +52,28 @@ public class TableTennisMatchManager {
     }
 
     private void setupTestData() {
-        Team filtonTeam = new Team("filton", "Gloucester road");
+        Team filtonTeam = new Team("Filton", "Gloucester road");
         filtonTeam.addPlayer(new Player("alex"));
         filtonTeam.addPlayer(new Player("brian"));
         teams.add(filtonTeam);
-        Team uweTeam = new Team("uwe", "Frenchay campus");
+        Team uweTeam = new Team("UWE", "Frenchay campus");
         uweTeam.addPlayer(new Player("jin"));
         uweTeam.addPlayer(new Player("julia"));
         teams.add(uweTeam);
+        Team kccTeam = new Team("KCC", "Fortfield road");
+        kccTeam.addPlayer(new Player("Chris"));
+        kccTeam.addPlayer(new Player("Ryan"));
+        teams.add(kccTeam);
+        Team pageTeam = new Team("Page", "Page road");
+        pageTeam.addPlayer(new Player("Peter"));
+        pageTeam.addPlayer(new Player("Phil"));
+        teams.add(pageTeam);
 
-        for(Team t : teams) {
-            addPlayersToList(t.getPlayers());
-        }
+ 
     }
 
     public Player getPlayerWithName(String name) {
         for(Player p : getPlayers()) {
-            System.out.println(p.getName());
             if(p.getName().toLowerCase().equals(name.trim().toLowerCase())) {
                 return p;
             }
@@ -78,11 +81,6 @@ public class TableTennisMatchManager {
         throw new NullPointerException("Could not find player");
     }
 
-    private void addPlayersToList(ArrayList<Player> ps) {
-        for(Player p : ps) {
-            getPlayers().add(p);
-        }
-    }
 
     private boolean verifyPlayerNames(String teamName, String[] players) {
         if(stringIsEmpty(teamName) ||
@@ -104,11 +102,7 @@ public class TableTennisMatchManager {
                 }
             }
         }
-        if(unverifiedPlayers == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return unverifiedPlayers == 0;
     }
 
     private boolean anyPlayerNamesAreEmpty(String[] players) {
@@ -121,9 +115,7 @@ public class TableTennisMatchManager {
     }
 
     private boolean anyPlayerNamesAreIdentical(String[] players) {
-
         HashSet tempHashSet = new HashSet();
-
         for(String s : players) {
             if(!tempHashSet.add(s)) {
                 return true;
@@ -135,11 +127,7 @@ public class TableTennisMatchManager {
 
 
     boolean stringIsEmpty(String str) {
-        if(str != null && str.length() > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(str != null && str.length() > 0);
     }
 
     public ArrayList<Team> getTeamsWithOpenPlayerSlots() {
@@ -158,15 +146,13 @@ public class TableTennisMatchManager {
     Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers,
                         String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
 
-
-
         if(verifyPlayerNames(hTeamName, hSinglesPlayers)
                 && verifyPlayerNames(hTeamName, hDoublesPlayers)
                 && verifyPlayerNames(aTeamName, aSinglesPlayers)
                 && verifyPlayerNames(aTeamName, aDoublesPlayers)
                 ) {
-            System.out.println("" +verifyPlayerNames(hTeamName, hSinglesPlayers) );
-            System.out.println("" +verifyPlayerNames(aTeamName, aSinglesPlayers) );
+            //System.out.println("" +verifyPlayerNames(hTeamName, hSinglesPlayers) );
+            //System.out.println("" +verifyPlayerNames(aTeamName, aSinglesPlayers) );
 
             return true;
         } else {
@@ -189,8 +175,8 @@ public class TableTennisMatchManager {
         if(m != null) {
             matches.add(m);
             for(Set s : m.getSets()) {
-                m.getHomeTeam().addSetsWon(s.getHomePoints());
-                m.getAwayTeam().addSetsWon(s.getAwayPoints());
+                m.getHomeTeam().addSetsWon(s.getHomePoint());
+                m.getAwayTeam().addSetsWon(s.getAwayPoint());
                 addSetStatsToPlayers(s);
             }
             m.getHomeTeam().addSetsPlayed(m.getSets().size());
@@ -200,14 +186,12 @@ public class TableTennisMatchManager {
     }
 
     private void addSetStatsToPlayers(Set s) {
-        System.out.println("Set has number of players:" + s.getAllSetPlayers().length);
 
         for(Player p : s.getAllSetPlayers()) {
-            System.out.println(p.getName());
             p.addSetsPlayed(1);
         }
 
-        if(s.getHomePoints() > s.getAwayPoints()) {
+        if(s.getHomePoint() > s.getAwayPoint()) {
             for(Player p : s.getHomePlayers()) {
                 p.addOneSetWin();
             }
@@ -250,5 +234,15 @@ public class TableTennisMatchManager {
         if(newTeam != null) {
             teams.add(newTeam);
         }
+    }
+
+    boolean hasTeamWithName(String newName) {
+        for(Team t : getTeams()) {
+            if(t.getName().equalsIgnoreCase(newName)) {
+                return true;
+            } 
+        }
+        
+        return false;
     }
 }

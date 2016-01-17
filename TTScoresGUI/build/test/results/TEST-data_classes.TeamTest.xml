@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.TeamTest" skipped="0" tests="12" time="0.212" timestamp="2015-11-24T09:32:14">
+<testsuite errors="0" failures="0" hostname="Vilde" name="data_classes.TeamTest" skipped="0" tests="12" time="0.054" timestamp="2015-12-06T21:29:56">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="VSB" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.TeamTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.TeamTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher4200171373065425865.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit1324325693401624410.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.TeamTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.TeamTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher7884985214648045627.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit4641298365141037233.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -84,7 +84,7 @@
     <property name="libs.testng.classpath" value="D:\Program Files\NetBeans 8.1\platform\modules\ext\testng-6.8.1-dist.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="ant.java.version" value="1.8" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Git\cmd;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Apache-Subversion-1.8.13\bin;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;c:\Users\VSB\AppData\Local\atom\bin;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\VSB\AppData\Roaming\npm;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\VSB\AppData\Local\atom\bin;C:\Program Files (x86)\OpenVPN\bin;." />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GitExtensions\;C:\Program Files (x86)\Git\cmd;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Apache-Subversion-1.8.13\bin;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;c:\Users\VSB\AppData\Local\atom\bin;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\VSB\AppData\Roaming\npm;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\VSB\AppData\Local\atom\bin;C:\Program Files (x86)\OpenVPN\bin;." />
     <property name="javadoc.author" value="false" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.spring-framework400.src" value="" />
@@ -302,17 +302,17 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="data_classes.TeamTest" name="test_hasPlayer_playerNotAdded_shouldFail" time="0.006" />
-  <testcase classname="data_classes.TeamTest" name="test_hasPlayerWithThisName_notAdded_shouldFail" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_hasRoomForMorePlayers_hasOne_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_GetTeamName_returnString" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_hasPlayerWithThisName_addedPlayer_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_GetTeamVenueName" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_toStringOverride_EqualsName_shouldSucceed" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_hasRoomForMorePlayers_isFull_shouldFail" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_getPoints" time="0.003" />
-  <testcase classname="data_classes.TeamTest" name="test_AddPlayer_NoMoreThanMaxSize" time="0.001" />
-  <testcase classname="data_classes.TeamTest" name="test_hasPlayer_playerAdded_shouldSucceed" time="0.001" />
+  <testcase classname="data_classes.TeamTest" name="test_hasPlayer_playerNotAdded_shouldFail" time="0.001" />
+  <testcase classname="data_classes.TeamTest" name="test_hasPlayerWithThisName_notAdded_shouldFail" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_hasRoomForMorePlayers_hasOne_shouldSucceed" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_GetTeamName_returnString" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_hasPlayerWithThisName_addedPlayer_shouldSucceed" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_GetTeamVenueName" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_toStringOverride_EqualsName_shouldSucceed" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_hasRoomForMorePlayers_isFull_shouldFail" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_getPoints" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_AddPlayer_NoMoreThanMaxSize" time="0.0" />
+  <testcase classname="data_classes.TeamTest" name="test_hasPlayer_playerAdded_shouldSucceed" time="0.0" />
   <testcase classname="data_classes.TeamTest" name="test_hasRoomForMorePlayers_isEmpty_shouldSucceed" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

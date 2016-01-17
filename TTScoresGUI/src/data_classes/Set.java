@@ -13,10 +13,9 @@ import java.util.Arrays;
  * @author VSB
  */
 public abstract class Set {
-    protected final int MAX_NUMBER_OF_GAMES = 3;
+    public final int MAX_NUMBER_OF_GAMES = 3;
     protected ArrayList<Game> games;
     protected String setIdentifier;
-    private String winner;
     protected Player[] homePlayers;
     protected Player[] awayPlayers;
 
@@ -102,7 +101,7 @@ public abstract class Set {
         return awayWins;
     }
     
-    public int getHomePoints() {
+    public int getHomePoint() {
         if(getHomeWins() > getAwayWins()) {
             return 1;
         } else {
@@ -110,7 +109,7 @@ public abstract class Set {
         }
     }
     
-    public int getAwayPoints() {
+    public int getAwayPoint() {
         if(getHomeWins() < getAwayWins()) {
             return 1;
         } else {

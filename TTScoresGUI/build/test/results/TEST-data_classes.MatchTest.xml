@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="4" hostname="Vilde" name="data_classes.MatchTest" skipped="0" tests="7" time="0.214" timestamp="2015-11-24T09:32:09">
+<testsuite errors="0" failures="2" hostname="Vilde" name="data_classes.MatchTest" skipped="0" tests="7" time="0.053" timestamp="2015-12-06T21:29:55">
   <properties>
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="VSB" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.MatchTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.MatchTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher2608835770467908180.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit1209188186944500028.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner data_classes.MatchTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\test\results\TEST-data_classes.MatchTest.xml crashfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junitvmwatcher6771673999994715187.properties propsfile=C:\Users\VSB\Desktop\TTScoresGUI\ooadp\TTScoresGUI\build\junit5108690002483332206.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -84,7 +84,7 @@
     <property name="libs.testng.classpath" value="D:\Program Files\NetBeans 8.1\platform\modules\ext\testng-6.8.1-dist.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="ant.java.version" value="1.8" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Git\cmd;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Apache-Subversion-1.8.13\bin;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;c:\Users\VSB\AppData\Local\atom\bin;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\VSB\AppData\Roaming\npm;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\VSB\AppData\Local\atom\bin;C:\Program Files (x86)\OpenVPN\bin;." />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GitExtensions\;C:\Program Files (x86)\Git\cmd;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Apache-Subversion-1.8.13\bin;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;c:\Users\VSB\AppData\Local\atom\bin;C:\Users\VSB\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\VSB\AppData\Roaming\npm;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\VSB\AppData\Local\atom\bin;C:\Program Files (x86)\OpenVPN\bin;." />
     <property name="javadoc.author" value="false" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.spring-framework400.src" value="" />
@@ -301,45 +301,24 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="data_classes.MatchTest" name="testGetSets" time="0.019">
+  <testcase classname="data_classes.MatchTest" name="testSetAwayTeam" time="0.001" />
+  <testcase classname="data_classes.MatchTest" name="testGetAwayTeam" time="0.0" />
+  <testcase classname="data_classes.MatchTest" name="test_GetSets" time="0.003">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at data_classes.MatchTest.testGetSets(MatchTest.java:112)
+	at data_classes.MatchTest.test_GetSets(MatchTest.java:105)
 </failure>
   </testcase>
-  <testcase classname="data_classes.MatchTest" name="testSetAwayTeam" time="0.002">
+  <testcase classname="data_classes.MatchTest" name="test_SetSets_setnull_shouldFail" time="0.0" />
+  <testcase classname="data_classes.MatchTest" name="testSetHomeTeam" time="0.0" />
+  <testcase classname="data_classes.MatchTest" name="testGetHomeTeam" time="0.0" />
+  <testcase classname="data_classes.MatchTest" name="testGetPointsForTeam" time="0.001">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at data_classes.MatchTest.testSetAwayTeam(MatchTest.java:56)
+	at data_classes.MatchTest.testGetPointsForTeam(MatchTest.java:78)
 </failure>
-  </testcase>
-  <testcase classname="data_classes.MatchTest" name="testGetAwayTeam" time="0.004">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at data_classes.MatchTest.testGetAwayTeam(MatchTest.java:70)
-</failure>
-  </testcase>
-  <testcase classname="data_classes.MatchTest" name="testSetHomeTeam" time="0.001" />
-  <testcase classname="data_classes.MatchTest" name="testGetHomeTeam" time="0.003">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at data_classes.MatchTest.testGetHomeTeam(MatchTest.java:43)
-</failure>
-  </testcase>
-  <testcase classname="data_classes.MatchTest" name="testGetPointsForTeam" time="0.002">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at data_classes.Match.getPointsForTeam(Match.java:36)
-	at data_classes.MatchTest.testGetPointsForTeam(MatchTest.java:82)
-</error>
-  </testcase>
-  <testcase classname="data_classes.MatchTest" name="testSetSets" time="0.003">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at data_classes.Match.setSets(Match.java:51)
-	at data_classes.MatchTest.testSetSets(MatchTest.java:96)
-</error>
   </testcase>
   <system-out><![CDATA[getSets
-setAwayTeam
-getAwayTeam
-getHomeTeam
-getPointsForTeam
 setSets
+getPointsForTeam
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

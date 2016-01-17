@@ -17,14 +17,22 @@ public class Match {
     private Team awayTeam;
     public final static int MAX_NUMBER_OF_SETS = 5;
 
-    public void setHomeTeam(Team team) {
+    public Match(Team homeTeam, Team awayTeam) {
+        //ASSUMPTION : a team cannot play itself
+        if(!homeTeam.equals(awayTeam)) {
+            setHomeTeam(homeTeam);
+            setAwayTeam(awayTeam);
+        }
+    }
+
+    private void setHomeTeam(Team team) {
       this.homeTeam = team;
     }
     public Team getHomeTeam() {
       return this.homeTeam;
     }
 
-    public void setAwayTeam(Team team) {
+    private void setAwayTeam(Team team) {
       this.awayTeam = team;
     }
     public Team getAwayTeam() {
@@ -37,12 +45,12 @@ public class Match {
             if(homeTeam.equals(t)) {
                 points = 0;
                 for(Set s : sets) {
-                    points += s.getHomePoints();
+                    points += s.getHomePoint();
                 }
             } else if (awayTeam.equals(t)) {
                 points = 0;
                 for(Set s : sets) {
-                    points += s.getAwayPoints();
+                    points += s.getAwayPoint();
                 }
             } else {
                 return 0;
@@ -52,10 +60,12 @@ public class Match {
     }
 
     public void setSets(ArrayList<Set> sets) {
-        if(sets.size() == 5) {
+        if(sets == null) {
+            throw new IllegalArgumentException("Set list was null.");
+        } else if (sets.size() == 5) {
             this.sets = sets;
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Set list was the wrong size. Please add a list of size " + Match.MAX_NUMBER_OF_SETS + ".");
         }
     }
 

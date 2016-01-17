@@ -7,15 +7,10 @@ package tabletennisscores;
 
 import data_classes.Player;
 import data_classes.Team;
-import java.awt.Color;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Vector;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.event.EventListenerList;
-import javax.swing.event.ListDataListener;
 
 /**
  *
@@ -36,7 +31,7 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
     
     private boolean addTeamsToComboBox() {
         Boolean teamsAdded = false;
-        ArrayList<Team> teams = TableTennisMatchManager.INSTANCE.getTeamsWithOpenPlayerSlots();
+        ArrayList<Team> teams = TableTennisManager.INSTANCE.getTeamsWithOpenPlayerSlots();
         
         if(teams != null && teams.size() > 0) {
             teamsAdded = true;
@@ -163,7 +158,7 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
             errorLabel.setText("Please enter a name.");
         } else {
             Player player = new Player(playerName);
-            Team team = (Team)teamNameComboBox.getSelectedItem();   
+            Team team = (Team)teamNameComboBox.getSelectedItem();
             if(team.addPlayer(player)) {
                 closeWindow();
             } else {

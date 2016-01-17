@@ -9,7 +9,7 @@ import data_classes.Game;
 import data_classes.Match;
 import data_classes.Set;
 import data_classes.Team;
-import java.awt.Color;
+
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 
@@ -29,7 +29,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     
     private void fillTeamBoxes() {
         Vector teamsVector = new Vector();
-        for(Team t : TableTennisMatchManager.INSTANCE.getTeams()) {          
+        for(Team t : TableTennisManager.INSTANCE.getTeams()) {          
             teamsVector.add(t);          
         }
         final DefaultComboBoxModel homeModel = new DefaultComboBoxModel(teamsVector);
@@ -43,7 +43,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     }
     
     private void getMatch() {
-        for(Match m : TableTennisMatchManager.INSTANCE.getMatches()) {
+        for(Match m : TableTennisManager.INSTANCE.getMatches()) {
             if(m.getHomeTeam().equals(homeTeamComboBox.getSelectedItem()) 
                     && m.getAwayTeam().equals(awayTeamComboBox.getSelectedItem())) {
                 //showMatchDetails(m);
