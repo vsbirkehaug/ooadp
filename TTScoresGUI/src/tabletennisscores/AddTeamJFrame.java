@@ -5,7 +5,9 @@
  */
 package tabletennisscores;
 
-import data_classes.Team;
+import controllers.TableTennisManager;
+import controllers.TeamController;
+import data_models.Team;
 import java.awt.Color;
 
 /**
@@ -103,7 +105,7 @@ public class AddTeamJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
-        addTeam();       
+        TeamController.INSTANCE.addTeam();
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void cancelFrameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelFrameButtonActionPerformed

@@ -5,7 +5,8 @@
  */
 package tabletennisscores;
 
-import data_classes.Player;
+import controllers.TableTennisManager;
+import data_models.Player;
 import java.util.Vector;
 
 /**

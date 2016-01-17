@@ -4,7 +4,8 @@
  */
 package tabletennisscores;
 
-import data_classes.*;
+import controllers.TableTennisManager;
+import data_models.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1243,14 +1244,12 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private boolean getScoresFromTextFields() {
 
         sets = new ArrayList<>();
-
-
         try {
 
             Team homeTeam = manager.getTeamByName(hTName);
             Team awayTeam = manager.getTeamByName(aTName);
             match = new Match(homeTeam, awayTeam);
-            addSetsToList();
+            createSetsFromFields();
             addGamesToSets();
             
             match.setSets(sets);
@@ -1272,7 +1271,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         return true;
     }
 
-    private void addSetsToList() {
+    private void createSetsFromFields() {
         sets.add(new SingleSet(set11.getText(), getHomePlayer1(), getAwayPlayer1()));
         sets.add(new SingleSet(set12.getText(), getHomePlayer1(), getAwayPlayer2()));
         sets.add(new SingleSet(set21.getText() , getHomePlayer2(), getAwayPlayer1()));

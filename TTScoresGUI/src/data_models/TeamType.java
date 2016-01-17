@@ -1,4 +1,4 @@
-package data_classes;
+package data_models;
 
 /**
  * Created by Vilde on 17.01.2016.

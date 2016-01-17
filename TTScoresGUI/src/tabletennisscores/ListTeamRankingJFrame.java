@@ -5,7 +5,8 @@
  */
 package tabletennisscores;
 
-import data_classes.Team;
+import controllers.TableTennisManager;
+import data_models.Team;
 
 import java.util.ArrayList;
 import java.util.Collections;

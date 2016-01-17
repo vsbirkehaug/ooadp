@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tabletennisscores;
+package controllers;
 
-import data_classes.*;
+import data_models.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -140,8 +140,8 @@ public class TableTennisManager {
     }
 
 
-    Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers,
-                        String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
+    public Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers,
+                               String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
 
         if(verifyPlayerNames(hTeamName, hSinglesPlayers)
                 && verifyPlayerNames(hTeamName, hDoublesPlayers)
@@ -234,7 +234,7 @@ public class TableTennisManager {
         }
     }
 
-    boolean hasTeamWithName(String newName) {
+    public boolean hasTeamWithName(String newName) {
         for(Team t : getTeams()) {
             if(t.getName().equalsIgnoreCase(newName)) {
                 return true;

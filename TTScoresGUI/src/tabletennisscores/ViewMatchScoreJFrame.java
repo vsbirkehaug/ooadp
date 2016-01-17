@@ -5,7 +5,8 @@
  */
 package tabletennisscores;
 
-import data_classes.*;
+import controllers.TableTennisManager;
+import data_models.*;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
@@ -26,7 +27,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     
     private void fillTeamBoxes() {
         Vector teamsVector = new Vector();
-        for(Team t : TableTennisManager.INSTANCE.getTeams()) {          
+        for(Team t : TableTennisManager.INSTANCE.getTeams()) {
             teamsVector.add(t);          
         }
         final DefaultComboBoxModel homeModel = new DefaultComboBoxModel(teamsVector);
