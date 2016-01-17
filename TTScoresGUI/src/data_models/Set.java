@@ -31,7 +31,7 @@ public abstract class Set {
         } else if (team.equals(TeamType.AWAY)) {
             return awayPlayers;
         } else {
-            throw new IllegalArgumentException("Please select a valid team to get players from. (Illegal argument)");
+            throw new IllegalArgumentException("Please select a valid team to getMatchMgr players from. (Illegal argument)");
         }
     }
 

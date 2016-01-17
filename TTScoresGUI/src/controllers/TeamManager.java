@@ -1,33 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
-import data_models.*;
+import data_models.Match;
+import data_models.Player;
+import data_models.Team;
+import data_models.TeamType;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
- *
- * @author VSB
+ * Created by VSB on 17/01/2016.
  */
-public class TableTennisManager {
-
+public class TeamManager {
     private ArrayList<Team> teams;
-    private ArrayList<Match> matches;
-    public static TableTennisManager INSTANCE = new TableTennisManager();
 
-    private TableTennisManager() {
-        intializeLists();
+    private static TeamManager tm;
+
+    private TeamManager() {
+        teams = new ArrayList<>();
         setupTestData();
     }
 
-    private void intializeLists() {
-        teams = new ArrayList<>();
-        matches = new ArrayList<>();
+    public static TeamManager getTeamMgr() {
+        if(tm == null) {
+            tm = new TeamManager();
+        }
+        return tm;
     }
 
     public ArrayList<Player> getPlayers() {
@@ -40,34 +38,10 @@ public class TableTennisManager {
         return players;
     }
 
-    public ArrayList<Match> getMatches() {
-        return this.matches;
-    }
-
     public ArrayList<Team> getTeams() {
         return this.teams;
     }
 
-    private void setupTestData() {
-        Team filtonTeam = new Team("Filton", "Gloucester road");
-        filtonTeam.addPlayer(new Player("alex"));
-        filtonTeam.addPlayer(new Player("brian"));
-        teams.add(filtonTeam);
-        Team uweTeam = new Team("UWE", "Frenchay campus");
-        uweTeam.addPlayer(new Player("jin"));
-        uweTeam.addPlayer(new Player("julia"));
-        teams.add(uweTeam);
-        Team kccTeam = new Team("KCC", "Fortfield road");
-        kccTeam.addPlayer(new Player("Chris"));
-        kccTeam.addPlayer(new Player("Ryan"));
-        teams.add(kccTeam);
-        Team pageTeam = new Team("Page", "Page road");
-        pageTeam.addPlayer(new Player("Peter"));
-        pageTeam.addPlayer(new Player("Phil"));
-        teams.add(pageTeam);
-
- 
-    }
 
     public Player getPlayerWithName(String name) {
         for(Player p : getPlayers()) {
@@ -77,7 +51,6 @@ public class TableTennisManager {
         }
         throw new NullPointerException("Could not find player");
     }
-
 
     private boolean verifyPlayerNames(String teamName, String[] players) {
         if(stringIsEmpty(teamName) ||
@@ -101,7 +74,6 @@ public class TableTennisManager {
         }
         return unverifiedPlayers == 0;
     }
-
     private boolean anyPlayerNamesAreEmpty(String[] players) {
         for(String s : players) {
             if(stringIsEmpty(s)) {
@@ -168,65 +140,6 @@ public class TableTennisManager {
         return null;
     }
 
-    public void addMatch(Match m) {
-        if(m != null) {
-            matches.add(m);
-            for(Set s : m.getSets()) {
-                m.getTeam(TeamType.HOME).addSetsWon(s.getSetPointForTeam(TeamType.HOME));
-                m.getTeam(TeamType.AWAY).addSetsWon(s.getSetPointForTeam(TeamType.AWAY));
-                addSetStatsToPlayers(s);
-            }
-            m.getTeam(TeamType.HOME).addSetsPlayed(m.getSets().size());
-            m.getTeam(TeamType.AWAY).addSetsPlayed(m.getSets().size());
-        }
-
-    }
-
-    private void addSetStatsToPlayers(Set s) {
-
-        for(Player p : s.getAllSetPlayers()) {
-            p.addSetsPlayed(1);
-        }
-
-
-        if(s.getSetPointForTeam(TeamType.HOME) > s.getSetPointForTeam(TeamType.AWAY)) {
-            for(Player p : s.getHomePlayers()) {
-                p.addOneSetWin();
-            }
-        } else if (s.getSetPointForTeam(TeamType.HOME) < s.getSetPointForTeam(TeamType.AWAY)) {
-            for(Player p : s.getAwayPlayers()) {
-                p.addOneSetWin();
-            }
-        } else {
-            throw new IllegalStateException("Set draw - should not occur.");
-        }
-
-    }
-
-    public int getPointsWonByTeam(Team team) {
-        int points = 0;
-        if(matches != null && !matches.isEmpty()) {
-            for(Match m : matches) {
-                if(m.getPointsForTeam(team) >= 0) {
-                    points = points + m.getPointsForTeam(team);
-                }
-            }
-        }
-        return points;
-    }
-
-
-    public boolean matchExistsForThisTeamSetup(String homeTeamName, String awayTeamName) {
-        Team homeTeam = getTeamByName(homeTeamName);
-        Team awayTeam = getTeamByName(awayTeamName);
-
-        for(Match m : getMatches()) {
-            if(m.getTeam(TeamType.HOME).equals(homeTeam) && m.getTeam(TeamType.AWAY).equals(awayTeam)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public void addTeam(Team newTeam) {
         if(newTeam != null) {
@@ -238,9 +151,29 @@ public class TableTennisManager {
         for(Team t : getTeams()) {
             if(t.getName().equalsIgnoreCase(newName)) {
                 return true;
-            } 
+            }
         }
-        
+
         return false;
+    }
+
+
+    private void setupTestData() {
+        Team filtonTeam = new Team("Filton", "Gloucester road");
+        filtonTeam.addPlayer(new Player("alex"));
+        filtonTeam.addPlayer(new Player("brian"));
+        teams.add(filtonTeam);
+        Team uweTeam = new Team("UWE", "Frenchay campus");
+        uweTeam.addPlayer(new Player("jin"));
+        uweTeam.addPlayer(new Player("julia"));
+        teams.add(uweTeam);
+        Team kccTeam = new Team("KCC", "Fortfield road");
+        kccTeam.addPlayer(new Player("Chris"));
+        kccTeam.addPlayer(new Player("Ryan"));
+        teams.add(kccTeam);
+        Team pageTeam = new Team("Page", "Page road");
+        pageTeam.addPlayer(new Player("Peter"));
+        pageTeam.addPlayer(new Player("Phil"));
+        teams.add(pageTeam);
     }
 }

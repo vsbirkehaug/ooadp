@@ -4,7 +4,8 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
+import controllers.MatchManager;
+import controllers.TeamManager;
 import data_models.*;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
      */
     public TTScoreGUI1() {
         initComponents();
-        manager = TableTennisManager.INSTANCE;
         setChangeListeners();
     }
 
@@ -1213,7 +1213,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
 
     public void calculateScoresButton() {
-        if(getScoresFromTextFields()) {
+        if(createMatchFromFields()) {
             if (calculateScores(sets)) {
                 setSubmitScoresButtonEnabled(true);
             } else {
@@ -1223,31 +1223,32 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private Player getHomePlayer1() {
-        return manager.getPlayerWithName(hPlayer1.getText());
+        return teamManager.getPlayerWithName(hPlayer1.getText());
     }
     private Player getHomePlayer2() {
-        return manager.getPlayerWithName(hPlayer2.getText());
+        return teamManager.getPlayerWithName(hPlayer2.getText());
     }
     private Player getAwayPlayer1() {
-        return manager.getPlayerWithName(aPlayer1.getText());
+        return teamManager.getPlayerWithName(aPlayer1.getText());
     }
     private Player getAwayPlayer2() {
-        return manager.getPlayerWithName(aPlayer2.getText());
-    }
-    private Player[] getHomePlayers() {
-        return new Player[]{manager.getPlayerWithName(hdblplayer1.getText()), manager.getPlayerWithName(hdblplayer2.getText())};
-    }
-    private Player[] getAwayPlayers() {
-        return new Player[]{manager.getPlayerWithName(adblplayer1.getText()), manager.getPlayerWithName(adblplayer2.getText())};
+        return teamManager.getPlayerWithName(aPlayer2.getText());
     }
 
-    private boolean getScoresFromTextFields() {
+    private Player[] getHomePlayers() {
+        return new Player[]{teamManager.getPlayerWithName(hdblplayer1.getText()), teamManager.getPlayerWithName(hdblplayer2.getText())};
+    }
+    private Player[] getAwayPlayers() {
+        return new Player[]{teamManager.getPlayerWithName(adblplayer1.getText()), teamManager.getPlayerWithName(adblplayer2.getText())};
+    }
+
+    private boolean createMatchFromFields() {
 
         sets = new ArrayList<>();
         try {
 
-            Team homeTeam = manager.getTeamByName(hTName);
-            Team awayTeam = manager.getTeamByName(aTName);
+            Team homeTeam = teamManager.getTeamByName(hTName);
+            Team awayTeam = teamManager.getTeamByName(aTName);
             match = new Match(homeTeam, awayTeam);
             createSetsFromFields();
             addGamesToSets();
@@ -1348,7 +1349,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }
 
     private void submitScores() {
-        manager.addMatch(match);
+        matchManager.addMatch(match);
     }
 
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
@@ -1380,7 +1381,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     private void checkPlayerNames() {
         getNamesFromTextFields();
-        Boolean isVerified = manager.verifyNames(hTName, hPNamesSingles, hPNamesDoubles, aTName, aPNamesSingles, aPNamesDoubles);
+        Boolean isVerified = teamManager.verifyNames(hTName, hPNamesSingles, hPNamesDoubles, aTName, aPNamesSingles, aPNamesDoubles);
         if(isVerified && !homeAwayCombinationExists(hTName, aTName)) {
             setCalculateScoresButtonEnabled(true);
         } else if (isVerified) {
@@ -1400,7 +1401,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
 
     private boolean homeAwayCombinationExists(String homeTeamName, String awayTeamName) {
-        return manager.matchExistsForThisTeamSetup(homeTeamName, awayTeamName);
+        return matchManager.matchExistsForThisTeamSetup(homeTeamName, awayTeamName);
     }
 
     private void showErrorNamesNotVerified() {
@@ -1526,8 +1527,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     ArrayList<Set> sets;
     Match match;
-    TableTennisManager manager;
-    GUIManager guiManager = new GUIManager();
+    TeamManager teamManager = TeamManager.getTeamMgr();
+    MatchManager matchManager = MatchManager.getMatchMgr();
     ArrayList<JTextField> scoreTextFields = new ArrayList<>();
 
 

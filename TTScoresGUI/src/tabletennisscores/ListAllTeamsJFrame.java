@@ -5,7 +5,8 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
+import controllers.MatchManager;
+import controllers.TeamManager;
 import data_models.Team;
 import java.util.Vector;
 
@@ -25,8 +26,8 @@ public class ListAllTeamsJFrame extends javax.swing.JFrame {
 
     private void fillListWithTeams() {
         Vector teamList = new Vector();
-        for(Team t : TableTennisManager.INSTANCE.getTeams()) {
-            String str = (t.getName() + ": " + TableTennisManager.INSTANCE.getPointsWonByTeam(t) + " points");
+        for(Team t : TeamManager.getTeamMgr().getTeams()) {
+            String str = (t.getName() + ": " + MatchManager.getMatchMgr().getPointsWonByTeam(t) + " points");
             teamList.add(str);
         }
         teamsList.setListData(teamList);

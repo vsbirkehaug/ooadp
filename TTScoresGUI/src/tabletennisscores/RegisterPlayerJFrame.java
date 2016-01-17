@@ -5,7 +5,7 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
+import controllers.TeamManager;
 import data_models.Player;
 import data_models.Team;
 
@@ -32,7 +32,7 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
     
     private boolean addTeamsToComboBox() {
         Boolean teamsAdded = false;
-        ArrayList<Team> teams = TableTennisManager.INSTANCE.getTeamsWithOpenPlayerSlots();
+        ArrayList<Team> teams = TeamManager.getTeamMgr().getTeamsWithOpenPlayerSlots();
         
         if(teams != null && teams.size() > 0) {
             teamsAdded = true;
@@ -165,9 +165,6 @@ public class RegisterPlayerJFrame extends javax.swing.JFrame {
             } else {
                 errorLabel.setText("<html>A player with this name is already registered for this team.</html>");
             }
-            
-            
-            
         }    
     }
     

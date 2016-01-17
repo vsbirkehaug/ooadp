@@ -5,7 +5,7 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
+import controllers.TeamManager;
 import data_models.Player;
 import java.util.Vector;
 
@@ -25,7 +25,7 @@ public class ListAllPlayersJFrame extends javax.swing.JFrame {
     
     private void fillPlayerList() {
         Vector players = new Vector();
-        for(Player p : TableTennisManager.INSTANCE.getPlayers()) {
+        for(Player p : TeamManager.getTeamMgr().getPlayers()) {
             String str = (p.getName() + ", Played: " + p.getSetsPlayed()+ ", wins: " + p.getSetsWon());
             players.add(str);
         }

@@ -5,8 +5,7 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
-import controllers.TeamController;
+import controllers.TeamManager;
 import data_models.Team;
 import java.awt.Color;
 
@@ -105,7 +104,7 @@ public class AddTeamJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
-        TeamController.INSTANCE.addTeam();
+        addTeam();
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void cancelFrameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelFrameButtonActionPerformed
@@ -126,10 +125,10 @@ public class AddTeamJFrame extends javax.swing.JFrame {
             addTeamErrorLabel.setText("<html>Please don't leave any fields empty.</html>");
         } else {
         
-            if(!TableTennisManager.INSTANCE.hasTeamWithName(teamName)) {
+            if(!TeamManager.getTeamMgr().hasTeamWithName(teamName)) {
                 Team newTeam = new Team(teamName, venueName);
                 if(newTeam != null ) {
-                    TableTennisManager.INSTANCE.addTeam(newTeam);
+                    TeamManager.getTeamMgr().addTeam(newTeam);
                 }      
                 closeWindow();
             } else {
@@ -139,7 +138,7 @@ public class AddTeamJFrame extends javax.swing.JFrame {
             
         }
         
-        for(Team t :  TableTennisManager.INSTANCE.getTeams()) {
+        for(Team t :  TeamManager.getTeamMgr().getTeams()) {
             System.out.println(t.toString());
         }
     }

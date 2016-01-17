@@ -31,7 +31,7 @@ public class Game {
         } else if (team.equals(TeamType.AWAY)) {
             return this.awayScore;
         } else {
-            throw new IllegalArgumentException("Please select a team to get score for.");
+            throw new IllegalArgumentException("Please select a team to getMatchMgr score for.");
         }
     }
 

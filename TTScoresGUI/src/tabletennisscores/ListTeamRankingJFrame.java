@@ -5,7 +5,7 @@
  */
 package tabletennisscores;
 
-import controllers.TableTennisManager;
+import controllers.TeamManager;
 import data_models.Team;
 
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ public class ListTeamRankingJFrame extends javax.swing.JFrame {
     
 
     private void fillListWithSortedTeams() { 
-        if(TableTennisManager.INSTANCE.getTeams() != null && !TableTennisManager.INSTANCE.getTeams().isEmpty()) {
-            ArrayList<Team> teams = TableTennisManager.INSTANCE.getTeams();
+        if(TeamManager.getTeamMgr() != null && !TeamManager.getTeamMgr().getTeams().isEmpty()) {
+            ArrayList<Team> teams = TeamManager.getTeamMgr().getTeams();
             Collections.sort(teams, new CustomComparator());
             String[] listData = new String[teams.size()];
             for(int i = 0; i < listData.length; i++) {
@@ -43,7 +43,7 @@ public class ListTeamRankingJFrame extends javax.swing.JFrame {
     public class CustomComparator implements Comparator<Team> {
     @Override
     public int compare(Team o1, Team o2) {
-        //o2 before o1 to get it in descending order
+        //o2 before o1 to getMatchMgr it in descending order
         return Integer.valueOf(o2.getSetsWon()).compareTo(Integer.valueOf(o1.getSetsWon()));
     }
 }
