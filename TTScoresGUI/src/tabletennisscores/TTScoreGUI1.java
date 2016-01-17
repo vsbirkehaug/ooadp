@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -25,12 +23,12 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
      * Creates new form TTScoreGUI1
      */
     public TTScoreGUI1() {
+        guiAction = new GuiActions(this);
         initComponents();
-        setChangeListeners();
+        setupChangeListeners();
     }
 
-
-    private void setChangeListeners() {
+    private void setupChangeListeners() {
 
         ArrayList<JTextField> nameTextFields = new ArrayList<>();
         nameTextFields.addAll(Arrays.asList(
@@ -39,8 +37,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
                 hdblplayer1, hdblplayer2,
                 adblplayer1, adblplayer2));
 
-
-        setNameChangeListener(nameTextFields);
+        guiAction.setNameChangeListener(nameTextFields);
         
         scoreTextFields.addAll(Arrays.asList(
                 set11ahpts, set11aapts, 
@@ -60,54 +57,9 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
                 dch, dca
         ));
 
-        setScoreChangeListener();
+        guiAction.setScoreChangeListener(scoreTextFields);
     }
 
-    private void setNameChangeListener(ArrayList<JTextField> nameTextFields) {
-        for(JTextField tf : nameTextFields) {
-            tf.getDocument().addDocumentListener(new DocumentListener() {
-                public void changedUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void removeUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void insertUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void textChanged() {
-                    doNameTextChanged();
-                }
-            });
-        }
-    }
-
-    private void setScoreChangeListener() {
-        for(JTextField tf : scoreTextFields) {
-            tf.getDocument().addDocumentListener(new DocumentListener() {
-                public void changedUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void removeUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void insertUpdate(DocumentEvent e) {
-                    textChanged();
-                }
-                public void textChanged() {
-                    doScoreTextChanged();
-                }
-            });
-        }
-    }
-    private void doNameTextChanged() {
-        setCalculateScoresButtonEnabled(false);
-        setSubmitScoresButtonEnabled(false);
-    }
-
-    private void doScoreTextChanged() {
-        setSubmitScoresButtonEnabled(false);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1207,221 +1159,43 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void calScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calScoreButtonActionPerformed
-        calculateScoresButton();
-    }//GEN-LAST:event_calScoreButtonActionPerformed
-
-
-    public void calculateScoresButton() {
-        if(createMatchFromFields()) {
-            if (calculateScores(sets)) {
-                setSubmitScoresButtonEnabled(true);
-            } else {
-                setSubmitScoresButtonEnabled(false);
-            }
-        }
+    public String getHomeTeamName() {
+        return hTName;
     }
 
-    private Player getHomePlayer1() {
-        return teamManager.getPlayerWithName(hPlayer1.getText());
-    }
-    private Player getHomePlayer2() {
-        return teamManager.getPlayerWithName(hPlayer2.getText());
-    }
-    private Player getAwayPlayer1() {
-        return teamManager.getPlayerWithName(aPlayer1.getText());
-    }
-    private Player getAwayPlayer2() {
-        return teamManager.getPlayerWithName(aPlayer2.getText());
+    public String getAwayTeamName() {
+        return aTName;
     }
 
-    private Player[] getHomePlayers() {
-        return new Player[]{teamManager.getPlayerWithName(hdblplayer1.getText()), teamManager.getPlayerWithName(hdblplayer2.getText())};
+    protected String getSet11() {
+        return set11.getText();
     }
-    private Player[] getAwayPlayers() {
-        return new Player[]{teamManager.getPlayerWithName(adblplayer1.getText()), teamManager.getPlayerWithName(adblplayer2.getText())};
+    protected String getSet12() {
+        return set12.getText();
     }
-
-    private boolean createMatchFromFields() {
-
-        sets = new ArrayList<>();
-        try {
-
-            Team homeTeam = teamManager.getTeamByName(hTName);
-            Team awayTeam = teamManager.getTeamByName(aTName);
-            match = new Match(homeTeam, awayTeam);
-            createSetsFromFields();
-            addGamesToSets();
-            
-            match.setSets(sets);
-
-        } catch (NumberFormatException nfex) {
-            String errorMessage = "Error reading scores. Please check that only numbers are entered.";
-            doErrorMessage(errorMessage, nfex.getMessage());
-            return false;
-        } catch (IllegalArgumentException iaex) {
-            String errorMessage = "Error verifying scores. Please check that the scores are valid.";
-            doErrorMessage(errorMessage, iaex.getMessage());
-            return false;
-        } catch (Exception ex) {
-            String errorMessage = "Error reading scores. Please check that all values are entered and try again.";
-            doErrorMessage(errorMessage, ex.getMessage());
-            return false;
-        }
-
-        return true;
+    protected String getSet21() {
+        return set21.getText();
+    }
+    protected String getSet22() {
+        return set22.getText();
+    }
+    protected String getSetDbl() {
+        return setDbl.getText();
     }
 
-    private void createSetsFromFields() {
-        sets.add(new SingleSet(set11.getText(), getHomePlayer1(), getAwayPlayer1()));
-        sets.add(new SingleSet(set12.getText(), getHomePlayer1(), getAwayPlayer2()));
-        sets.add(new SingleSet(set21.getText() , getHomePlayer2(), getAwayPlayer1()));
-        sets.add(new SingleSet(set22.getText(), getHomePlayer2(), getAwayPlayer2()));
-        sets.add(new DoubleSet(setDbl.getText(), getHomePlayers(), getAwayPlayers()));
+    protected void showTeamScores(int homeWin1, int homeWin2, int homeWin3, int awayWin1, int awayWin2, int awayWin3) {
+        hWinRow1.setText(String.valueOf(homeWin1));
+        aWinRow1.setText(String.valueOf(awayWin1));
+        hWinRow2.setText(String.valueOf(homeWin2));
+        aWinRow2.setText(String.valueOf(awayWin2));
+        doubleHWin.setText(String.valueOf(homeWin3));
+        doubleAWin.setText(String.valueOf(awayWin3));
 
+        hWinTotal.setText(String.valueOf(homeWin1 + homeWin2 + homeWin3));
+        aWinTotal.setText(String.valueOf(awayWin1 + awayWin2 + awayWin3));
     }
 
-    private void addGamesToSets() {
-        int gamesPerSet = 3;
-        int counter = 0;
-        for(int i = 0; i < sets.size(); i++) {
-            for(int j = 0; j < gamesPerSet; j++) {
-                sets.get(i).addGameToSet(new Game(
-                        Integer.parseInt(scoreTextFields.get(counter).getText()),
-                        Integer.parseInt(scoreTextFields.get(counter+1).getText())));
-                counter = counter+2;
-            }
-        }
-    }
-
-    private boolean calculateScores(ArrayList<Set> sets) {
-        try {
-            int homeWin1 = 0, homeWin2 = 0 ,homeWin3 = 0;
-            int awayWin1 = 0, awayWin2 = 0, awayWin3 = 0;
-            
-
-            homeWin1 = sets.get(0).getSetPointForTeam(TeamType.HOME) + sets.get(1).getSetPointForTeam(TeamType.HOME);
-            awayWin1 = sets.get(0).getSetPointForTeam(TeamType.AWAY) + sets.get(1).getSetPointForTeam(TeamType.AWAY);
-
-            homeWin2 = sets.get(2).getSetPointForTeam(TeamType.HOME) + sets.get(3).getSetPointForTeam(TeamType.HOME);
-            awayWin2 = sets.get(2).getSetPointForTeam(TeamType.AWAY) + sets.get(3).getSetPointForTeam(TeamType.AWAY);
-
-            homeWin3 = sets.get(4).getSetPointForTeam(TeamType.HOME);
-            awayWin3 = sets.get(4).getSetPointForTeam(TeamType.AWAY);
-
-            hWinRow1.setText(String.valueOf(homeWin1));
-            aWinRow1.setText(String.valueOf(awayWin1));
-            hWinRow2.setText(String.valueOf(homeWin2));
-            aWinRow2.setText(String.valueOf(awayWin2));
-            doubleHWin.setText(String.valueOf(homeWin3));
-            doubleAWin.setText(String.valueOf(awayWin3));
-
-            hWinTotal.setText(String.valueOf(homeWin1 + homeWin2 + homeWin3));
-            aWinTotal.setText(String.valueOf(awayWin1 + awayWin2 + awayWin3));
-
-        } catch (IndexOutOfBoundsException ioobex) {
-            String errorMessage = "Error calculating scores. Please try again.";
-            doErrorMessage(errorMessage, ioobex.getMessage());
-            return false;
-        } catch (Exception ex) {
-            String errorMessage = "Error calculating scores. Please try again.";
-            doErrorMessage(errorMessage, ex.getMessage());
-            return false;
-        }
-        return true;
-    }
-
-    private void doErrorMessage(String errorMessage, String exceptionMessage) {
-        showErrorMessage(errorMessage);
-        System.out.println(errorMessage);
-        System.out.println(exceptionMessage);
-    }
-
-    private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
-        submitScores();
-        setSubmitScoresButtonEnabled(false);
-        setCalculateScoresButtonEnabled(false);
-
-    }//GEN-LAST:event_submitScoreButtonActionPerformed
-
-    private void setSubmitScoresButtonEnabled(boolean state) {
-        submitScoreButton.setEnabled(state);
-    }
-
-    private void submitScores() {
-        matchManager.addMatch(match);
-    }
-
-    private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
-        ViewMatchScoreJFrame viewMatchScore = new ViewMatchScoreJFrame();
-        viewMatchScore.setVisible(true);
-    }//GEN-LAST:event_viewMatchButtonActionPerformed
-
-    private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
-        listTeamRankings();
-    }//GEN-LAST:event_teamTankingButtonActionPerformed
-
-    private void listTeamRankings() {
-        ListTeamRankingJFrame listTeamRanking = new ListTeamRankingJFrame();
-        listTeamRanking.setVisible(true);
-    }
-
-    private void allTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allTeamButtonActionPerformed
-        listAllTeams();
-    }//GEN-LAST:event_allTeamButtonActionPerformed
-
-    private void listAllTeams() {
-        ListAllTeamsJFrame listAllTeams = new ListAllTeamsJFrame();
-        listAllTeams.setVisible(true);
-    }
-
-    private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
-        checkPlayerNames();
-    }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
-
-    private void checkPlayerNames() {
-        getNamesFromTextFields();
-        Boolean isVerified = teamManager.verifyNames(hTName, hPNamesSingles, hPNamesDoubles, aTName, aPNamesSingles, aPNamesDoubles);
-        if(isVerified && !homeAwayCombinationExists(hTName, aTName)) {
-            setCalculateScoresButtonEnabled(true);
-        } else if (isVerified) {
-            showErrorTeamHomeAwayComboAlreadyExists();
-        } else {
-            setCalculateScoresButtonEnabled(false);
-            showErrorNamesNotVerified();
-        }
-    }
-
-    private void showErrorTeamHomeAwayComboAlreadyExists() {
-        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
-        //wrapped in HTML to allow for multiline error label.
-        errorMessage.setMessage("<html>Error, these teams have already played a match with that home/away team combination.</html>");
-        errorMessage.setVisible(true);
-    }
-
-
-    private boolean homeAwayCombinationExists(String homeTeamName, String awayTeamName) {
-        return matchManager.matchExistsForThisTeamSetup(homeTeamName, awayTeamName);
-    }
-
-    private void showErrorNamesNotVerified() {
-        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
-        //wrapped in HTML to allow for multiline error label.
-        errorMessage.setMessage("<html>Error, player names could not be verified. Please check your entries and try again.</html>");
-        errorMessage.setVisible(true);
-    }
-
-    private void showErrorMessage(String message) {
-        String msg = "<html>" + message + "</html>";
-        ErrorMessageFrame errorMessage = new ErrorMessageFrame();
-        //wrapped in HTML to allow for multiline error label.
-        errorMessage.setMessage(msg);
-        errorMessage.setVisible(true);
-    }
-
-
-
-    private void getNamesFromTextFields() {
+    protected void getNamesFromTextFields() {
         hTName = hTeamField.getText().trim();
         hPNamesSingles = new String[2];
         hPNamesDoubles = new String[2];
@@ -1439,37 +1213,63 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         aPNamesDoubles[1] = adblplayer2.getText().trim();
     }
 
-    private void setCalculateScoresButtonEnabled(Boolean state) {
+    protected void setSubmitScoresButtonEnabled(boolean state) {
+        submitScoreButton.setEnabled(state);
+    }
+
+    protected void setCalculateScoresButtonEnabled(Boolean state) {
         calScoreButton.setEnabled(state);
     }
 
+
+    //-------------------------------------------------------------------------------------------------
+    //-------------- Action performed ---------------
+
+
+    private void calScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calScoreButtonActionPerformed
+        guiAction.calculateScoresButton(scoreTextFields);
+    }//GEN-LAST:event_calScoreButtonActionPerformed
+
+    private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
+        guiAction.submitScores();
+    }//GEN-LAST:event_submitScoreButtonActionPerformed
+
+    private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
+        guiAction.optionViewMatchScore();
+
+    }//GEN-LAST:event_viewMatchButtonActionPerformed
+
+    private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
+        guiAction.optionListTeamRanking();
+    }//GEN-LAST:event_teamTankingButtonActionPerformed
+
+    private void allTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allTeamButtonActionPerformed
+        guiAction.optionListAllTeams();
+    }//GEN-LAST:event_allTeamButtonActionPerformed
+
+    private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
+        guiAction.checkPlayerNames();
+    }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
+
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
-        openAddTeamFrame();
+        guiAction.optionAddTeam();
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
-    private void openAddTeamFrame() {
-        JFrame addTeam = new AddTeamJFrame();
-        addTeam.setVisible(true);
-    }
-
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
-        JFrame registerPlayer = new RegisterPlayerJFrame();
-        registerPlayer.setVisible(true);
+        guiAction.optionRegisterPlayer();
+
     }//GEN-LAST:event_regPlayerButtonActionPerformed
 
     private void allPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allPlayerButtonActionPerformed
-        listAllPlayers();
+        guiAction.optionListAllPlayers();
     }//GEN-LAST:event_allPlayerButtonActionPerformed
-
-    private void listAllPlayers() {
-        ListAllPlayersJFrame listAllPlayers = new ListAllPlayersJFrame();
-        listAllPlayers.setVisible(true);
-    }
 
 
     private void testScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testScoreButtonActionPerformed
         getTestScores();
     }//GEN-LAST:event_testScoreButtonActionPerformed
+
+
 
     private void getTestScores() {
         if (sc.hasNext()) {
@@ -1524,11 +1324,8 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     String aTName;
     String[] aPNamesSingles;
     String[] aPNamesDoubles;
-
-    ArrayList<Set> sets;
-    Match match;
-    TeamManager teamManager = TeamManager.getTeamMgr();
-    MatchManager matchManager = MatchManager.getMatchMgr();
+    
+    GuiActions guiAction;
     ArrayList<JTextField> scoreTextFields = new ArrayList<>();
 
 
@@ -1644,6 +1441,56 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private javax.swing.JButton teamTankingButton;
     private javax.swing.JButton testScoreButton;
     private javax.swing.JButton viewMatchButton;
+
+    public String getHomePlayer1() {
+        return hPlayer1.getText();
+    }
+
+    public String getHomePlayer2() {
+        return hPlayer2.getText();
+    }
+
+    public String getAwayPlayer1() {
+        return aPlayer1.getText();
+    }
+
+    public String getAwayPlayer2() {
+        return aPlayer2.getText();
+    }
+
+    public String getHDblPlayer1() {
+        return hdblplayer1.getText();
+    }
+
+    public String getHDblPlayer2() {
+        return hdblplayer2.getText();
+    }
+
+    public String getADblPlayer1() {
+        return adblplayer1.getText();
+    }
+
+    public String getADblPlayer2() {
+        return adblplayer2.getText();
+    }
+
+    public String[] getHomeSinglesPlayers() {
+        return hPNamesSingles;
+    }
+
+    public String[] getHomeDoublesPlayers() {
+        return hPNamesDoubles;
+    }
+
+    public String[] getAwaySinglesPlayers() {
+        return aPNamesSingles;
+    }
+
+    public String[] getAwayDoublesPlayers() {
+        return aPNamesDoubles;
+    }
+
+
     // End of variables declaration//GEN-END:variables
 
 
