@@ -1,8 +1,9 @@
-package tabletennisscores;
+package controllers;
 
 import controllers.MatchManager;
 import controllers.TeamManager;
 import data_models.*;
+import tabletennisscores.*;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 /**
  * Created by VSB on 17/01/2016.
  */
-public class GuiActions {
+public class GuiScoreManager {
 
     TTScoreGUI1 gui;
     ArrayList<Set> sets;
@@ -20,7 +21,7 @@ public class GuiActions {
     TeamManager teamManager = TeamManager.getTeamMgr();
     MatchManager matchManager = MatchManager.getMatchMgr();
 
-    public GuiActions(TTScoreGUI1 gui) {
+    public GuiScoreManager(TTScoreGUI1 gui) {
         this.gui = gui;
     }
 
@@ -36,7 +37,6 @@ public class GuiActions {
     protected Player getAwayPlayer2() {
         return teamManager.getPlayerWithName(gui.getAwayPlayer2());
     }
-
     protected Player[] getHomePlayers() {
         return new Player[]{teamManager.getPlayerWithName(gui.getHDblPlayer1()), teamManager.getPlayerWithName(gui.getHDblPlayer2())};
     }
@@ -90,7 +90,7 @@ public class GuiActions {
         System.out.println(exceptionMessage);
     }
 
-    protected void submitScores() {
+    public void submitScores() {
         matchManager.addMatch(match);
 
         gui.setSubmitScoresButtonEnabled(false);
@@ -159,22 +159,9 @@ public class GuiActions {
         return true;
     }
 
-    public void optionViewMatchScore() {
-        ViewMatchScoreJFrame viewMatchScore = new ViewMatchScoreJFrame();
-        viewMatchScore.setVisible(true);
-    }
 
-    public void optionListTeamRanking() {
-        ListTeamRankingJFrame listTeamRanking = new ListTeamRankingJFrame();
-        listTeamRanking.setVisible(true);
-    }
 
-    public void optionListAllTeams() {
-        ListAllTeamsJFrame listAllTeams = new ListAllTeamsJFrame();
-        listAllTeams.setVisible(true);
-    }
-
-    protected void checkPlayerNames() {
+    public void checkPlayerNames() {
         gui.getNamesFromTextFields();
         Boolean isVerified = teamManager.verifyNames(
                 gui.getHomeTeamName(), gui.getHomeSinglesPlayers(), gui.getHomeDoublesPlayers(),
@@ -209,20 +196,7 @@ public class GuiActions {
         errorMessage.setVisible(true);
     }
 
-    public void optionAddTeam() {
-        JFrame addTeam = new AddTeamJFrame();
-        addTeam.setVisible(true);
-    }
 
-    public void optionRegisterPlayer() {
-        JFrame registerPlayer = new RegisterPlayerJFrame();
-        registerPlayer.setVisible(true);
-    }
-
-    public void optionListAllPlayers() {
-        ListAllPlayersJFrame listAllPlayers = new ListAllPlayersJFrame();
-        listAllPlayers.setVisible(true);
-    }
 
     protected void doNameTextChanged() {
         gui.setCalculateScoresButtonEnabled(false);
@@ -233,7 +207,7 @@ public class GuiActions {
         gui.setSubmitScoresButtonEnabled(false);
     }
 
-    protected void setNameChangeListener(ArrayList<JTextField> nameTextFields) {
+    public void setNameChangeListener(ArrayList<JTextField> nameTextFields) {
         for(JTextField tf : nameTextFields) {
             tf.getDocument().addDocumentListener(new DocumentListener() {
                 public void changedUpdate(DocumentEvent e) {
@@ -252,7 +226,7 @@ public class GuiActions {
         }
     }
 
-    protected void setScoreChangeListener(ArrayList<JTextField> scoreTextFields) {
+    public void setScoreChangeListener(ArrayList<JTextField> scoreTextFields) {
         for(JTextField tf : scoreTextFields) {
             tf.getDocument().addDocumentListener(new DocumentListener() {
                 public void changedUpdate(DocumentEvent e) {
