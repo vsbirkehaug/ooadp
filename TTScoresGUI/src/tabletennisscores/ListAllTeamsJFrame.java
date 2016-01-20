@@ -27,7 +27,7 @@ public class ListAllTeamsJFrame extends javax.swing.JFrame {
     private void fillListWithTeams() {
         Vector teamList = new Vector();
         for(Team t : TeamManager.getTeamMgr().getTeams()) {
-            String str = (t.getName() + ": " + MatchManager.getMatchMgr().getPointsWonByTeam(t) + " points");
+            String str = (t.getName() + ": " + MatchManager.getMatchMgr().getTotalSeasonPointsWonByTeam(t) + " points");
             teamList.add(str);
         }
         teamsList.setListData(teamList);

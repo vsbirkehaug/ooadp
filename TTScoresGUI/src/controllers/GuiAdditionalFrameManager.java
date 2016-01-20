@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * Created by VSB on 17/01/2016.
  */
-public class GuiOptionsManager {
+public class GuiAdditionalFrameManager {
 
 
     public void optionAddTeam() {

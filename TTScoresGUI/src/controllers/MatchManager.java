@@ -22,15 +22,12 @@ public class MatchManager {
         return mm;
     }
 
-
     public ArrayList<Match> getMatches() {
         return this.matches;
     }
 
-
-    public void addMatch(Match m) {
+    public void addMatchToList(Match m) {
         if(m != null) {
-            matches.add(m);
             for(Set s : m.getSets()) {
                 m.getTeam(TeamType.HOME).addSetsWon(s.getSetPointForTeam(TeamType.HOME));
                 m.getTeam(TeamType.AWAY).addSetsWon(s.getSetPointForTeam(TeamType.AWAY));
@@ -38,6 +35,10 @@ public class MatchManager {
             }
             m.getTeam(TeamType.HOME).addSetsPlayed(m.getSets().size());
             m.getTeam(TeamType.AWAY).addSetsPlayed(m.getSets().size());
+
+            matches.add(m);
+        } else {
+            throw new IllegalArgumentException("The match you tried add to the collection was empty.");
         }
     }
 
@@ -58,10 +59,10 @@ public class MatchManager {
         } else {
             throw new IllegalStateException("Set draw - should not occur.");
         }
-
     }
 
-    public int getPointsWonByTeam(Team team) {
+
+    public int getTotalSeasonPointsWonByTeam(Team team) {
         int points = 0;
         if(matches != null && !matches.isEmpty()) {
             for(Match m : matches) {
@@ -73,6 +74,8 @@ public class MatchManager {
         return points;
     }
 
+
+    //Each team can only play another team once home and once away
     public boolean matchExistsForThisTeamSetup(String homeTeamName, String awayTeamName) {
         Team homeTeam = TeamManager.getTeamMgr().getTeamByName(homeTeamName);
         Team awayTeam = TeamManager.getTeamMgr().getTeamByName(awayTeamName);

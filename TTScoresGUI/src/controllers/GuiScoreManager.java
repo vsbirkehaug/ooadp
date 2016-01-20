@@ -1,7 +1,5 @@
 package controllers;
 
-import controllers.MatchManager;
-import controllers.TeamManager;
 import data_models.*;
 import tabletennisscores.*;
 
@@ -61,7 +59,9 @@ public class GuiScoreManager {
 
             Team homeTeam = teamManager.getTeamByName(gui.getHomeTeamName());
             Team awayTeam = teamManager.getTeamByName(gui.getAwayTeamName());
+
             match = new Match(homeTeam, awayTeam);
+
             createSetsFromFields();
             addGamesToSets(scoreTextFields);
 
@@ -91,7 +91,7 @@ public class GuiScoreManager {
     }
 
     public void submitScores() {
-        matchManager.addMatch(match);
+        matchManager.addMatchToList(match);
 
         gui.setSubmitScoresButtonEnabled(false);
         gui.setCalculateScoresButtonEnabled(false);
@@ -134,7 +134,6 @@ public class GuiScoreManager {
             int homeWin1 = 0, homeWin2 = 0 ,homeWin3 = 0;
             int awayWin1 = 0, awayWin2 = 0, awayWin3 = 0;
 
-
             homeWin1 = sets.get(0).getSetPointForTeam(TeamType.HOME) + sets.get(1).getSetPointForTeam(TeamType.HOME);
             awayWin1 = sets.get(0).getSetPointForTeam(TeamType.AWAY) + sets.get(1).getSetPointForTeam(TeamType.AWAY);
 
@@ -146,13 +145,12 @@ public class GuiScoreManager {
 
             gui.showTeamScores(homeWin1, homeWin2, homeWin3, awayWin1, awayWin2, awayWin3);
 
-
         } catch (IndexOutOfBoundsException ioobex) {
-            String errorMessage = "Error calculating scores. Please try again.";
+            String errorMessage = "Error calculating scores. Please restart and try again.";
             doErrorMessage(errorMessage, ioobex.getMessage());
             return false;
         } catch (Exception ex) {
-            String errorMessage = "Error calculating scores. Please try again.";
+            String errorMessage = "Error calculating scores. Please restart and try again.";
             doErrorMessage(errorMessage, ex.getMessage());
             return false;
         }
@@ -162,7 +160,7 @@ public class GuiScoreManager {
 
 
     public void checkPlayerNames() {
-        gui.getNamesFromTextFields();
+        gui.updateNamesFromTextFields();
         Boolean isVerified = teamManager.verifyNames(
                 gui.getHomeTeamName(), gui.getHomeSinglesPlayers(), gui.getHomeDoublesPlayers(),
                 gui.getAwayTeamName(), gui.getAwaySinglesPlayers(), gui.getAwayDoublesPlayers());

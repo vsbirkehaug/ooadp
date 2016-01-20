@@ -5,7 +5,7 @@
 package tabletennisscores;
 
 import controllers.GuiScoreManager;
-import controllers.GuiOptionsManager;
+import controllers.GuiAdditionalFrameManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,48 +17,6 @@ import javax.swing.*;
  * @author jin
  */
 public class TTScoreGUI1 extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TTScoreGUI1
-     */
-    public TTScoreGUI1() {
-        guiScoreManager = new GuiScoreManager(this);
-        guiOptionsManager = new GuiOptionsManager();
-        initComponents();
-        setupChangeListeners();
-    }
-
-    private void setupChangeListeners() {
-
-        ArrayList<JTextField> nameTextFields = new ArrayList<>();
-        nameTextFields.addAll(Arrays.asList(
-                hPlayer1, hPlayer2, hTeamField,
-                aPlayer1, aPlayer2, aTeamField,
-                hdblplayer1, hdblplayer2,
-                adblplayer1, adblplayer2));
-
-        guiScoreManager.setNameChangeListener(nameTextFields);
-        
-        scoreTextFields.addAll(Arrays.asList(
-                set11ahpts, set11aapts, 
-                set11bhpts, set11bapts,
-                set11chpts, set11capts,
-                set12ahpts, set12aapts,
-                set12bhpts, set12bapts, 
-                set12chpts, set12capts,
-                set21ahpts, set21aapts, 
-                set21bhpts, set21bapts, 
-                set21chpts, set21capts,
-                set22ahpts, set22aapts, 
-                set22bhpts, set22bapts, 
-                set22chpts, set22capts,
-                dah, daa, 
-                dbh, dba, 
-                dch, dca
-        ));
-
-        guiScoreManager.setScoreChangeListener(scoreTextFields);
-    }
 
 
     /**
@@ -1159,34 +1117,69 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Creates new form TTScoreGUI1
+     */
+    public TTScoreGUI1() {
+        guiScoreManager = new GuiScoreManager(this);
+        guiAdditionalFrameManager = new GuiAdditionalFrameManager();
+        initComponents();
+        setupChangeListeners();
+    }
+
+    private void setupChangeListeners() {
+
+        ArrayList<JTextField> nameTextFields = new ArrayList<>();
+        nameTextFields.addAll(Arrays.asList(
+                hPlayer1, hPlayer2, hTeamField,
+                aPlayer1, aPlayer2, aTeamField,
+                hdblplayer1, hdblplayer2,
+                adblplayer1, adblplayer2));
+
+        guiScoreManager.setNameChangeListener(nameTextFields);
+
+        scoreTextFields.addAll(Arrays.asList(
+                set11ahpts, set11aapts,
+                set11bhpts, set11bapts,
+                set11chpts, set11capts,
+                set12ahpts, set12aapts,
+                set12bhpts, set12bapts,
+                set12chpts, set12capts,
+                set21ahpts, set21aapts,
+                set21bhpts, set21bapts,
+                set21chpts, set21capts,
+                set22ahpts, set22aapts,
+                set22bhpts, set22bapts,
+                set22chpts, set22capts,
+                dah, daa,
+                dbh, dba,
+                dch, dca
+        ));
+
+        guiScoreManager.setScoreChangeListener(scoreTextFields);
+    }
+
     public String getHomePlayer1() {
         return hPlayer1.getText();
     }
-
     public String getHomePlayer2() {
         return hPlayer2.getText();
     }
-
     public String getAwayPlayer1() {
         return aPlayer1.getText();
     }
-
     public String getAwayPlayer2() {
         return aPlayer2.getText();
     }
-
     public String getHDblPlayer1() {
         return hdblplayer1.getText();
     }
-
     public String getHDblPlayer2() {
         return hdblplayer2.getText();
     }
-
     public String getADblPlayer1() {
         return adblplayer1.getText();
     }
-
     public String getADblPlayer2() {
         return adblplayer2.getText();
     }
@@ -1194,15 +1187,12 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     public String[] getHomeSinglesPlayers() {
         return hPNamesSingles;
     }
-
     public String[] getHomeDoublesPlayers() {
         return hPNamesDoubles;
     }
-
     public String[] getAwaySinglesPlayers() {
         return aPNamesSingles;
     }
-
     public String[] getAwayDoublesPlayers() {
         return aPNamesDoubles;
     }
@@ -1210,7 +1200,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     public String getHomeTeamName() {
         return hTName;
     }
-
     public String getAwayTeamName() {
         return aTName;
     }
@@ -1243,7 +1232,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         aWinTotal.setText(String.valueOf(awayWin1 + awayWin2 + awayWin3));
     }
 
-    public void getNamesFromTextFields() {
+    public void updateNamesFromTextFields() {
         hTName = hTeamField.getText().trim();
         hPNamesSingles = new String[2];
         hPNamesDoubles = new String[2];
@@ -1274,29 +1263,29 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     //-------------- Action performed ---------------
 
     private void viewMatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchButtonActionPerformed
-        guiOptionsManager.optionViewMatchScore();
+        guiAdditionalFrameManager.optionViewMatchScore();
 
     }//GEN-LAST:event_viewMatchButtonActionPerformed
 
     private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
-        guiOptionsManager.optionListTeamRanking();
+        guiAdditionalFrameManager.optionListTeamRanking();
     }//GEN-LAST:event_teamTankingButtonActionPerformed
 
     private void allTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allTeamButtonActionPerformed
-        guiOptionsManager.optionListAllTeams();
+        guiAdditionalFrameManager.optionListAllTeams();
     }//GEN-LAST:event_allTeamButtonActionPerformed
 
     private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamButtonActionPerformed
-        guiOptionsManager.optionAddTeam();
+        guiAdditionalFrameManager.optionAddTeam();
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void regPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regPlayerButtonActionPerformed
-        guiOptionsManager.optionRegisterPlayer();
+        guiAdditionalFrameManager.optionRegisterPlayer();
 
     }//GEN-LAST:event_regPlayerButtonActionPerformed
 
     private void allPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allPlayerButtonActionPerformed
-        guiOptionsManager.optionListAllPlayers();
+        guiAdditionalFrameManager.optionListAllPlayers();
     }//GEN-LAST:event_allPlayerButtonActionPerformed
 
     private void checkPlayerNamesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPlayerNamesButtonActionPerformed
@@ -1372,7 +1361,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     String[] aPNamesDoubles;
     
     GuiScoreManager guiScoreManager;
-    GuiOptionsManager guiOptionsManager;
+    GuiAdditionalFrameManager guiAdditionalFrameManager;
     ArrayList<JTextField> scoreTextFields = new ArrayList<>();
 
 
