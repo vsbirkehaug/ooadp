@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data_classes;
+package data_models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +31,7 @@ public abstract class Set {
         } else if (team.equals(TeamType.AWAY)) {
             return awayPlayers;
         } else {
-            throw new IllegalArgumentException("Please select a valid team to get players from. (Illegal argument)");
+            throw new IllegalArgumentException("Please select a valid team to getMatchMgr players from. (Illegal argument)");
         }
     }
 

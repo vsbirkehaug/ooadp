@@ -5,7 +5,9 @@
  */
 package tabletennisscores;
 
-import data_classes.*;
+import controllers.MatchManager;
+import controllers.TeamManager;
+import data_models.*;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
@@ -26,7 +28,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     
     private void fillTeamBoxes() {
         Vector teamsVector = new Vector();
-        for(Team t : TableTennisManager.INSTANCE.getTeams()) {          
+        for(Team t : TeamManager.getTeamMgr().getTeams()) {
             teamsVector.add(t);          
         }
         final DefaultComboBoxModel homeModel = new DefaultComboBoxModel(teamsVector);
@@ -40,7 +42,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
     }
     
     private void getMatch() {
-        for(Match m : TableTennisManager.INSTANCE.getMatches()) {
+        for(Match m : MatchManager.getMatchMgr().getMatches()) {
             if(m.getTeam(TeamType.HOME).equals(homeTeamComboBox.getSelectedItem())
                     && m.getTeam(TeamType.AWAY).equals(awayTeamComboBox.getSelectedItem())) {
                 //showMatchDetails(m);
@@ -88,7 +90,7 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
 //        
 //        setList.setSelectedIndex(0);
 //        
-//        setGameList(m.getSets().get(setList.getSelectedIndex()));
+//        setGameList(m.getSets().getMatchMgr(setList.getSelectedIndex()));
 //
 //    }
 //    
