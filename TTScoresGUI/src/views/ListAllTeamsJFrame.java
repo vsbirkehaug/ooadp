@@ -3,27 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tabletennisscores;
+package views;
+
+import controllers.MatchManager;
+import controllers.TeamManager;
+import models.Team;
+import java.util.Vector;
 
 /**
  *
- * @author VSB
+ * @author Vilde
  */
-public class ErrorMessageFrame extends javax.swing.JFrame {
+public class ListAllTeamsJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form ErrorMessageFrame
+     * Creates new form ListAllTeams
      */
-    public ErrorMessageFrame() {
+    public ListAllTeamsJFrame() {
         initComponents();
-    }
-  
-    public void setMessage(String message) {
-        if(message != null) {
-            errorMsgLabel.setText(message);
-        }
+        fillListWithTeams();
     }
 
+    private void fillListWithTeams() {
+        Vector teamList = new Vector();
+        for(Team t : TeamManager.getTeamMgr().getTeams()) {
+            String str = (t.getName() + ": " + MatchManager.getMatchMgr().getTotalSeasonPointsWonByTeam(t) + " points");
+            teamList.add(str);
+        }
+        teamsList.setListData(teamList);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,51 +43,37 @@ public class ErrorMessageFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        errorMsgLabel = new javax.swing.JLabel();
-        okButton = new javax.swing.JButton();
+        teamsScrollPane = new javax.swing.JScrollPane();
+        teamsList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Error!");
 
-        errorMsgLabel.setForeground(java.awt.Color.red);
-        errorMsgLabel.setText("Error!");
-
-        okButton.setText("OK");
-        okButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
-            }
+        teamsList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
+        teamsScrollPane.setViewportView(teamsList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(okButton)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(errorMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(teamsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(errorMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(okButton)
-                .addContainerGap())
+                .addGap(30, 30, 30)
+                .addComponent(teamsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_okButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,26 +92,27 @@ public class ErrorMessageFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ErrorMessageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ErrorMessageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ErrorMessageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ErrorMessageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListAllTeamsJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ErrorMessageFrame().setVisible(true);
+                new ListAllTeamsJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel errorMsgLabel;
-    private javax.swing.JButton okButton;
+    private javax.swing.JList<String> teamsList;
+    private javax.swing.JScrollPane teamsScrollPane;
     // End of variables declaration//GEN-END:variables
 }

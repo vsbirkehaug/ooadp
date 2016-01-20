@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/TTScoreGUI1.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/GUIManager.java</file>
+            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/views/TTScoreGUI1.java</file>
+            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/views/GUIManager.java</file>
             <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Team.java</file>
             <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Match.java</file>
             <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Game.java</file>
-            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/tabletennisscores/TableTennisManager.java</file>
+            <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/views/TableTennisManager.java</file>
             <file>file:/C:/Users/Vilde/Desktop/ooadp/TTScoresGUI/src/data_classes/Set.java</file>
         </group>
     </open-files>

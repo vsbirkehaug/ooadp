@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tabletennisscores;
+package views;
 
 import controllers.TeamManager;
-import data_models.Player;
-import data_models.Team;
+import models.Player;
+import models.Team;
 
 import java.util.ArrayList;
 import java.util.Vector;

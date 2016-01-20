@@ -1,7 +1,7 @@
 package controllers;
 
-import data_models.*;
-import tabletennisscores.*;
+import models.*;
+import views.*;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

@@ -1,6 +1,6 @@
 package controllers;
 
-import data_models.*;
+import models.*;
 
 import java.util.ArrayList;
 
@@ -27,37 +27,44 @@ public class MatchManager {
     }
 
     public void addMatchToList(Match m) {
-        if(m != null) {
-            for(Set s : m.getSets()) {
-                m.getTeam(TeamType.HOME).addSetsWon(s.getSetPointForTeam(TeamType.HOME));
-                m.getTeam(TeamType.AWAY).addSetsWon(s.getSetPointForTeam(TeamType.AWAY));
-                addSetStatsToPlayers(s);
-            }
-            m.getTeam(TeamType.HOME).addSetsPlayed(m.getSets().size());
-            m.getTeam(TeamType.AWAY).addSetsPlayed(m.getSets().size());
+        try {
+            if (m != null) {
+                for (Set s : m.getSets()) {
+                    m.getTeam(TeamType.HOME).addSetsWon(s.getSetPointForTeam(TeamType.HOME));
+                    m.getTeam(TeamType.AWAY).addSetsWon(s.getSetPointForTeam(TeamType.AWAY));
+                    addSetStatsToPlayers(s);
+                }
+                m.getTeam(TeamType.HOME).addSetsPlayed(m.getSets().size());
+                m.getTeam(TeamType.AWAY).addSetsPlayed(m.getSets().size());
 
-            matches.add(m);
-        } else {
-            throw new IllegalArgumentException("The match you tried add to the collection was empty.");
+                matches.add(m);
+            } else {
+                throw new IllegalArgumentException("The match you tried add to the collection was null.");
+            }
+        } catch(Exception ex) {
+            System.out.println("Error adding match to list.");
         }
     }
 
     private void addSetStatsToPlayers(Set s) {
-
-        for(Player p : s.getAllSetPlayers()) {
-            p.addSetsPlayed(1);
-        }
-
-        if(s.getSetPointForTeam(TeamType.HOME) > s.getSetPointForTeam(TeamType.AWAY)) {
-            for(Player p : s.getHomePlayers()) {
-                p.addOneSetWin();
+        try {
+            for (Player p : s.getAllSetPlayers()) {
+                p.addSetsPlayed(1);
             }
-        } else if (s.getSetPointForTeam(TeamType.HOME) < s.getSetPointForTeam(TeamType.AWAY)) {
-            for(Player p : s.getAwayPlayers()) {
-                p.addOneSetWin();
+
+            if (s.getSetPointForTeam(TeamType.HOME) > s.getSetPointForTeam(TeamType.AWAY)) {
+                for (Player p : s.getHomePlayers()) {
+                    p.addOneSetWin();
+                }
+            } else if (s.getSetPointForTeam(TeamType.HOME) < s.getSetPointForTeam(TeamType.AWAY)) {
+                for (Player p : s.getAwayPlayers()) {
+                    p.addOneSetWin();
+                }
+            } else {
+                throw new IllegalStateException("Set draw - should not occur.");
             }
-        } else {
-            throw new IllegalStateException("Set draw - should not occur.");
+        } catch (Exception ex) {
+            System.out.println("Error adding set stats to player records.");
         }
     }
 

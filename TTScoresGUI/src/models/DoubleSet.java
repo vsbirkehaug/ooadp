@@ -1,4 +1,4 @@
-package data_models;
+package models;
 
 /**
  * Created by VSB on 17/11/2015.

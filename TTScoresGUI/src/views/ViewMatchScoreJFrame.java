@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tabletennisscores;
+package views;
 
 import controllers.MatchManager;
 import controllers.TeamManager;
-import data_models.*;
+import models.*;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;

@@ -1,6 +1,6 @@
 package controllers;
 
-import tabletennisscores.*;
+import views.*;
 
 import javax.swing.*;
 

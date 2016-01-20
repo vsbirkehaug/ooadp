@@ -1,9 +1,7 @@
 package controllers;
 
-import data_models.Match;
-import data_models.Player;
-import data_models.Team;
-import data_models.TeamType;
+import models.Player;
+import models.Team;
 
 import java.util.ArrayList;
 import java.util.HashSet;
