@@ -58,9 +58,7 @@ public class Match {
             for(Set s : sets) {
                 points += s.getSetPointForTeam(TeamType.AWAY);
             }
-        } else {
-            throw new IllegalArgumentException("The selected team did not play this match.");
-        }
+        } 
 
         return points;
     }
