@@ -10,6 +10,7 @@ import java.util.HashSet;
  * Created by VSB on 17/01/2016.
  */
 public class TeamManager {
+
     private ArrayList<Team> teams;
 
     private static TeamManager tm;
@@ -20,7 +21,7 @@ public class TeamManager {
     }
 
     public static TeamManager getTeamMgr() {
-        if(tm == null) {
+        if (tm == null) {
             tm = new TeamManager();
         }
         return tm;
@@ -28,8 +29,8 @@ public class TeamManager {
 
     public ArrayList<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<>();
-        for(Team t : teams) {
-            for(Player p : t.getPlayers()) {
+        for (Team t : teams) {
+            for (Player p : t.getPlayers()) {
                 players.add(p);
             }
         }
@@ -40,10 +41,9 @@ public class TeamManager {
         return this.teams;
     }
 
-
     public Player getPlayerWithName(String name) {
-        for(Player p : getPlayers()) {
-            if(p.getName().toLowerCase().equals(name.trim().toLowerCase())) {
+        for (Player p : getPlayers()) {
+            if (p.getName().toLowerCase().equals(name.trim().toLowerCase())) {
                 return p;
             }
         }
@@ -51,9 +51,9 @@ public class TeamManager {
     }
 
     private boolean verifyPlayerNames(String teamName, String[] players) {
-        if(stringIsEmpty(teamName) ||
-                anyPlayerNamesAreEmpty(players) ||
-                anyPlayerNamesAreIdentical(players)) {
+        if (stringIsEmpty(teamName)
+                || anyPlayerNamesAreEmpty(players)
+                || anyPlayerNamesAreIdentical(players)) {
 
             return false;
         }
@@ -61,20 +61,21 @@ public class TeamManager {
         //to keep track of the verified players
         int unverifiedPlayers = players.length;
 
-        for(Team t : teams) {
-            if(t.getName().equalsIgnoreCase(teamName)) {
-                for(String s : players) {
-                    if(t.hasPlayerWithThisName(s)) {
-                        unverifiedPlayers = unverifiedPlayers-1;
+        for (Team t : teams) {
+            if (t.getName().equalsIgnoreCase(teamName)) {
+                for (String s : players) {
+                    if (t.hasPlayerWithThisName(s)) {
+                        unverifiedPlayers = unverifiedPlayers - 1;
                     }
                 }
             }
         }
         return unverifiedPlayers == 0;
     }
+
     private boolean anyPlayerNamesAreEmpty(String[] players) {
-        for(String s : players) {
-            if(stringIsEmpty(s)) {
+        for (String s : players) {
+            if (stringIsEmpty(s)) {
                 return true;
             }
         }
@@ -83,15 +84,13 @@ public class TeamManager {
 
     private boolean anyPlayerNamesAreIdentical(String[] players) {
         HashSet tempHashSet = new HashSet();
-        for(String s : players) {
-            if(!tempHashSet.add(s)) {
+        for (String s : players) {
+            if (!tempHashSet.add(s)) {
                 return true;
             }
         }
         return false;
     }
-
-
 
     boolean stringIsEmpty(String str) {
         return !(str != null && str.length() > 0);
@@ -100,8 +99,8 @@ public class TeamManager {
     public ArrayList<Team> getTeamsWithOpenPlayerSlots() {
         ArrayList<Team> availableTeams = new ArrayList<>();
 
-        for(Team t : teams) {
-            if(t.hasRoomForMorePlayers()) {
+        for (Team t : teams) {
+            if (t.hasRoomForMorePlayers()) {
                 availableTeams.add(t);
             }
         }
@@ -109,15 +108,13 @@ public class TeamManager {
         return availableTeams;
     }
 
-
     public Boolean verifyNames(String hTeamName, String[] hSinglesPlayers, String[] hDoublesPlayers,
-                               String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
+            String aTeamName, String[] aSinglesPlayers, String[] aDoublesPlayers) {
 
-        if(verifyPlayerNames(hTeamName, hSinglesPlayers)
+        if (verifyPlayerNames(hTeamName, hSinglesPlayers)
                 && verifyPlayerNames(hTeamName, hDoublesPlayers)
                 && verifyPlayerNames(aTeamName, aSinglesPlayers)
-                && verifyPlayerNames(aTeamName, aDoublesPlayers)
-                ) {
+                && verifyPlayerNames(aTeamName, aDoublesPlayers)) {
             //System.out.println("" +verifyPlayerNames(hTeamName, hSinglesPlayers) );
             //System.out.println("" +verifyPlayerNames(aTeamName, aSinglesPlayers) );
 
@@ -128,9 +125,9 @@ public class TeamManager {
     }
 
     public Team getTeamByName(String teamName) {
-        if(teams != null && !teams.isEmpty()) {
-            for(Team t : teams) {
-                if(t.getName().equalsIgnoreCase(teamName.trim())){
+        if (teams != null && !teams.isEmpty()) {
+            for (Team t : teams) {
+                if (t.getName().equalsIgnoreCase(teamName.trim())) {
                     return t;
                 }
             }
@@ -138,23 +135,21 @@ public class TeamManager {
         return null;
     }
 
-
     public void addTeam(Team newTeam) {
-        if(newTeam != null) {
+        if (newTeam != null) {
             teams.add(newTeam);
         }
     }
 
     public boolean hasTeamWithName(String newName) {
-        for(Team t : getTeams()) {
-            if(t.getName().equalsIgnoreCase(newName)) {
+        for (Team t : getTeams()) {
+            if (t.getName().equalsIgnoreCase(newName)) {
                 return true;
             }
         }
 
         return false;
     }
-
 
     private void setupTestData() {
         Team filtonTeam = new Team("Filton", "Gloucester road");

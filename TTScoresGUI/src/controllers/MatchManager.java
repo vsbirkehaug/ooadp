@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * Created by VSB on 17/01/2016.
  */
 public class MatchManager {
+
     private ArrayList<Match> matches;
     private static MatchManager mm;
 
@@ -16,7 +17,7 @@ public class MatchManager {
     }
 
     public static MatchManager getMatchMgr() {
-        if(mm == null) {
+        if (mm == null) {
             mm = new MatchManager();
         }
         return mm;
@@ -41,7 +42,7 @@ public class MatchManager {
             } else {
                 throw new IllegalArgumentException("The match you tried add to the collection was null.");
             }
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             System.out.println("Error adding match to list.");
         }
     }
@@ -68,12 +69,11 @@ public class MatchManager {
         }
     }
 
-
     public int getTotalSeasonPointsWonByTeam(Team team) {
         int points = 0;
-        if(matches != null && !matches.isEmpty()) {
-            for(Match m : matches) {
-                if(m.getPointsForTeam(team) >= 0) {
+        if (matches != null && !matches.isEmpty()) {
+            for (Match m : matches) {
+                if (m.getPointsForTeam(team) >= 0) {
                     points = points + m.getPointsForTeam(team);
                 }
             }
@@ -81,14 +81,13 @@ public class MatchManager {
         return points;
     }
 
-
     //Each team can only play another team once home and once away
     public boolean matchExistsForThisTeamSetup(String homeTeamName, String awayTeamName) {
         Team homeTeam = TeamManager.getTeamMgr().getTeamByName(homeTeamName);
         Team awayTeam = TeamManager.getTeamMgr().getTeamByName(awayTeamName);
 
-        for(Match m : getMatches()) {
-            if(m.getTeam(TeamType.HOME).equals(homeTeam) && m.getTeam(TeamType.AWAY).equals(awayTeam)) {
+        for (Match m : getMatches()) {
+            if (m.getTeam(TeamType.HOME).equals(homeTeam) && m.getTeam(TeamType.AWAY).equals(awayTeam)) {
                 return true;
             }
         }

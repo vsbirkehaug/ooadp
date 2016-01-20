@@ -9,7 +9,6 @@ import javax.swing.*;
  */
 public class GuiAdditionalFrameManager {
 
-
     public void optionAddTeam() {
         JFrame addTeam = new AddTeamJFrame();
         addTeam.setVisible(true);

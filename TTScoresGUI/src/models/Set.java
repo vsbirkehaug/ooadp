@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 import java.util.ArrayList;
@@ -13,6 +8,7 @@ import java.util.Arrays;
  * @author VSB
  */
 public abstract class Set {
+
     public final int MAX_NUMBER_OF_GAMES = 3;
     protected ArrayList<Game> games;
     protected String setIdentifier;
@@ -26,7 +22,7 @@ public abstract class Set {
     }
 
     public Player[] getPlayers(TeamType team) {
-        if(team.equals(TeamType.HOME)) {
+        if (team.equals(TeamType.HOME)) {
             return homePlayers;
         } else if (team.equals(TeamType.AWAY)) {
             return awayPlayers;
@@ -41,24 +37,24 @@ public abstract class Set {
 
     public String getHomePlayerString() {
         String str = "";
-        for(Player p : homePlayers) {
+        for (Player p : homePlayers) {
             str += p.getName() + ",";
         }
-        return str.substring(0, str.length()-1);
+        return str.substring(0, str.length() - 1);
     }
 
     public String getAwayPlayerString() {
         String str = "";
-        for(Player p : awayPlayers) {
+        for (Player p : awayPlayers) {
             str += p.getName() + ",";
         }
-        return str.substring(0, str.length()-1);
+        return str.substring(0, str.length() - 1);
     }
 
     public Player[] getAwayPlayers() {
         return awayPlayers;
     }
-    
+
     public String getSetIdentifier() {
         return setIdentifier;
     }
@@ -72,22 +68,22 @@ public abstract class Set {
     }
 
     public void addGameToSet(Game game) {
-      if(this.games == null) {
-        this.games = new ArrayList<>();
-      }
-      if(this.games.size() < MAX_NUMBER_OF_GAMES) {
-        this.games.add(game);
-      } else {
-         throw new IllegalStateException("Cannot add more games to this set.");
-      }
+        if (this.games == null) {
+            this.games = new ArrayList<>();
+        }
+        if (this.games.size() < MAX_NUMBER_OF_GAMES) {
+            this.games.add(game);
+        } else {
+            throw new IllegalStateException("Cannot add more games to this set.");
+        }
     }
 
     private int getGameWins(TeamType team) {
         int wins = 0;
-        if(games.size() == MAX_NUMBER_OF_GAMES) {
-            for(Game g : games) {
-                if(g.gameWinner().equals(team)) {
-                    wins = wins +1;
+        if (games.size() == MAX_NUMBER_OF_GAMES) {
+            for (Game g : games) {
+                if (g.gameWinner().equals(team)) {
+                    wins = wins + 1;
                 }
             }
         } else {
@@ -97,7 +93,7 @@ public abstract class Set {
     }
 
     public int getSetPointForTeam(TeamType team) {
-        if(getSetWinner().equals(team)) {
+        if (getSetWinner().equals(team)) {
             return 1;
         } else {
             return 0;
@@ -105,7 +101,7 @@ public abstract class Set {
     }
 
     public TeamType getSetWinner() {
-        if(getGameWins(TeamType.HOME) > getGameWins(TeamType.AWAY)) {
+        if (getGameWins(TeamType.HOME) > getGameWins(TeamType.AWAY)) {
             return TeamType.HOME;
         } else if (getGameWins(TeamType.AWAY) > getGameWins(TeamType.HOME)) {
             return TeamType.AWAY;
@@ -121,7 +117,7 @@ public abstract class Set {
 
         return allPlayers.toArray(new Player[allPlayers.size()]);
     }
-    
+
     @Override
     public String toString() {
         return getSetIdentifier();

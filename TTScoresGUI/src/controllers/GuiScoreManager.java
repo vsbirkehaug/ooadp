@@ -26,24 +26,29 @@ public class GuiScoreManager {
     protected Player getHomePlayer1() {
         return teamManager.getPlayerWithName(gui.getHomePlayer1());
     }
+
     protected Player getHomePlayer2() {
         return teamManager.getPlayerWithName(gui.getHomePlayer2());
     }
+
     protected Player getAwayPlayer1() {
         return teamManager.getPlayerWithName(gui.getAwayPlayer1());
     }
+
     protected Player getAwayPlayer2() {
         return teamManager.getPlayerWithName(gui.getAwayPlayer2());
     }
+
     protected Player[] getHomePlayers() {
         return new Player[]{teamManager.getPlayerWithName(gui.getHDblPlayer1()), teamManager.getPlayerWithName(gui.getHDblPlayer2())};
     }
+
     protected Player[] getAwayPlayers() {
         return new Player[]{teamManager.getPlayerWithName(gui.getADblPlayer1()), teamManager.getPlayerWithName(gui.getADblPlayer2())};
     }
 
     public void calculateScoresButton(ArrayList<JTextField> scoreTextFields) {
-        if(createMatchFromFields(scoreTextFields)) {
+        if (createMatchFromFields(scoreTextFields)) {
             if (calculateScores(sets)) {
                 gui.setSubmitScoresButtonEnabled(true);
             } else {
@@ -97,7 +102,6 @@ public class GuiScoreManager {
         gui.setCalculateScoresButtonEnabled(false);
     }
 
-
     private void showErrorMessage(String message) {
         String msg = "<html>" + message + "</html>";
         ErrorMessageFrame errorMessage = new ErrorMessageFrame();
@@ -106,12 +110,10 @@ public class GuiScoreManager {
         errorMessage.setVisible(true);
     }
 
-
-
     private void createSetsFromFields() {
         sets.add(new SingleSet(gui.getSet11(), getHomePlayer1(), getAwayPlayer1()));
         sets.add(new SingleSet(gui.getSet12(), getHomePlayer1(), getAwayPlayer2()));
-        sets.add(new SingleSet(gui.getSet21() , getHomePlayer2(), getAwayPlayer1()));
+        sets.add(new SingleSet(gui.getSet21(), getHomePlayer2(), getAwayPlayer1()));
         sets.add(new SingleSet(gui.getSet22(), getHomePlayer2(), getAwayPlayer2()));
         sets.add(new DoubleSet(gui.getSetDbl(), getHomePlayers(), getAwayPlayers()));
     }
@@ -119,19 +121,19 @@ public class GuiScoreManager {
     private void addGamesToSets(ArrayList<JTextField> scoreTextFields) {
         int gamesPerSet = 3;
         int counter = 0;
-        for(int i = 0; i < sets.size(); i++) {
-            for(int j = 0; j < gamesPerSet; j++) {
+        for (int i = 0; i < sets.size(); i++) {
+            for (int j = 0; j < gamesPerSet; j++) {
                 sets.get(i).addGameToSet(new Game(
                         Integer.parseInt(scoreTextFields.get(counter).getText()),
-                        Integer.parseInt(scoreTextFields.get(counter+1).getText())));
-                counter = counter+2;
+                        Integer.parseInt(scoreTextFields.get(counter + 1).getText())));
+                counter = counter + 2;
             }
         }
     }
 
     protected boolean calculateScores(ArrayList<Set> sets) {
         try {
-            int homeWin1 = 0, homeWin2 = 0 ,homeWin3 = 0;
+            int homeWin1 = 0, homeWin2 = 0, homeWin3 = 0;
             int awayWin1 = 0, awayWin2 = 0, awayWin3 = 0;
 
             homeWin1 = sets.get(0).getSetPointForTeam(TeamType.HOME) + sets.get(1).getSetPointForTeam(TeamType.HOME);
@@ -157,15 +159,13 @@ public class GuiScoreManager {
         return true;
     }
 
-
-
     public void checkPlayerNames() {
         gui.updateNamesFromTextFields();
         Boolean isVerified = teamManager.verifyNames(
                 gui.getHomeTeamName(), gui.getHomeSinglesPlayers(), gui.getHomeDoublesPlayers(),
                 gui.getAwayTeamName(), gui.getAwaySinglesPlayers(), gui.getAwayDoublesPlayers());
 
-        if(isVerified && !homeAwayCombinationExists(gui.getHomeTeamName(), gui.getAwayTeamName())) {
+        if (isVerified && !homeAwayCombinationExists(gui.getHomeTeamName(), gui.getAwayTeamName())) {
             gui.setCalculateScoresButtonEnabled(true);
         } else if (isVerified) {
             showErrorTeamHomeAwayComboAlreadyExists();
@@ -182,7 +182,6 @@ public class GuiScoreManager {
         errorMessage.setVisible(true);
     }
 
-
     private boolean homeAwayCombinationExists(String homeTeamName, String awayTeamName) {
         return matchManager.matchExistsForThisTeamSetup(homeTeamName, awayTeamName);
     }
@@ -194,8 +193,6 @@ public class GuiScoreManager {
         errorMessage.setVisible(true);
     }
 
-
-
     protected void doNameTextChanged() {
         gui.setCalculateScoresButtonEnabled(false);
         gui.setSubmitScoresButtonEnabled(false);
@@ -206,17 +203,20 @@ public class GuiScoreManager {
     }
 
     public void setNameChangeListener(ArrayList<JTextField> nameTextFields) {
-        for(JTextField tf : nameTextFields) {
+        for (JTextField tf : nameTextFields) {
             tf.getDocument().addDocumentListener(new DocumentListener() {
                 public void changedUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void removeUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void insertUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void textChanged() {
                     doNameTextChanged();
                 }
@@ -225,17 +225,20 @@ public class GuiScoreManager {
     }
 
     public void setScoreChangeListener(ArrayList<JTextField> scoreTextFields) {
-        for(JTextField tf : scoreTextFields) {
+        for (JTextField tf : scoreTextFields) {
             tf.getDocument().addDocumentListener(new DocumentListener() {
                 public void changedUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void removeUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void insertUpdate(DocumentEvent e) {
                     textChanged();
                 }
+
                 public void textChanged() {
                     doScoreTextChanged();
                 }

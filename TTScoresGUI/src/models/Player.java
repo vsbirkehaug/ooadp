@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 /**
@@ -10,47 +5,47 @@ package models;
  * @author VSB
  */
 public class Player {
+
     private String name;
     private int setsPlayed = 0;
     private int setsWon = 0;
-    
+
     public Player(String name) {
         setName(name);
     }
-    
+
     public String getName() {
         return name;
     }
 
     private void setName(String name) {
-        if(name != null && !name.isEmpty()) {
+        if (name != null && !name.isEmpty()) {
             this.name = name;
         } else {
             throw new IllegalArgumentException();
         }
     }
-    
+
     public void addSetsPlayed(int sets) {
         //ASSUMPTION : cannot add 0 or lower
-        if(sets > 0) {
+        if (sets > 0) {
             setsPlayed = setsPlayed + sets;
         } else {
             throw new IllegalArgumentException();
         }
     }
-    
+
     public void addOneSetWin() {
-        setsWon = setsWon+1;
+        setsWon = setsWon + 1;
     }
-    
+
     public int getSetsWon() {
         return setsWon;
     }
-    
+
     public int getSetsPlayed() {
         return setsPlayed;
     }
-    
 
 //    public int getPlayerSetsPlayed() {
 //        int setsPlayed = 0;
@@ -65,7 +60,6 @@ public class Player {
 //        }
 //        return setsPlayed;
 //    }
-
 //    public int getPlayerSetsWon() {
 //        int setsWon = 0;
 //        if(TableTennisMatchManager.INSTANCE != null && TableTennisMatchManager.INSTANCE.getMatches() != null) {
@@ -87,7 +81,6 @@ public class Player {
 //        }
 //        return setsWon;
 //    }
-
 //    public int getPlayerSetsLost() {
 //        for(Match m : TableTennisMatchManager.INSTANCE.matches) {
 //            if(m.getHomeTeam().getPlayers().contains(this)) {
@@ -101,5 +94,4 @@ public class Player {
 //        int setsLost = getPlayerSetsPlayed() - getPlayerSetsWon();
 //        return setsLost;
 //    }
-
 }

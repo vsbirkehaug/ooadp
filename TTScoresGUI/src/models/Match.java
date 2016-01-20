@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
 import java.util.ArrayList;
@@ -12,59 +7,63 @@ import java.util.ArrayList;
  * @author VSB
  */
 public class Match {
+
     private ArrayList<Set> sets;
     private Team homeTeam;
     private Team awayTeam;
     public final static int MAX_NUMBER_OF_SETS = 5;
 
     public Match(Team homeTeam, Team awayTeam) {
-        if(!homeTeam.equals(awayTeam)) {
+        if (!homeTeam.equals(awayTeam)) {
             setTeam(TeamType.HOME, homeTeam);
             setTeam(TeamType.AWAY, awayTeam);
         }
     }
 
     private void setTeam(TeamType teamId, Team team) {
-        if(teamId.equals(TeamType.HOME)) {
-            this.homeTeam = team;
-        } else if (teamId.equals(TeamType.AWAY)) {
-            this.awayTeam = team;
-        } else {
-            throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
+        switch (teamId) {
+            case HOME:
+                this.homeTeam = team;
+                break;
+            case AWAY:
+                this.awayTeam = team;
+                break;
+            default:
+                throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
         }
     }
 
     public Team getTeam(TeamType teamId) {
-        if(teamId.equals(TeamType.HOME)) {
-            return this.homeTeam;
-        } else if (teamId.equals(TeamType.AWAY)) {
-            return this.awayTeam;
-        } else {
-            throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
+        switch (teamId) {
+            case HOME:
+                return this.homeTeam;
+            case AWAY:
+                return this.awayTeam;
+            default:
+                throw new IllegalArgumentException("Please select a valid team identifier for this team (HOME or AWAY");
         }
     }
-
 
     public int getPointsForTeam(Team t) {
         int points = 0;
 
-        if(homeTeam != null && homeTeam.equals(t)) {
+        if (homeTeam != null && homeTeam.equals(t)) {
             points = 0;
-            for(Set s : sets) {
+            for (Set s : sets) {
                 points += s.getSetPointForTeam(TeamType.HOME);
             }
         } else if (awayTeam != null && awayTeam.equals(t)) {
             points = 0;
-            for(Set s : sets) {
+            for (Set s : sets) {
                 points += s.getSetPointForTeam(TeamType.AWAY);
             }
-        } 
+        }
 
         return points;
     }
 
     public void setSets(ArrayList<Set> sets) {
-        if(sets == null) {
+        if (sets == null) {
             throw new IllegalArgumentException("Set list was null.");
         } else if (sets.size() == 5) {
             this.sets = sets;
@@ -76,6 +75,5 @@ public class Match {
     public ArrayList<Set> getSets() {
         return sets;
     }
-
 
 }

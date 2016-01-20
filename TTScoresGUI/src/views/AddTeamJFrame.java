@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
 import controllers.TeamManager;
@@ -108,41 +103,36 @@ public class AddTeamJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addTeamButtonActionPerformed
 
     private void cancelFrameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelFrameButtonActionPerformed
-       closeWindow();
+        closeWindow();
     }//GEN-LAST:event_cancelFrameButtonActionPerformed
 
     private void closeWindow() {
         this.setVisible(false);
         this.dispose();
     }
-    
+
     private void addTeam() {
-        String teamName = teamNameTextField.getText().toString();
-        String venueName = venueNameTextField.getText().toString();
-        
-        if(teamName.isEmpty() || venueName.isEmpty()) { 
+        String teamName = teamNameTextField.getText();
+        String venueName = venueNameTextField.getText();
+
+        if (teamName.isEmpty() || venueName.isEmpty()) {
             addTeamErrorLabel.setForeground(Color.RED);
-            addTeamErrorLabel.setText("<html>Please don't leave any fields empty.</html>");
+            addTeamErrorLabel.setText("<html>Both team name and team venue values are required.</html>");
+        } else if (!TeamManager.getTeamMgr().hasTeamWithName(teamName)) {
+            Team newTeam = new Team(teamName, venueName);
+            TeamManager.getTeamMgr().addTeam(newTeam);
+
+            closeWindow();
         } else {
-        
-            if(!TeamManager.getTeamMgr().hasTeamWithName(teamName)) {
-                Team newTeam = new Team(teamName, venueName);
-                if(newTeam != null ) {
-                    TeamManager.getTeamMgr().addTeam(newTeam);
-                }      
-                closeWindow();
-            } else {
-                addTeamErrorLabel.setForeground(Color.RED);
-                addTeamErrorLabel.setText("<html>A team with this name already exists!</html>");
-            }
-            
+            addTeamErrorLabel.setForeground(Color.RED);
+            addTeamErrorLabel.setText("<html>A team with this name already exists.</html>");
         }
-        
-        for(Team t :  TeamManager.getTeamMgr().getTeams()) {
+
+        for (Team t : TeamManager.getTeamMgr().getTeams()) {
             System.out.println(t.toString());
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
