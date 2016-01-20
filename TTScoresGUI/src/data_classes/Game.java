@@ -21,7 +21,7 @@ public class Game {
                 this.awayScore = score;
             }
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid score entered.");
         }
     }
 
@@ -40,7 +40,7 @@ public class Game {
             setScore(homeScore, TeamType.HOME);
             setScore(awayScore, TeamType.AWAY);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Scores could not be verified.");
         }
     }
     
@@ -66,6 +66,10 @@ public class Game {
         return (hs == 11 || as == 11) && wonByAtLeastTwoPoints(hs, as);
     }
 
+    private boolean wonByAtLeastTwoPoints(int hs, int as) {
+        return ((hs-as)>=2 || (as-hs)>=2);
+    }
+
     private boolean scoreConditionTwo(int hs, int as) {
         return ((hs > 11 || as > 11) && wonByExactlyTwoPoints(hs, as));
     }
@@ -74,8 +78,6 @@ public class Game {
         return ((hs-as)==2 || (as-hs)==2);
     }
 
-    private boolean wonByAtLeastTwoPoints(int hs, int as) {
-        return ((hs-as)>=2 || (as-hs)>=2);
-    }
+
 
 }

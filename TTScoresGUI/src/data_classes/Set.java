@@ -58,10 +58,6 @@ public abstract class Set {
     public Player[] getAwayPlayers() {
         return awayPlayers;
     }
-
-    public Set(String id) {
-        setSetIdentifier(id.trim());
-    }
     
     public String getSetIdentifier() {
         return setIdentifier;
@@ -86,7 +82,7 @@ public abstract class Set {
       }
     }
 
-    private int getSetGameWins(TeamType team) {
+    private int getGameWins(TeamType team) {
         int wins = 0;
         if(games.size() == MAX_NUMBER_OF_GAMES) {
             for(Game g : games) {
@@ -94,33 +90,11 @@ public abstract class Set {
                     wins = wins +1;
                 }
             }
+        } else {
+            throw new IllegalStateException("This set has less than the max number of games.");
         }
         return wins;
     }
-//
-//    private int getHomeWins() {
-//        int homeWins = 0;
-//        if(games.size() == MAX_NUMBER_OF_GAMES) {
-//            for(Game g : games) {
-//                if(g.gameWinner().equals(TeamType.HOME)) {
-//                    homeWins = homeWins +1;
-//                }
-//            }
-//        }
-//        return homeWins;
-//    }
-//
-//    private int getAwayWins() {
-//        int awayWins = 0;
-//        if(games.size() == MAX_NUMBER_OF_GAMES) {
-//            for(Game g : games) {
-//                if(g.gameWinner().equals(TeamType.AWAY)) {
-//                    awayWins = awayWins +1;
-//                }
-//            }
-//        }
-//        return awayWins;
-//    }
 
     public int getSetPointForTeam(TeamType team) {
         if(getSetWinner().equals(team)) {
@@ -131,16 +105,15 @@ public abstract class Set {
     }
 
     public TeamType getSetWinner() {
-        if(getSetGameWins(TeamType.HOME) > getSetGameWins(TeamType.AWAY)) {
+        if(getGameWins(TeamType.HOME) > getGameWins(TeamType.AWAY)) {
             return TeamType.HOME;
-        } else if (getSetGameWins(TeamType.AWAY) > getSetGameWins(TeamType.HOME)) {
+        } else if (getGameWins(TeamType.AWAY) > getGameWins(TeamType.HOME)) {
             return TeamType.AWAY;
         } else {
             throw new IllegalStateException("No game winner. (Draw is not allowed)");
         }
     }
 
-    
     public Player[] getAllSetPlayers() {
         ArrayList<Player> allPlayers = new ArrayList<>();
         allPlayers.addAll(Arrays.asList(getPlayers(TeamType.HOME)));

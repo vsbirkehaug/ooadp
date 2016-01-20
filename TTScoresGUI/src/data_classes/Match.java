@@ -18,7 +18,6 @@ public class Match {
     public final static int MAX_NUMBER_OF_SETS = 5;
 
     public Match(Team homeTeam, Team awayTeam) {
-        //ASSUMPTION : a team cannot play itself
         if(!homeTeam.equals(awayTeam)) {
             setTeam(TeamType.HOME, homeTeam);
             setTeam(TeamType.AWAY, awayTeam);
@@ -45,24 +44,24 @@ public class Match {
         }
     }
 
-    
+
     public int getPointsForTeam(Team t) {
         int points = 0;
-        if(homeTeam != null && awayTeam != null) {
-            if(homeTeam.equals(t)) {
-                points = 0;
-                for(Set s : sets) {
-                    points += s.getSetPointForTeam(TeamType.HOME);
-                }
-            } else if (awayTeam.equals(t)) {
-                points = 0;
-                for(Set s : sets) {
-                    points += s.getSetPointForTeam(TeamType.AWAY);
-                }
-            } else {
-                return 0;
-            }   
+
+        if(homeTeam != null && homeTeam.equals(t)) {
+            points = 0;
+            for(Set s : sets) {
+                points += s.getSetPointForTeam(TeamType.HOME);
+            }
+        } else if (awayTeam != null && awayTeam.equals(t)) {
+            points = 0;
+            for(Set s : sets) {
+                points += s.getSetPointForTeam(TeamType.AWAY);
+            }
+        } else {
+            throw new IllegalArgumentException("The selected team did not play this match.");
         }
+
         return points;
     }
 
@@ -77,12 +76,8 @@ public class Match {
     }
 
     public ArrayList<Set> getSets() {
-        if(sets != null) {
-            return sets; 
-        } else {
-            return null;
-        }
+        return sets;
     }
-    
+
 
 }

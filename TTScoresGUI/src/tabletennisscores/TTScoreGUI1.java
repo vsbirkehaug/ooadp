@@ -1244,7 +1244,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
         sets = new ArrayList<>();
 
-
         try {
 
             Team homeTeam = manager.getTeamByName(hTName);
