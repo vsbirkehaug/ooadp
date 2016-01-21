@@ -16,9 +16,9 @@ public abstract class Set {
     protected Player[] awayPlayers;
 
     protected Set(String id, Player[] homePlayers, Player[] awayPlayers) {
-        this.setIdentifier = id;
-        this.homePlayers = homePlayers;
-        this.awayPlayers = awayPlayers;
+        setSetIdentifier(id);
+        setHomePlayers(homePlayers);
+        setAwayPlayers(awayPlayers);
     }
 
     public Player[] getPlayers(TeamType team) {
@@ -31,28 +31,21 @@ public abstract class Set {
         }
     }
 
-    public Player[] getHomePlayers() {
-        return homePlayers;
-    }
-
-    public String getHomePlayerString() {
+    public String getPlayerString(TeamType team) {
         String str = "";
-        for (Player p : homePlayers) {
-            str += p.getName() + ",";
+        if(team.equals(TeamType.HOME)) {
+            for (Player p : homePlayers) {
+                str += p.getName() + ",";
+            }
+            return str.substring(0, str.length() - 1);
+        } else if (team.equals(TeamType.AWAY)) {
+            for (Player p : awayPlayers) {
+                str += p.getName() + ",";
+            }
+            return str.substring(0, str.length() - 1);
+        } else {
+            return "";
         }
-        return str.substring(0, str.length() - 1);
-    }
-
-    public String getAwayPlayerString() {
-        String str = "";
-        for (Player p : awayPlayers) {
-            str += p.getName() + ",";
-        }
-        return str.substring(0, str.length() - 1);
-    }
-
-    public Player[] getAwayPlayers() {
-        return awayPlayers;
     }
 
     public String getSetIdentifier() {
@@ -100,7 +93,7 @@ public abstract class Set {
         }
     }
 
-    public TeamType getSetWinner() {
+    private TeamType getSetWinner() {
         if (getGameWins(TeamType.HOME) > getGameWins(TeamType.AWAY)) {
             return TeamType.HOME;
         } else if (getGameWins(TeamType.AWAY) > getGameWins(TeamType.HOME)) {
@@ -123,4 +116,15 @@ public abstract class Set {
         return getSetIdentifier();
     }
 
+    private void setHomePlayers(Player[] homePlayers) {
+        if(homePlayers.length > 0) {
+            this.homePlayers = homePlayers;
+        }
+    }
+
+    private void setAwayPlayers(Player[] awayPlayers) {
+        if(awayPlayers.length > 0) {
+            this.awayPlayers = awayPlayers;
+        }
+    }
 }

@@ -13,7 +13,7 @@ public class TeamManager {
 
     private ArrayList<Team> teams;
 
-    private static TeamManager tm;
+    private static TeamManager instance;
 
     private TeamManager() {
         teams = new ArrayList<>();
@@ -21,10 +21,10 @@ public class TeamManager {
     }
 
     public static TeamManager getTeamMgr() {
-        if (tm == null) {
-            tm = new TeamManager();
+        if (instance == null) {
+            instance = new TeamManager();
         }
-        return tm;
+        return instance;
     }
 
     public ArrayList<Player> getPlayers() {
@@ -64,7 +64,7 @@ public class TeamManager {
         for (Team t : teams) {
             if (t.getName().equalsIgnoreCase(teamName)) {
                 for (String s : players) {
-                    if (t.hasPlayerWithThisName(s)) {
+                    if (t.hasPlayerWithName(s)) {
                         unverifiedPlayers = unverifiedPlayers - 1;
                     }
                 }
@@ -92,7 +92,7 @@ public class TeamManager {
         return false;
     }
 
-    boolean stringIsEmpty(String str) {
+    private boolean stringIsEmpty(String str) {
         return !(str != null && str.length() > 0);
     }
 

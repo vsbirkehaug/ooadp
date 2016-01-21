@@ -27,7 +27,6 @@ public class Player {
     }
 
     public void addSetsPlayed(int sets) {
-        //ASSUMPTION : cannot add 0 or lower
         if (sets > 0) {
             setsPlayed = setsPlayed + sets;
         } else {
@@ -47,51 +46,4 @@ public class Player {
         return setsPlayed;
     }
 
-//    public int getPlayerSetsPlayed() {
-//        int setsPlayed = 0;
-//            if(TableTennisMatchManager.INSTANCE != null && TableTennisMatchManager.INSTANCE.getMatches() != null) {
-//            for(Match m : TableTennisMatchManager.INSTANCE.getMatches()) {
-//                for(Set s : m.getSets()) {
-//                    if(Arrays.asList(s.getHomePlayers()).contains(this) || Arrays.asList(s.getAwayPlayers()).contains(this)) {
-//                       ++setsPlayed;
-//                    }
-//                }
-//            }  
-//        }
-//        return setsPlayed;
-//    }
-//    public int getPlayerSetsWon() {
-//        int setsWon = 0;
-//        if(TableTennisMatchManager.INSTANCE != null && TableTennisMatchManager.INSTANCE.getMatches() != null) {
-//            for(Match m : TableTennisMatchManager.INSTANCE.getMatches()) {
-//                if(m.getHomeTeam().getPlayers().contains(this)) {
-//                    for(Set s : m.getSets()) {
-//                        if(Arrays.asList(s.getHomePlayers()).contains(this) && (s.getAwayPoint() < s.getHomePoint())) {
-//                           setsWon++; 
-//                        }
-//                    }               
-//                } else if (m.getAwayTeam().getPlayers().contains(this)) {
-//                    for(Set s : m.getSets()) {
-//                        if(Arrays.asList(s.getAwayPlayers()).contains(this) && (s.getAwayPoint() > s.getHomePoint())) {
-//                           setsWon++; 
-//                        }
-//                    }  
-//                }          
-//            } 
-//        }
-//        return setsWon;
-//    }
-//    public int getPlayerSetsLost() {
-//        for(Match m : TableTennisMatchManager.INSTANCE.matches) {
-//            if(m.getHomeTeam().getPlayers().contains(this)) {
-//                setsLost = setsLost + (m.MAX_NUMBER_OF_SETS - m.getPointsForTeam(m.getHomeTeam()));
-//            } else if (m.getAwayTeam().getPlayers().contains(this)) {
-//                setsLost = setsLost + (m.MAX_NUMBER_OF_SETS - m.getPointsForTeam(m.getAwayTeam()));
-//            }          
-//        }
-//
-//        //assuming a set is either won or lost
-//        int setsLost = getPlayerSetsPlayed() - getPlayerSetsWon();
-//        return setsLost;
-//    }
 }

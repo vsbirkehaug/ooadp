@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public class GuiScoreManager {
 
-    TTScoreGUI1 gui;
-    ArrayList<Set> sets;
-    Match match;
-    TeamManager teamManager = TeamManager.getTeamMgr();
-    MatchManager matchManager = MatchManager.getMatchMgr();
+    private TTScoreGUI1 gui;
+    private ArrayList<Set> sets;
+    private Match match;
+    private TeamManager teamManager = TeamManager.getTeamMgr();
+    private MatchManager matchManager = MatchManager.getMatchMgr();
 
     public GuiScoreManager(TTScoreGUI1 gui) {
         this.gui = gui;
@@ -47,7 +47,7 @@ public class GuiScoreManager {
         return new Player[]{teamManager.getPlayerWithName(gui.getADblPlayer1()), teamManager.getPlayerWithName(gui.getADblPlayer2())};
     }
 
-    public void calculateScoresButton(ArrayList<JTextField> scoreTextFields) {
+    public void doCalculateScores(ArrayList<JTextField> scoreTextFields) {
         if (createMatchFromFields(scoreTextFields)) {
             if (calculateScores(sets)) {
                 gui.setSubmitScoresButtonEnabled(true);

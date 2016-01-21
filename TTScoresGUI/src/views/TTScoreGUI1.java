@@ -1005,7 +1005,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         teamTankingButton.setText("list team ranking");
         teamTankingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teamTankingButtonActionPerformed(evt);
+                teamRankingButtonActionPerformed(evt);
             }
         });
 
@@ -1250,7 +1250,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
         submitScoreButton.setEnabled(state);
     }
 
-    public void setCalculateScoresButtonEnabled(Boolean state) {
+    public void setCalculateScoresButtonEnabled(boolean state) {
         calScoreButton.setEnabled(state);
     }
 
@@ -1263,7 +1263,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_viewMatchButtonActionPerformed
 
-    private void teamTankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
+    private void teamRankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTankingButtonActionPerformed
         guiAdditionalFrameManager.optionListTeamRanking();
     }//GEN-LAST:event_teamTankingButtonActionPerformed
 
@@ -1289,7 +1289,7 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     }//GEN-LAST:event_checkPlayerNamesButtonActionPerformed
 
     private void calScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calScoreButtonActionPerformed
-        guiScoreManager.calculateScoresButton(scoreTextFields);
+        guiScoreManager.doCalculateScores(scoreTextFields);
     }//GEN-LAST:event_calScoreButtonActionPerformed
 
     private void submitScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitScoreButtonActionPerformed
@@ -1299,8 +1299,6 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
     private void testScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testScoreButtonActionPerformed
         getTestScores();
     }//GEN-LAST:event_testScoreButtonActionPerformed
-
-
 
     private void getTestScores() {
         if (sc.hasNext()) {
@@ -1349,16 +1347,16 @@ public class TTScoreGUI1 extends javax.swing.JFrame {
 
     }
     // Variables:
-    String hTName;
-    String[] hPNamesSingles;
-    String[] hPNamesDoubles;
-    String aTName;
-    String[] aPNamesSingles;
-    String[] aPNamesDoubles;
-    
-    GuiScoreManager guiScoreManager;
-    GuiAdditionalFrameManager guiAdditionalFrameManager;
-    ArrayList<JTextField> scoreTextFields = new ArrayList<>();
+    private String hTName;
+    private String[] hPNamesSingles;
+    private String[] hPNamesDoubles;
+    private String aTName;
+    private String[] aPNamesSingles;
+    private String[] aPNamesDoubles;
+
+    private GuiScoreManager guiScoreManager;
+    private GuiAdditionalFrameManager guiAdditionalFrameManager;
+    private ArrayList<JTextField> scoreTextFields = new ArrayList<>();
 
 
     public Scanner sc = new Scanner(TTScoreGUI1.class.getResourceAsStream("/testscores.txt"));

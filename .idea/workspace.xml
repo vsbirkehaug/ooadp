@@ -27,9 +27,45 @@
         <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/TTScoreGUI1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1295" column="34" selection-start-line="1295" selection-start-column="34" selection-end-line="1295" selection-end-column="34" />
+              <caret line="1184" column="5" selection-start-line="1184" selection-start-column="5" selection-end-line="1184" selection-end-column="5" />
               <folding>
-                <element signature="e#601#631#0" expanded="true" />
+                <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="e#88073#88172#0" expanded="false" />
+                <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+                <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/MatchManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+              <folding>
+                <element signature="method#getMatchMgr#0;class#MatchManager#0" expanded="false" />
+                <element signature="method#addMatchToList#0;class#MatchManager#0" expanded="false" />
+                <element signature="method#addSetStatsToPlayers#0;class#MatchManager#0" expanded="false" />
+                <element signature="method#getTotalSeasonPointsWonByTeam#0;class#MatchManager#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -39,8 +75,27 @@
         <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiScoreManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-              <folding />
+              <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#getHomePlayers#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#getAwayPlayers#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#doCalculateScores#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#createMatchFromFields#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#doErrorMessage#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#submitScores#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#showErrorMessage#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#createSetsFromFields#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#addGamesToSets#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#calculateScores#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#checkPlayerNames#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#showErrorNamesNotVerified#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#doNameTextChanged#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="method#setNameChangeListener#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="class#8057:8537" expanded="false" />
+                <element signature="method#setScoreChangeListener#0;class#GuiScoreManager#0" expanded="false" />
+                <element signature="class#8738:9219" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,47 +104,232 @@
         <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiAdditionalFrameManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/MatchManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TeamManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/TeamManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0177268">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+              <folding>
+                <element signature="docComment;class#TeamManager#0" expanded="false" />
+                <element signature="method#TeamManager#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#getTeamMgr#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#getPlayers#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#getPlayerWithName#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#verifyPlayerNames#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#anyPlayerNamesAreEmpty#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#anyPlayerNamesAreIdentical#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#getTeamsWithOpenPlayerSlots#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#verifyNames#0;class#TeamManager#0" expanded="false" />
+                <element signature="e#3208#3281#0" expanded="false" />
+                <element signature="method#getTeamByName#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#addTeam#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#hasTeamWithName#0;class#TeamManager#0" expanded="false" />
+                <element signature="method#setupTestData#0;class#TeamManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Venue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Venue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListAllTeamsJFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ListAllTeamsJFrame.java">
+      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Match.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="method#Match#0;class#Match#0" expanded="false" />
+                <element signature="method#setTeam#0;class#Match#0" expanded="false" />
+                <element signature="method#getTeam#0;class#Match#0" expanded="false" />
+                <element signature="method#getPointsForTeam#0;class#Match#0" expanded="false" />
+                <element signature="method#setSets#0;class#Match#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewMatchScoreJFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ViewMatchScoreJFrame.java">
+      <file leaf-file-name="JAVA/models.DoubleSet" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/models.DoubleSet">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>models.DoubleSet</OriginalElement>
+              <nodes>
+                <node x="312.0" y="433.0">controllers.TeamManager</node>
+                <node x="581.0" y="193.0">models.Game</node>
+                <node x="0.0" y="232.0">controllers.GuiAdditionalFrameManager</node>
+                <node x="340.0" y="118.0">models.SingleSet</node>
+                <node x="329.5" y="0.0">models.Set</node>
+                <node x="70.0" y="468.0">models.Player</node>
+                <node x="-308.0" y="300.0">views.TTScoreGUI1</node>
+                <node x="117.0" y="0.0">java.io.Serializable</node>
+                <node x="755.0" y="201.0">models.Match</node>
+                <node x="73.75" y="79.0">java.lang.Enum</node>
+                <node x="215.0" y="112.0">models.DoubleSet</node>
+                <node x="524.0" y="364.0">controllers.MatchManager</node>
+                <node x="285.0" y="325.0">controllers.GuiScoreManager</node>
+                <node x="95.0" y="561.0">models.Venue</node>
+                <node x="539.0" y="590.0">models.Team</node>
+                <node x="0.0" y="0.0">java.lang.Comparable</node>
+                <node x="61.25" y="158.0">models.TeamType</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="controllers.TeamManager" target="models.Player">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.SingleSet" target="models.Set">
+                  <point x="0.0" y="-14.5" />
+                  <point x="398.0" y="54.0" />
+                  <point x="358.5" y="54.0" />
+                  <point x="12.0" y="14.5" />
+                </edge>
+                <edge source="models.Set" target="models.Player">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="controllers.TeamManager">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.SingleSet" target="models.Player">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="views.TTScoreGUI1">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.Player">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.Match" target="models.Team">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.TeamType" target="java.lang.Enum">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.Match">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.DoubleSet" target="models.Set">
+                  <point x="0.0" y="-14.5" />
+                  <point x="295.0" y="54.0" />
+                  <point x="334.5" y="54.0" />
+                  <point x="-12.0" y="14.5" />
+                </edge>
+                <edge source="models.Match" target="models.Set">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.DoubleSet">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="java.lang.Enum" target="java.io.Serializable">
+                  <point x="15.75" y="-14.5" />
+                  <point x="121.0" y="54.0" />
+                  <point x="162.0" y="54.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="views.TTScoreGUI1" target="controllers.GuiAdditionalFrameManager">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="views.TTScoreGUI1" target="controllers.GuiScoreManager">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.Team" target="models.Venue">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.Game">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="controllers.MatchManager">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.SingleSet">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="java.lang.Enum" target="java.lang.Comparable">
+                  <point x="-15.75" y="-14.5" />
+                  <point x="89.5" y="54.0" />
+                  <point x="48.5" y="54.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="controllers.GuiScoreManager" target="models.Set">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.MatchManager" target="models.Match">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.Set" target="models.Game">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="controllers.TeamManager" target="models.Team">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="views.TTScoreGUI1" target="java.io.Serializable">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="models.Team" target="models.Player">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="203.5" y="387.5" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeamType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/TeamType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -127,8 +367,14 @@
         <option value="$PROJECT_DIR$/TTScoresGUI/src/data_classes/Match.java" />
         <option value="$PROJECT_DIR$/TTScoresGUI/src/tabletennisscores/TTScoreGUI1.java" />
         <option value="$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiAdditionalFrameManager.java" />
-        <option value="$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiScoreManager.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/views/ViewMatchScoreJFrame.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/models/Set.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/models/Team.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/models/Player.java" />
         <option value="$PROJECT_DIR$/TTScoresGUI/src/controllers/MatchManager.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiScoreManager.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/controllers/TeamManager.java" />
+        <option value="$PROJECT_DIR$/TTScoresGUI/src/views/TTScoreGUI1.java" />
       </list>
     </option>
   </component>
@@ -733,12 +979,12 @@
       <workItem from="1453042244835" duration="6390000" />
       <workItem from="1453323763275" duration="508000" />
       <workItem from="1453324497180" duration="61000" />
-      <workItem from="1453324642994" duration="1915000" />
+      <workItem from="1453324642994" duration="8918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8874000" />
+    <option name="totallyTimeSpent" value="15877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -746,10 +992,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24919268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -759,17 +1007,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37029064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31983805" sideWeight="0.4956943" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -787,7 +1033,22 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/TTScoresGUI/src/models/Match.java</url>
+          <line>15</line>
+          <properties class="models.Match" method="&lt;init&gt;" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/TTScoresGUI/src/models/Match.java</url>
+          <line>64</line>
+          <properties class="models.Match" method="setSets" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -800,7 +1061,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#601#631#0" expanded="true" />
+            <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="e#88073#88172#0" expanded="false" />
+            <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,7 +1100,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#601#631#0" expanded="true" />
+            <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="e#88073#88172#0" expanded="false" />
+            <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -836,7 +1139,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1374" column="22" selection-start-line="1374" selection-start-column="21" selection-end-line="1374" selection-end-column="22" />
           <folding>
-            <element signature="e#601#631#0" expanded="true" />
+            <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="e#88073#88172#0" expanded="false" />
+            <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -854,7 +1178,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
-            <element signature="e#601#631#0" expanded="true" />
+            <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="e#88073#88172#0" expanded="false" />
+            <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,44 +1228,272 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ViewMatchScoreJFrame.java">
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ListAllTeamsJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
+          <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiAdditionalFrameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
+    <entry file="uml://JAVA/controllers">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>controllers</OriginalElement>
+          <nodes>
+            <node x="820.0" y="981.5714285714287">controllers.TeamManager</node>
+            <node x="32.28571428571445" y="-269.85714285714266">models.Game</node>
+            <node x="948.0" y="1122.0">controllers.GuiAdditionalFrameManager</node>
+            <node x="725.1428571428571" y="347.71428571428567">models.SingleSet</node>
+            <node x="573.1428571428571" y="-161.4285714285714">models.Set</node>
+            <node x="697.4285714285716" y="694.8571428571429">models.Player</node>
+            <node x="1468.2857142857142" y="133.42857142857156">models.Match</node>
+            <node x="977.0" y="412.0">models.DoubleSet</node>
+            <node x="240.0" y="1192.0">controllers.MatchManager</node>
+            <node x="-758.5714285714286" y="135.71428571428572">controllers.GuiScoreManager</node>
+            <node x="1628.4285714285713" y="1157.7142857142858">models.Venue</node>
+            <node x="1438.7142857142858" y="687.2857142857142">models.Team</node>
+            <node x="0.0" y="1375.0">models.TeamType</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="controllers.TeamManager" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Team" target="models.Venue">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.SingleSet" target="models.Set">
+              <point x="0.0" y="-25.5" />
+              <point x="847.5" y="387.0" />
+              <point x="849.25" y="387.0" />
+              <point x="-123.25" y="181.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Game">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="controllers.TeamManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="controllers.MatchManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Set" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.SingleSet">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.SingleSet" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Set">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Match" target="models.Team">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Match">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Set" target="models.Game">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.DoubleSet" target="models.Set">
+              <point x="0.0" y="-25.5" />
+              <point x="1097.5" y="387.0" />
+              <point x="1095.75" y="387.0" />
+              <point x="123.25" y="181.0" />
+            </edge>
+            <edge source="controllers.MatchManager" target="models.Match">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Match" target="models.Set">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.TeamManager" target="models.Team">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.DoubleSet">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Team" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.1" x="-167.81818181818184" y="72.18181818181816" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/TTScoreGUI1.java">
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Set.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1295" column="34" selection-start-line="1295" selection-start-column="34" selection-end-line="1295" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.18769716">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding>
-            <element signature="e#601#631#0" expanded="true" />
+            <element signature="method#Set#0;class#Set#0" expanded="false" />
+            <element signature="method#getPlayers#0;class#Set#0" expanded="false" />
+            <element signature="method#getPlayerString#0;class#Set#0" expanded="false" />
+            <element signature="method#addGameToSet#0;class#Set#0" expanded="false" />
+            <element signature="method#getSetWinner#0;class#Set#0" expanded="false" />
+            <element signature="method#getAllSetPlayers#0;class#Set#0" expanded="false" />
+            <element signature="method#setHomePlayers#0;class#Set#0" expanded="false" />
+            <element signature="method#setAwayPlayers#0;class#Set#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61671925">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <element signature="e#1549#1550#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Venue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="method#Match#0;class#Match#0" expanded="false" />
+            <element signature="method#setTeam#0;class#Match#0" expanded="false" />
+            <element signature="method#getTeam#0;class#Match#0" expanded="false" />
+            <element signature="method#getPointsForTeam#0;class#Match#0" expanded="false" />
+            <element signature="method#setSets#0;class#Match#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/models/TeamType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiScoreManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#getHomePlayers#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#getAwayPlayers#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#doCalculateScores#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#createMatchFromFields#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#doErrorMessage#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#submitScores#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#showErrorMessage#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#createSetsFromFields#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#addGamesToSets#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#calculateScores#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#checkPlayerNames#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#showErrorNamesNotVerified#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#doNameTextChanged#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="method#setNameChangeListener#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="class#8057:8537" expanded="false" />
+            <element signature="method#setScoreChangeListener#0;class#GuiScoreManager#0" expanded="false" />
+            <element signature="class#8738:9219" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/GuiAdditionalFrameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ListAllTeamsJFrame.java">
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/TeamManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+          <folding>
+            <element signature="docComment;class#TeamManager#0" expanded="false" />
+            <element signature="method#TeamManager#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#getTeamMgr#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#getPlayers#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#getPlayerWithName#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#verifyPlayerNames#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#anyPlayerNamesAreEmpty#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#anyPlayerNamesAreIdentical#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#getTeamsWithOpenPlayerSlots#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#verifyNames#0;class#TeamManager#0" expanded="false" />
+            <element signature="e#3208#3281#0" expanded="false" />
+            <element signature="method#getTeamByName#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#addTeam#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#hasTeamWithName#0;class#TeamManager#0" expanded="false" />
+            <element signature="method#setupTestData#0;class#TeamManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/ViewMatchScoreJFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02681388">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -928,16 +1501,195 @@
     <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/MatchManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-          <folding />
+          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+          <folding>
+            <element signature="method#getMatchMgr#0;class#MatchManager#0" expanded="false" />
+            <element signature="method#addMatchToList#0;class#MatchManager#0" expanded="false" />
+            <element signature="method#addSetStatsToPlayers#0;class#MatchManager#0" expanded="false" />
+            <element signature="method#getTotalSeasonPointsWonByTeam#0;class#MatchManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/controllers/TeamManager.java">
+    <entry file="file://$PROJECT_DIR$/TTScoresGUI/src/views/TTScoreGUI1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0177268">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1184" column="5" selection-start-line="1184" selection-start-column="5" selection-end-line="1184" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#initComponents#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#TTScoreGUI1#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#setupChangeListeners#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#showTeamScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#updateNamesFromTextFields#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="e#88073#88172#0" expanded="false" />
+            <element signature="method#viewMatchButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#teamRankingButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#addTeamButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#regPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#allPlayerButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#checkPlayerNamesButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#calScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#submitScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#testScoreButtonActionPerformed#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#getTestScores#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#TTScoreGUI1#0" expanded="false" />
+            <element signature="method#main#0;class#TTScoreGUI1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/models.DoubleSet">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>models.DoubleSet</OriginalElement>
+          <nodes>
+            <node x="312.0" y="433.0">controllers.TeamManager</node>
+            <node x="581.0" y="193.0">models.Game</node>
+            <node x="0.0" y="232.0">controllers.GuiAdditionalFrameManager</node>
+            <node x="340.0" y="118.0">models.SingleSet</node>
+            <node x="329.5" y="0.0">models.Set</node>
+            <node x="70.0" y="468.0">models.Player</node>
+            <node x="-308.0" y="300.0">views.TTScoreGUI1</node>
+            <node x="117.0" y="0.0">java.io.Serializable</node>
+            <node x="755.0" y="201.0">models.Match</node>
+            <node x="73.75" y="79.0">java.lang.Enum</node>
+            <node x="215.0" y="112.0">models.DoubleSet</node>
+            <node x="524.0" y="364.0">controllers.MatchManager</node>
+            <node x="285.0" y="325.0">controllers.GuiScoreManager</node>
+            <node x="95.0" y="561.0">models.Venue</node>
+            <node x="539.0" y="590.0">models.Team</node>
+            <node x="0.0" y="0.0">java.lang.Comparable</node>
+            <node x="61.25" y="158.0">models.TeamType</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="controllers.TeamManager" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.SingleSet" target="models.Set">
+              <point x="0.0" y="-14.5" />
+              <point x="398.0" y="54.0" />
+              <point x="358.5" y="54.0" />
+              <point x="12.0" y="14.5" />
+            </edge>
+            <edge source="models.Set" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="controllers.TeamManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.SingleSet" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="views.TTScoreGUI1">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Match" target="models.Team">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.TeamType" target="java.lang.Enum">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Match">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.DoubleSet" target="models.Set">
+              <point x="0.0" y="-14.5" />
+              <point x="295.0" y="54.0" />
+              <point x="334.5" y="54.0" />
+              <point x="-12.0" y="14.5" />
+            </edge>
+            <edge source="models.Match" target="models.Set">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.DoubleSet">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="java.lang.Enum" target="java.io.Serializable">
+              <point x="15.75" y="-14.5" />
+              <point x="121.0" y="54.0" />
+              <point x="162.0" y="54.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="views.TTScoreGUI1" target="controllers.GuiAdditionalFrameManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="views.TTScoreGUI1" target="controllers.GuiScoreManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Team" target="models.Venue">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Game">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="controllers.MatchManager">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.SingleSet">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="java.lang.Enum" target="java.lang.Comparable">
+              <point x="-15.75" y="-14.5" />
+              <point x="89.5" y="54.0" />
+              <point x="48.5" y="54.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="controllers.GuiScoreManager" target="models.Set">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.MatchManager" target="models.Match">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Set" target="models.Game">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="controllers.TeamManager" target="models.Team">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="views.TTScoreGUI1" target="java.io.Serializable">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="models.Team" target="models.Player">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="203.5" y="387.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

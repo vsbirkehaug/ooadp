@@ -32,8 +32,7 @@ public class Team {
         if (players == null) {
             players = new ArrayList<>();
         }
-        //ASSUMPTION : team can only have one player with a specific name
-        if (players.size() < MAX_TEAM_SIZE && !hasPlayerWithThisName(player.getName())) {
+        if (players.size() < MAX_TEAM_SIZE && !hasPlayerWithName(player.getName())) {
             players.add(player);
             return true;
         } else {
@@ -45,7 +44,7 @@ public class Team {
         return this.players;
     }
 
-    public boolean hasPlayerWithThisName(String playerName) {
+    public boolean hasPlayerWithName(String playerName) {
         if (players != null && players.size() > 0 && playerName != null) {
             for (Player p : players) {
                 if (p.getName().toLowerCase().equals(playerName.toLowerCase())) {
@@ -68,7 +67,6 @@ public class Team {
 
     @Override
     public String toString() {
-        //return ("Name: " + name + ", venue: " + venue.getName());
         return getName();
     }
 

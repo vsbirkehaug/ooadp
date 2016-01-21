@@ -10,17 +10,17 @@ import java.util.ArrayList;
 public class MatchManager {
 
     private ArrayList<Match> matches;
-    private static MatchManager mm;
+    private static MatchManager instance;
 
     private MatchManager() {
         matches = new ArrayList<>();
     }
 
     public static MatchManager getMatchMgr() {
-        if (mm == null) {
-            mm = new MatchManager();
+        if (instance == null) {
+            instance = new MatchManager();
         }
-        return mm;
+        return instance;
     }
 
     public ArrayList<Match> getMatches() {
@@ -54,11 +54,11 @@ public class MatchManager {
             }
 
             if (s.getSetPointForTeam(TeamType.HOME) > s.getSetPointForTeam(TeamType.AWAY)) {
-                for (Player p : s.getHomePlayers()) {
+                for (Player p : s.getPlayers(TeamType.HOME)) {
                     p.addOneSetWin();
                 }
             } else if (s.getSetPointForTeam(TeamType.HOME) < s.getSetPointForTeam(TeamType.AWAY)) {
-                for (Player p : s.getAwayPlayers()) {
+                for (Player p : s.getPlayers(TeamType.AWAY)) {
                     p.addOneSetWin();
                 }
             } else {

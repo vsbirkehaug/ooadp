@@ -20,91 +20,56 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
         initComponents();
         fillTeamBoxes();
     }
-    
+
     private void fillTeamBoxes() {
         Vector teamsVector = new Vector();
         for(Team t : TeamManager.getTeamMgr().getTeams()) {
-            teamsVector.add(t);          
+            teamsVector.add(t);
         }
         final DefaultComboBoxModel homeModel = new DefaultComboBoxModel(teamsVector);
         homeTeamComboBox.setModel(homeModel);
         homeTeamComboBox.invalidate();
-        
+
         final DefaultComboBoxModel awayModel = new DefaultComboBoxModel(teamsVector);
-        awayTeamComboBox.setModel(awayModel); 
-        awayTeamComboBox.invalidate();      
+        awayTeamComboBox.setModel(awayModel);
+        awayTeamComboBox.invalidate();
 
     }
-    
+
     private void getMatch() {
         for(Match m : MatchManager.getMatchMgr().getMatches()) {
             if(m.getTeam(TeamType.HOME).equals(homeTeamComboBox.getSelectedItem())
                     && m.getTeam(TeamType.AWAY).equals(awayTeamComboBox.getSelectedItem())) {
-                //showMatchDetails(m);
                 printMatchDetails(m);
                 errorLabel.setVisible(false);
                 return;
             }
         }
-        
+
         //else say there is no match for these teams
         errorLabel.setVisible(true);
         errorLabel.setText("No matches found for these teams.");
     }
-    
+
     private void printMatchDetails(Match m) {
         System.out.println("Match : " + homeTeamComboBox.getSelectedItem().toString() + " VS " +  awayTeamComboBox.getSelectedItem().toString());
         for(Set s : m.getSets()) {
             System.out.println("Set : " + s.getSetIdentifier());
             int i = 1;
             for(Game g : s.getGames()) {
-                System.out.println("Game " + i + ": " + s.getHomePlayerString() + " " + g.getScore(TeamType.HOME) + ", " + s.getAwayPlayerString() + " " + g.getScore(TeamType.AWAY));
+                System.out.println("Game " + i + ": " + s.getPlayerString(TeamType.HOME) + " " + g.getScore(TeamType.HOME) + ", " + s.getPlayerString(TeamType.AWAY) + " " + g.getScore(TeamType.AWAY));
                 i++;
-            }       
+            }
         }
-        
-        System.out.println("");     
+
+        System.out.println("");
         System.out.println("Total home win: " + m.getPointsForTeam(m.getTeam(TeamType.HOME)));
         System.out.println("Total away win: " + m.getPointsForTeam(m.getTeam(TeamType.AWAY)));
-        
-    }
-    
-//    private void showMatchDetails(Match m) {
-//        setupSetList(m);
-//        
-//    }
-    
-//    private void setupSetList(Match m) {
-//        Vector setsVector = new Vector();
-//        for(Set s : m.getSets()) {          
-//            setsVector.add(s);          
-//        }
-//        final DefaultComboBoxModel setModel = new DefaultComboBoxModel(setsVector);
-//        setList.setModel(setModel);
-//        setList.invalidate();
-//        
-//        setList.setSelectedIndex(0);
-//        
-//        setGameList(m.getSets().getMatchMgr(setList.getSelectedIndex()));
-//
-//    }
-//    
-//    private void setGameList(Set s) {
-//        Vector gameVector = new Vector();
-//        for(Game g : s.getGames()) {          
-//            gameVector.add(s);          
-//        }
-//        final DefaultComboBoxModel gameModel = new DefaultComboBoxModel(gameVector);
-//        gameList.setModel(gameModel);
-//        gameList.invalidate();
-//        
-//        gameList.setSelectedIndex(0);
-//
-//
-//    }
-    
 
-            
+    }
+
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -149,42 +114,42 @@ public class ViewMatchScoreJFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(getMatchButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(homeTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addComponent(jLabel2))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(16, 16, 16)
-                                    .addComponent(awayTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(getMatchButton)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(homeTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel1))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(layout.createSequentialGroup()
+                                                                        .addGap(20, 20, 20)
+                                                                        .addComponent(jLabel2))
+                                                                .addGroup(layout.createSequentialGroup()
+                                                                        .addGap(16, 16, 16)
+                                                                        .addComponent(awayTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(awayTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(getMatchButton)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(homeTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(awayTeamComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addComponent(getMatchButton)
+                                .addContainerGap())
         );
 
         pack();
